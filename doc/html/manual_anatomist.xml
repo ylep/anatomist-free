@@ -3221,7 +3221,7 @@ systèmes-->
       <screen>Comment obtenir des images au format Analyze 4D ?  </screen>
     </para>
     <para>
-      <emphasis>Pour cela vous devez mettre le champ 'spm_output_4d_volumes' à la valeur 1.</emphasis>
+      <emphasis>Pour cela vous devez mettre le champ 'spm_output_4d_volumes' à la valeur 1. Idem pour le format NIFTI-1 avec le champ 'nifti_output_4d_volumes'.</emphasis>
     </para>
     <para>
       <screen>Peut-on fusionner des volumes 4D ?  </screen>
@@ -4121,16 +4121,19 @@ systèmes-->
         <screen>  'spm_input_radio_convention' : 1, </screen>
       </para>
       <para>
-        <screen>  'spm_input_spm2_normalization' : 0, </screen>
+        <screen>  'spm_input_spm2_normalization' : 1, </screen>
       </para>
       <para>
         <screen>  'spm_output_radio_convention' : 1, </screen>
       </para>
       <para>
-        <screen>  'spm_output_spm2_normalization' : 0, </screen>
+        <screen>  'spm_output_spm2_normalization' : 1, </screen>
       </para>
       <para>
-        <screen>  'spm_output_4d_volumes' : 0, </screen>
+        <screen>  'spm_output_4d_volumes' : 1, </screen>
+      </para>
+      <para>
+        <screen>  'nifti_output_4d_volumes' : 1, </screen>
       </para>
       <para>
         <screen>  'spm_force_output_convention' : 0, </screen>
@@ -4191,10 +4194,10 @@ systèmes-->
             </row>
             <row>
               <entry>
-                <para>spm_output_4d_volumes</para>
+                <para>spm_output_4d_volumes et nifti_output_4d_volumes</para>
               </entry>
               <entry>
-                <para>Interdit ou autorise l'écriture de volume   4D au format Analyze. Ceci est dû au fait que SPM99 ne   peut pas lire de volume 4D, il doit charger le volume   4D sous forme de fichier 3D. Par contre, SPM2 peut   lire des volumes 4D.</para>
+                <para>Interdit ou autorise l'écriture de volume   4D au format Analyze ou NIFTI-1. Ceci est dû au fait que SPM99 ne   peut pas lire de volume 4D, il doit charger le volume   4D sous forme de fichier 3D. Par contre, SPM2 peut   lire des volumes 4D.</para>
                 <para>0 : n'autorise pas l'écriture de volume 4D.</para>
                 <para>1 : autorise l'écriture de volume 4D.</para>
               </entry>
