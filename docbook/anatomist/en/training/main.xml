@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-15"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5CR1//EN"
-	"/volatile/xml_documentation/dtd/docbook-xml-4.5CR1/docbookx.dtd" 
+<!DOCTYPE book
 	[
 	<!ENTITY % entities SYSTEM "catalog.ent">
 	<!ENTITY % local.common.attrib "infoid CDATA #IMPLIED">
@@ -13,7 +12,6 @@
 		
 		<bookinfo code='ana_training'><title>The Anatomist getting started guide</title>
 			<!--<author> <firstname>DENGHIEN</firstname> <surname>Isabelle</surname></author> <date>06/2004</date>-->
-			<edition>3.1</edition>
 			
 		</bookinfo>
 		
