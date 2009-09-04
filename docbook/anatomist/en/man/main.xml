@@ -388,7 +388,7 @@
                 </entry>
                 <entry>
                   <para> Opens a <emphasis>browser</emphasis> window that lists the window contained objects. Enables to select an object in the list in order to handle it in the window. 
-                    <!--( faire lien : contrôle de transformation) -->.</para>
+                    <!--( faire lien : contrï¿½le de transformation) -->.</para>
                 </entry>
               </row>
               <row>
@@ -525,7 +525,7 @@
               </row>
               <row>
                 <entry>
-                  <para> Script (pas d'icône)</para>
+                  <para> Script (pas d'icï¿½ne)</para>
                 </entry>
                 <entry><para>.ana</para></entry>
                 <entry> Script to execute a sequence of actions. For example, a script can be a file containing commands to merge two volumes and load a specific palette. </entry>
@@ -843,7 +843,7 @@
                     </entry>
                     <entry>
                       <para> RGB channels multiplication (between texture and mesh). White color is the 'neutral element'.
-                        <!-- Modification du matériau --> </para>
+                        <!-- Modification du matï¿½riau --> </para>
                     </entry>
                   </row>
                   <row>
@@ -851,7 +851,7 @@
                       <para> Linear</para>
                     </entry>
                     <entry>
-                      <para> RGB channels addition weighted by a coefficient.<!-- Pas de modification du matériau.--></para>
+                      <para> RGB channels addition weighted by a coefficient.<!-- Pas de modification du matï¿½riau.--></para>
                     </entry>
                   </row>
                   <row>
@@ -868,7 +868,7 @@
                     </entry>
                     <entry>
                       <para>
-                        <!--Addition des canaux RGB pondérée par un coefficient.-->
+                        <!--Addition des canaux RGB pondï¿½rï¿½e par un coefficient.-->
                       </para>
                     </entry>
                   </row>
@@ -1171,8 +1171,8 @@
       			<listitem><para>Object2 (O2) : regions of interest graph drawn from the anatomy. So these 2 objects are in the same referential.</para></listitem>
 			<listitem><para>Object3 (O3) : nomenclature to associate colors to regions of interest according to their name. This   object doesn't have to be put in a window. Link between names in the nomenclature and in regions of interest is done automatically by Anatomist.</para></listitem>
 			</itemizedlist>
-			<para>These 2 objects are in the same coordinates system, so they will be placed in the same referential, that is to say they will have the same color circle (red by default).<!-- Il y a un troisième
-			objet, une nomenclature décrivant la nomenclature des couleurs mais il ne rentre pas dans le cadre de la superposition.-->
+			<para>These 2 objects are in the same coordinates system, so they will be placed in the same referential, that is to say they will have the same color circle (red by default).<!-- Il y a un troisiï¿½me
+			objet, une nomenclature dï¿½crivant la nomenclature des couleurs mais il ne rentre pas dans le cadre de la superposition.-->
           		</para>
 				
                         <figure><title>Superimposing an anatomy and regions of interest</title>
@@ -1190,7 +1190,7 @@
 			<listitem><para>Object1 (O1) : head mesh, object obtained from a T1 MRI with BrainVISA anatomical pipeline.
 			 Opacity is decreased in the example below to enable visualization of the other objects.</para></listitem>
       			<listitem><para>Object2 (O2) : right hemisphere mesh, object obtained from the T1 MRI with BrainVISA anatomical pipeline.  </para></listitem>
-                        <listitem><para>Object3 (O3) : left hemisphere mesh, maillage de l'hemisphère gauche, object obtained from the T1 MRI with BrainVISA anatomical pipeline. </para></listitem>
+                        <listitem><para>Object3 (O3) : left hemisphere mesh, maillage de l'hemisphï¿½re gauche, object obtained from the T1 MRI with BrainVISA anatomical pipeline. </para></listitem>
 			</itemizedlist>
                         These three objects are in the same coordinates system, so they will be placed in the same referential, that is to say they will have the same color circle (red by default).
           		</para>
@@ -1269,7 +1269,7 @@
                     
                     <row><entry><para>Volume + Mesh <mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_iwhitemesh_little.png" format="PNG"  width="20"/></imageobject> <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_iwhitemesh_little.png" format="PNG"/></imageobject></mediaobject> </para></entry><entry>Fusion3DMethod</entry> <entry><para>Maps on the mesh a texture corrsponding to the volume values.</para></entry></row>
                     
-                    <row><entry><para>Volume + Mesh</para></entry><entry>FusionCutMeshMethod</entry> <entry><para>Mesh cut by a plane: the cutting plane will have the texture of the volume slice. When you put this object in a 3D window, the "cut mesh" control is available. It enables to control the orientation of the slice (<emphasis>shift</emphasis>) and its position (<emphasis>contrôle</emphasis>) against the mesh. </para></entry> </row>
+                    <row><entry><para>Volume + Mesh</para></entry><entry>FusionCutMeshMethod</entry> <entry><para>Mesh cut by a plane: the cutting plane will have the texture of the volume slice. When you put this object in a 3D window, the "cut mesh" control is available. It enables to control the orientation of the slice (<emphasis>shift</emphasis>) and its position (<emphasis>contrï¿½le</emphasis>) against the mesh. </para></entry> </row>
                     
                     <row><entry><para>2 textures</para></entry><entry>FusionTextureMethod</entry> <entry><para>Creates a 2D texture from two 1D textures.</para></entry></row> 
                     
@@ -1536,7 +1536,7 @@
           	<para><emphasis>Ryx Ryy Ryz</emphasis></para>
           	<para><emphasis>Rzx Rzy Rzz</emphasis></para>
 
-		<para>This format defines a translation T and a rotation matrix R. Ce format spécifie une translation T et une matrice de rotation R. Let R1 the refenential of a first volume and R2 the referential of a second volume. The file R1_TO_R2 gives a transformation that moves from R1 to R2. So we have the following relation between coordinates of the two referentials : X2 = R *  X1 + T.</para>
+		<para>This format defines a translation T and a rotation matrix R. Ce format spï¿½cifie une translation T et une matrice de rotation R. Let R1 the refenential of a first volume and R2 the referential of a second volume. The file R1_TO_R2 gives a transformation that moves from R1 to R2. So we have the following relation between coordinates of the two referentials : X2 = R *  X1 + T.</para>
 
                 <para>The name of transformation file is generally *TO*.trm where each <emphasis role="bold">*</emphasis> is a referential. For example : refimage_TO_Talairach.trm. These transformations apply between two referentials  and modifies only display of corresponding objects. Data on disk is not modified.</para>
 
@@ -2389,7 +2389,7 @@
 	</figure>	
 	
 	
-        <para>At the top you see the histogram of your volume. Vous pouvez visualiser l'histogramme de votre volume sur la première partie haute de l'onglet. y-coordinate is the frequency of a gray level and x-coordinate is its value.</para>
+        <para>At the top you see the histogram of your volume. Vous pouvez visualiser l'histogramme de votre volume sur la premiï¿½re partie haute de l'onglet. y-coordinate is the frequency of a gray level and x-coordinate is its value.</para>
         <table>
           <title>Connectivity threshold panel</title>
           <tgroup align="justify" cols="2">
@@ -2539,7 +2539,7 @@
             </tbody>
           </tgroup>
         </table>
-        <!-- <para> RQ Renaud : Certaines palettes 2D sont construites à partir de deux palettes 1d choisies par l'utilisateur. Pour les LevelSet du module de ROI, la seconde palettest est BLUE-ufusion.
+        <!-- <para> RQ Renaud : Certaines palettes 2D sont construites ï¿½ partir de deux palettes 1d choisies par l'utilisateur. Pour les LevelSet du module de ROI, la seconde palettest est BLUE-ufusion.
 </para>-->
       </sect1>
       <sect1>
@@ -2560,9 +2560,9 @@
 	</para>
 	
         <!--
-Il recherche l'extrémum le plus proche et opère une "descente (extraction de maximum) 
-ou montée des eaux (extraction de minimum)", ce qui correspond à un seuillage connexe au point cliqué, 
-jusqu'à ce que la taille de la région dépasse la taille max donnée, ou que le niveau des eaux dépasse le pourcentage de l'extremum. 
+Il recherche l'extrï¿½mum le plus proche et opï¿½re une "descente (extraction de maximum) 
+ou montï¿½e des eaux (extraction de minimum)", ce qui correspond ï¿½ un seuillage connexe au point cliquï¿½, 
+jusqu'ï¿½ ce que la taille de la rï¿½gion dï¿½passe la taille max donnï¿½e, ou que le niveau des eaux dï¿½passe le pourcentage de l'extremum. 
 -->
         <table>
           <title>Blob segmentation</title>
@@ -2714,7 +2714,7 @@ jusqu'à ce que la taille de la région dépasse la taille max donnée, ou que le ni
               <para>Use attribute Label/name : nomenclatures and graphs are linked through <emphasis>Label</emphasis> or <emphasis>Name</emphasis> attribute.</para>
             </listitem>
             <listitem>
-              <para>Display Tooltips : display information tooltips when the mouse passes on objects. Afficher les bulles : affiche les bulles d'informations lorsque la souris est déplacée sur les objets.</para>
+              <para>Display Tooltips : display information tooltips when the mouse passes on objects. Afficher les bulles : affiche les bulles d'informations lorsque la souris est dï¿½placï¿½e sur les objets.</para>
             </listitem>
           </itemizedlist>
         </para>
@@ -3182,7 +3182,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
             <para>If there is no information about the convention, Anatomist search for the user configuration file $HOME/.aimsrc </para>
           </listitem>
           <listitem>
-            <para>If this file doesn't exist, the configuration file of aims is used : &lt;package&gt;/share/aims/.aimsrc or $AIMS_PATH/shared/aimsrc or $SHFJ_SHARED_PATH/aims/aimsrc.</para>
+            <para>If this file doesn't exist, the configuration file of aims is used : &lt;package&gt;/share/aims/.aimsrc or $AIMS_PATH/shared/aimsrc or $BRAINVISA_SHARE/aims/aimsrc.</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -3276,12 +3276,12 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               </entry>
               <entry>
                 <!-- Pas compris cette partie... cet attribut existe toujours ? il n'est pas dans le fichier aimsrc actuel. -->
-                <para>Cet attribut permet de forcer l'écriture d'une image au format ANALYZE en utilisant la valeur des attributs <emphasis>spm_output_radio_convention</emphasis> et<emphasis>spm_output_spm2_normalization</emphasis>.                 Par exemple, si une image est en convention   radiologique et que </para>
-                <para>0 : prend par défaut les caractéristiques de l'image. Par exemple, si une image au format Analyze est en convention radiologique et que 
-		l'attribut <emphasis>spm_output_radio_convention</emphasis> est à 0, alors l'image sera réécrite en convention radiologique.</para>
-                <para>1 : prend par défaut les caractéristiques des attributs <emphasis>spm_output_radio_convention</emphasis> et 
+                <para>Cet attribut permet de forcer l'ï¿½criture d'une image au format ANALYZE en utilisant la valeur des attributs <emphasis>spm_output_radio_convention</emphasis> et<emphasis>spm_output_spm2_normalization</emphasis>.                 Par exemple, si une image est en convention   radiologique et que </para>
+                <para>0 : prend par dï¿½faut les caractï¿½ristiques de l'image. Par exemple, si une image au format Analyze est en convention radiologique et que 
+		l'attribut <emphasis>spm_output_radio_convention</emphasis> est ï¿½ 0, alors l'image sera rï¿½ï¿½crite en convention radiologique.</para>
+                <para>1 : prend par dï¿½faut les caractï¿½ristiques des attributs <emphasis>spm_output_radio_convention</emphasis> et 
 		 <emphasis>spm_output_spm2_normalization</emphasis>. Par exemple si une image au format Analyze est en convention radiologique et que 
-		l'attribut <emphasis>spm_output_radio_convention</emphasis> est à 0, alors l'image sera réécrite en convention neurologique.</para>
+		l'attribut <emphasis>spm_output_radio_convention</emphasis> est ï¿½ 0, alors l'image sera rï¿½ï¿½crite en convention neurologique.</para>
               </entry>
             </row>
           </tbody>
@@ -3359,7 +3359,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
         </thead>
         <tbody>
           <row>
-            <entry spanname="hspan">Région centrale :</entry>
+            <entry spanname="hspan">Rï¿½gion centrale :</entry>
           </row>
           <row>
             <entry>S.C.</entry>
@@ -3385,10 +3385,10 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               <para/>
               <itemizedlist>
                 <listitem>
-                  <para>supérieur</para>
+                  <para>supï¿½rieur</para>
                 </listitem>
                 <listitem>
-                  <para>inférieur</para>
+                  <para>infï¿½rieur</para>
                 </listitem>
               </itemizedlist>
             </entry>
@@ -3397,15 +3397,15 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
             <entry spanname="hspan"/>
           </row>
           <row>
-            <entry spanname="hspan">F.C.L : vallée sylvienne (fissure cérébrale latérale) </entry>
+            <entry spanname="hspan">F.C.L : vallï¿½e sylvienne (fissure cï¿½rï¿½brale latï¿½rale) </entry>
           </row>
           <row>
             <entry>F.C.L.a.</entry>
-            <entry>FCL antérieure</entry>
+            <entry>FCL antï¿½rieure</entry>
           </row>
           <row>
             <entry>F.C.L.r.ant.</entry>
-            <entry>rameau antérieur</entry>
+            <entry>rameau antï¿½rieur</entry>
           </row>
           <row>
             <entry>F.C.L.r.asc.</entry>
@@ -3413,7 +3413,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>F.C.L.p.</entry>
-            <entry>FCL postérieure</entry>
+            <entry>FCL postï¿½rieure</entry>
           </row>
           <row>
             <entry>F.C.L.r.diag.</entry>
@@ -3421,41 +3421,41 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>F.C.L.r.sc.ant.</entry>
-            <entry>rameau sub-central antérieur</entry>
+            <entry>rameau sub-central antï¿½rieur</entry>
           </row>
           <row>
             <entry>F.C.L.r.sc.post.</entry>
-            <entry>rameau sub-central postérieur</entry>
+            <entry>rameau sub-central postï¿½rieur</entry>
           </row>
           <row>
             <entry>F.C.L.r.retroC.tr.</entry>
-            <entry>rameau rétro-central transverse</entry>
+            <entry>rameau rï¿½tro-central transverse</entry>
           </row>
           <row>
             <entry spanname="hspan"/>
           </row>
           <row>
-            <entry spanname="hspan">Région précentrale : </entry>
+            <entry spanname="hspan">Rï¿½gion prï¿½centrale : </entry>
           </row>
           <row>
             <entry>S.Pe.C.median.</entry>
-            <entry>sillon précentral médian</entry>
+            <entry>sillon prï¿½central mï¿½dian</entry>
           </row>
           <row>
             <entry>S.Pe.C.marginal.</entry>
-            <entry>sillon précentral marginal</entry>
+            <entry>sillon prï¿½central marginal</entry>
           </row>
           <row>
             <entry>S.Pe.C.sup.</entry>
-            <entry>sillon précentral supérieur</entry>
+            <entry>sillon prï¿½central supï¿½rieur</entry>
           </row>
           <row>
             <entry>S.Pe.C.inter.</entry>
-            <entry>sillon précentral intermédiaire</entry>
+            <entry>sillon prï¿½central intermï¿½diaire</entry>
           </row>
           <row>
             <entry>S.Pe.C.inf.</entry>
-            <entry>sillon précentral inférieur</entry>
+            <entry>sillon prï¿½central infï¿½rieur</entry>
           </row>
           <row>
             <entry spanname="hspan"/>
@@ -3465,7 +3465,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>S.F.median.</entry>
-            <entry>sillon frontal médian</entry>
+            <entry>sillon frontal mï¿½dian</entry>
           </row>
           <row>
             <entry>
@@ -3483,16 +3483,16 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               </itemizedlist>
             </entry>
             <entry>
-              <para>sillon frontal supérieur</para>
+              <para>sillon frontal supï¿½rieur</para>
               <itemizedlist>
                 <listitem>
-                  <para>(antérieur)</para>
+                  <para>(antï¿½rieur)</para>
                 </listitem>
                 <listitem>
                   <para>(moyen)</para>
                 </listitem>
                 <listitem>
-                  <para>(postérieur)</para>
+                  <para>(postï¿½rieur)</para>
                 </listitem>
               </itemizedlist>
             </entry>
@@ -3513,16 +3513,16 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               </itemizedlist>
             </entry>
             <entry>
-              <para>sillon frontal intermédiaire</para>
+              <para>sillon frontal intermï¿½diaire</para>
               <itemizedlist>
                 <listitem>
-                  <para>(antérieur)</para>
+                  <para>(antï¿½rieur)</para>
                 </listitem>
                 <listitem>
                   <para>(moyen)</para>
                 </listitem>
                 <listitem>
-                  <para>(postérieur)</para>
+                  <para>(postï¿½rieur)</para>
                 </listitem>
               </itemizedlist>
             </entry>
@@ -3543,7 +3543,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               </itemizedlist>
             </entry>
             <entry>
-              <para>sillon frontal inférieur</para>
+              <para>sillon frontal infï¿½rieur</para>
               <itemizedlist>
                 <listitem>
                   <para> S.F.inf.ant.</para>
@@ -3579,7 +3579,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>S.Or.l.</entry>
-            <entry>sillon orbitaire latéral</entry>
+            <entry>sillon orbitaire latï¿½ral</entry>
           </row>
           <row>
             <entry spanname="hspan"/>
@@ -3613,21 +3613,21 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
                   <para>(polaire)</para>
                 </listitem>
                 <listitem>
-                  <para>(supérieur)</para>
+                  <para>(supï¿½rieur)</para>
                 </listitem>
                 <listitem>
-                  <para>sillon frontal interne de l'aire motrice supplémentaire</para>
+                  <para>sillon frontal interne de l'aire motrice supplï¿½mentaire</para>
                 </listitem>
               </itemizedlist>
             </entry>
           </row>
           <row>
             <entry>S.R.sup.</entry>
-            <entry>sillon rostral supérieur</entry>
+            <entry>sillon rostral supï¿½rieur</entry>
           </row>
           <row>
             <entry>S.R.inf.</entry>
-            <entry>(inférieur)</entry>
+            <entry>(infï¿½rieur)</entry>
           </row>
           <row>
             <entry>
@@ -3642,24 +3642,24 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               </itemizedlist>
             </entry>
             <entry>
-              <para>fissure calloso-marginale antérieure</para>
+              <para>fissure calloso-marginale antï¿½rieure</para>
               <itemizedlist>
                 <listitem>
                   <para>-</para>
                 </listitem>
                 <listitem>
-                  <para>rameau ascendant antérieur</para>
+                  <para>rameau ascendant antï¿½rieur</para>
                 </listitem>
               </itemizedlist>
             </entry>
           </row>
           <row>
             <entry>F.C.M.post.</entry>
-            <entry>(postérieure)</entry>
+            <entry>(postï¿½rieure)</entry>
           </row>
           <row>
             <entry>F.C.M.r.AMS.ant.</entry>
-            <entry>rameau de l'aire motrice supplémentaire</entry>
+            <entry>rameau de l'aire motrice supplï¿½mentaire</entry>
           </row>
           <row>
             <entry>S.p.C.</entry>
@@ -3677,23 +3677,23 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
             <entry spanname="hspan"/>
           </row>
           <row>
-            <entry spanname="hspan">Face interne postérieure :</entry>
+            <entry spanname="hspan">Face interne postï¿½rieure :</entry>
           </row>
           <row>
             <entry>S.s.P.</entry>
-            <entry>sillon sous-pariétal</entry>
+            <entry>sillon sous-pariï¿½tal</entry>
           </row>
           <row>
             <entry>S.Pa.int.</entry>
-            <entry>sillon pariétal interne</entry>
+            <entry>sillon pariï¿½tal interne</entry>
           </row>
           <row>
             <entry>F.P.O.</entry>
-            <entry>fissure pariéto-occipitale</entry>
+            <entry>fissure pariï¿½to-occipitale</entry>
           </row>
           <row>
             <entry>S.Cu.</entry>
-            <entry>sillon cunéal</entry>
+            <entry>sillon cunï¿½al</entry>
           </row>
           <row>
             <entry>S.Li.</entry>
@@ -3703,19 +3703,19 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
             <entry spanname="hspan"/>
           </row>
           <row>
-            <entry spanname="hspan">Lobe pariétal :</entry>
+            <entry spanname="hspan">Lobe pariï¿½tal :</entry>
           </row>
           <row>
             <entry>S.Pa.sup.</entry>
-            <entry>sillon pariétal supérieur</entry>
+            <entry>sillon pariï¿½tal supï¿½rieur</entry>
           </row>
           <row>
             <entry>S.Pa.t.</entry>
-            <entry>sillon pariétal transverse</entry>
+            <entry>sillon pariï¿½tal transverse</entry>
           </row>
           <row>
             <entry>S.Po.C.sup.</entry>
-            <entry>sillon post-central supérieur</entry>
+            <entry>sillon post-central supï¿½rieur</entry>
           </row>
           <row>
             <entry>(S.GSM.)</entry>
@@ -3743,13 +3743,13 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
               </itemizedlist>
             </entry>
             <entry>
-              <para>fissure inter-pariétale</para>
+              <para>fissure inter-pariï¿½tale</para>
               <itemizedlist>
                 <listitem>
                   <para>-</para>
                 </listitem>
                 <listitem>
-                  <para>partie post-centrale supérieure</para>
+                  <para>partie post-centrale supï¿½rieure</para>
                 </listitem>
                 <listitem>
                   <para>rameau transverse</para>
@@ -3758,22 +3758,22 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
                   <para>FIP horizontale</para>
                 </listitem>
                 <listitem>
-                  <para>pariéto-occipital</para>
+                  <para>pariï¿½to-occipital</para>
                 </listitem>
               </itemizedlist>
             </entry>
           </row>
           <row>
             <entry>F.I.P.Po.C.inf.</entry>
-            <entry>partie post-centrale inférieure</entry>
+            <entry>partie post-centrale infï¿½rieure</entry>
           </row>
           <row>
             <entry>F.I.P.r.int.1</entry>
-            <entry>rameau intermédiaire primaire</entry>
+            <entry>rameau intermï¿½diaire primaire</entry>
           </row>
           <row>
             <entry>F.I.P.r.int.2</entry>
-            <entry>rameau intermédiaire secondaire</entry>
+            <entry>rameau intermï¿½diaire secondaire</entry>
           </row>
           <row>
             <entry spanname="hspan"/>
@@ -3783,14 +3783,14 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>OCCIPITAL</entry>
-            <entry>(non détaillé)</entry>
+            <entry>(non dï¿½taillï¿½)</entry>
           </row>
           <row>
             <entry spanname="hspan">Complexe calcarin :</entry>
           </row>
           <row>
             <entry>F.Cal.ant.-Sc.Cal.</entry>
-            <entry>fissure calcarine antérieure et scissure calcarine (la segmentation fusionne souvent ces deux sillons)</entry>
+            <entry>fissure calcarine antï¿½rieure et scissure calcarine (la segmentation fusionne souvent ces deux sillons)</entry>
           </row>
           <row>
             <entry>S.O.p.</entry>
@@ -3808,23 +3808,23 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>S.T.s.</entry>
-            <entry>sillon temporal supérieur</entry>
+            <entry>sillon temporal supï¿½rieur</entry>
           </row>
           <row>
             <entry>S.T.s.ter.asc.ant.</entry>
-            <entry>branche terminale ascendante antérieure</entry>
+            <entry>branche terminale ascendante antï¿½rieure</entry>
           </row>
           <row>
             <entry>S.T.s.ter.asc.post.</entry>
-            <entry>branche terminale ascendante postérieure</entry>
+            <entry>branche terminale ascendante postï¿½rieure</entry>
           </row>
           <row>
             <entry>S.T.i.ant.</entry>
-            <entry>sillon temporal inférieur antérieur</entry>
+            <entry>sillon temporal infï¿½rieur antï¿½rieur</entry>
           </row>
           <row>
             <entry>S.T.i.post.</entry>
-            <entry>sillon temporal inférieur postérieur</entry>
+            <entry>sillon temporal infï¿½rieur postï¿½rieur</entry>
           </row>
           <row>
             <entry spanname="hspan"/>
@@ -3834,15 +3834,15 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>S.O.T.lat.ant.</entry>
-            <entry>sillon occipito-temporal latéral antérieur</entry>
+            <entry>sillon occipito-temporal latï¿½ral antï¿½rieur</entry>
           </row>
           <row>
             <entry>S.O.T.lat.post.</entry>
-            <entry>(postérieur)</entry>
+            <entry>(postï¿½rieur)</entry>
           </row>
           <row>
             <entry>F.Coll.</entry>
-            <entry>fissure collatérale</entry>
+            <entry>fissure collatï¿½rale</entry>
           </row>
           <row>
             <entry>S.Rh.</entry>
@@ -3856,7 +3856,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
           </row>
           <row>
             <entry>INSULA</entry>
-            <entry>(non détaillée)</entry>
+            <entry>(non dï¿½taillï¿½e)</entry>
           </row>
         </tbody>
       </tgroup>
