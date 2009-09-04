@@ -4103,7 +4103,7 @@ systèmes-->
             <para>S'il n'y a pas assez d'indication,      lecture du fichier de configuration de l'utilisateur $HOME/.aimsrc </para>
           </listitem>
           <listitem>
-            <para>Si le fichier précédent n'existe pas, c'est le      fichier (/nom_package/share/aims/.aimsrc ou      $AIMS_PATH/shared/aimsrc ou $SHFJ_SHARED_PATH/aims/aimsrc) de configuration du site qui est pris en compte.</para>
+            <para>Si le fichier précédent n'existe pas, c'est le      fichier (/nom_package/share/aims/.aimsrc ou      $AIMS_PATH/shared/aimsrc ou $BRAINVISA_SHARE/aims/aimsrc) de configuration du site qui est pris en compte.</para>
           </listitem>
         </itemizedlist>
       </para>
