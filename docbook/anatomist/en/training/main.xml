@@ -665,6 +665,28 @@
               
     </sect2>
   </sect1>
+  <sect1><title>Extraction and merging of sulci meshed (from sulci graph) and fusion between them</title>
+    <para>This exercise shows how to extract a graph node mesh (ie sulcus or sulcus part), and merge or rather concatenate several such meshes. Note this example only works on graphs containing meshes.</para>
+    
+    <para><emphasis role="bold">EXTRACTION OF EACH MESH FROM A GRAPH</emphasis></para>
+    <itemizedlist>
+      <listitem><para>Put your sulci graph into a browser.</para></listitem>
+      <listitem><para>Select a node and save its mesh by right-clicking on the mesh (aims_Tmtktri) in a browser and selecting <emphasis>Object-specific</emphasis> <emphasis>File</emphasis>=&gt;<emphasis>Save</emphasis>.</para></listitem>
+      <listitem><para>specify an output file name as <emphasis>NameSulcus1.mesh</emphasis>.</para></listitem>	
+    </itemizedlist>
+    
+    <para><emphasis role="bold">CONCATENATION OF ALL SAVED MESHES</emphasis></para>
+    <itemizedlist>
+      <listitem><para>Usage of the AimsZcat command line:</para>
+        <screen>AimsZCat -i NameSuclcus1.mesh NameSuclcus2.mesh NameSuclcus3.mesh -o AllMesh.mesh</screen>This command has other options, but here we need:
+        <itemizedlist>
+          <listitem><para><emphasis>-i option</emphasis>: list of meshes to concatenate.</para></listitem>
+          <listitem><para><emphasis>-o option</emphasis>: output filename for the concatenated mesh.</para></listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </sect1>
+
 </chapter>
 
 <chapter><title>Combining objects</title>
@@ -757,13 +779,21 @@
     </figure>
     
     <para>NOTE: the step order is very important because if you directly do a fusion between the inflated mesh and the map, then the result will be 
-      wrong. In fact <!-- O1 and O2 are the same number of point but not at the same location. In the other hand, the intersection between 
-                          O1-O3 and O2-O3 will not the same. You must keep the right spatial information by beginning with the fusion between O1 and O3.-->
-      the white mesh and the inflated mesh are two meshes sharing the same structure (number of vertices and polygons), only the location of vertices differ, so they can be assigned the same textures. But 3D fusions for mesh-map and inflated mesh-map do not produce the same result since in a 3D fusion, the 3D location of points is actually taken into account. 
+      wrong. In fact the white mesh and the inflated mesh are two meshes sharing the same structure (number of vertices and polygons), only the location of vertices differ, so they can be assigned the same textures. But 3D fusions for mesh-map and inflated mesh-map do not produce the same result since in a 3D fusion, the 3D location of points is actually taken into account. 
       So you have to fusion first mesh and map to make an activation texture processing the correct points location, and then report this texture onto the inflated mesh in the second fusion (textured surface).
     </para>
     
   </sect1>    
+
+  <sect1><title>Extract a texture</title>
+    <itemizedlist>
+      <listitem><para><link linkend='ana_training%fusion_whitemesh_map'>Do a fusion between a mesh and a volume</link>.</para></listitem>
+      <listitem><para>Right-click on the FUSION3D object.</para></listitem>
+      <listitem><para>Select <emphasis>File -&gt; Export texture</emphasis>.</para></listitem>
+    </itemizedlist>
+    
+    <para>NOTE: this texture corresponds solely to meshes with the same structure.</para>
+  </sect1>
 
   <sect1 id='ana_training%fusion_mesh_tex' infoid='Fusion between a mesh and texture'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_mesh_tex_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_mesh_tex_little.png" format="PNG"  /></imageobject></inlinemediaobject> Fusion between an inflated cortical surface mesh and a texture</title>
     
@@ -773,7 +803,7 @@
       <listitem><para>Load</para> 
         <itemizedlist>
           <listitem>Inflated white mesh: <filename>&data_ana;subject01/subject01_Lwhite_inflated.mesh</filename> or <filename>subject01_Lwhite_inflated_4d.mesh</filename></listitem>
-          <listitem>Cortex curvature texture: <filename>&data_ana;subject01/subject01_Lwhite_curv.tex</filename></listitem>
+          <listitem>Cortical curvature texture: <filename>&data_ana;subject01/subject01_Lwhite_curv.tex</filename></listitem>
         </itemizedlist>
       </listitem>
       <listitem><para>Select the mesh and the texture to do a fusion (click on &fusion;).</para>
@@ -793,7 +823,7 @@
     <para>NOTE: <!-- you can do this kind of fusion because the mesh and the texture must have the same number of point -->this kind of fusion is only possible if the texture has been specifically made for the corresponding mesh: the number of vertices, and their order, must match.</para>
   </sect1>    
 
-  <sect1 id='ana_training%fusion_multitexture'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_multitexture_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_multitexture_little.png" format="PNG"  /></imageobject></inlinemediaobject> Multitexture</title>
+  <sect1 id='ana_training%fusion_multitexture'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_multitexture_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_multitexture_little.png" format="PNG"  /></imageobject></inlinemediaobject> Multitexture : Inflated cortical surface mesh with an activation map and a curvature texture</title>
     
     <para>KEYWORDS: <link linkend='fusion3dmethod'>Fusion3DMethod</link>, <link linkend='fusiontexsurfmethod'>FusionTexSurfMethod</link> and
       <link linkend='fusionmultitexturemethod'>FusionMultiTextureMethod</link>.</para>
@@ -802,11 +832,11 @@
       
       <listitem><para>Load</para> 
         <itemizedlist>
-          <listitem>O1: <filename>&data_ana;subject01/subject01_Lwhite.mesh</filename></listitem>
-          <listitem>O2: <filename>&data_ana;subject01/subject01_Lwhite_inflated.mesh or subject01_Lwhite_inflated_4d.mesh</filename></listitem>
-          <listitem>O3: <filename>&data_ana;subject01/Audio-Video_T_map.nii</filename></listitem>
-          <listitem>O4: <filename>&data_ana;subject01/subject01.nii</filename></listitem>
-          <listitem>O5: <filename>&data_ana;subject01/subject01_Lwhite_curv.tex</filename></listitem>
+          <listitem>Left cortical mesh: <filename>&data_ana;subject01/subject01_Lwhite.mesh</filename></listitem>
+          <listitem>Left inflated cortical mesh: <filename>&data_ana;subject01/subject01_Lwhite_inflated.mesh or subject01_Lwhite_inflated_4d.mesh</filename></listitem>
+          <listitem>Activation map: <filename>&data_ana;subject01/Audio-Video_T_map.nii</filename></listitem>
+          <listitem>T1 MRI: <filename>&data_ana;subject01/subject01.nii</filename></listitem>
+          <listitem>Mean curvature texture: <filename>&data_ana;subject01/subject01_Lwhite_curv.tex</filename></listitem>
         </itemizedlist>
       </listitem>
       
@@ -818,7 +848,7 @@
         </mediaobject>
       </listitem>
       
-      <listitem><para><link linkend='ana_training%fusion_iwhitemesh_tex'>Do a FUSIONMULTITEXTUREMETHOD fusion between a the FUSION3D and the texture</link>. A Multitexture is created. This object can not be visualized into a window.</para></listitem>
+      <listitem><para><link linkend='ana_training%fusion_iwhitemesh_tex'>Do a FUSIONMULTITEXTUREMETHOD fusion between a the FUSION3D and the texture</link>. A Multitexture is created. This object cannot be visualized into a window.</para></listitem>
       
       <listitem><para>Do a FUSIONTEXSURFMETHOD fusion between the Multitexture and the inflated mesh.</para></listitem>
             
@@ -836,72 +866,18 @@
 
   </sect1>
   
-  <sect1 id='ana_training%FusionCutMeshMethod' infoid='Mesh cutting'><title> <inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_meshcutting1_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_meshcutting1_little.png" format="PNG"  /></imageobject></inlinemediaobject> Fusion Mesh cut by a plane </title> 
+  <sect1 id='ana_training%FusionCutMeshMethod_planar' infoid='Mesh cutting and planar'><title> <inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_meshcutting_planar_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_meshcutting_planar_little.png" format="PNG"  /></imageobject></inlinemediaobject> Fusion Mesh cut by a plane </title> 
     
-    <para>KEYWORDS:  <link linkend='fusioncutmeshmethod'>FusionCutMeshMethod</link>.</para>	
-
+    <para>KEYWORDS:  <link linkend='fusioncutmeshmethod_planar'>FusionCutMeshMethod</link>.</para>	
+        
     <itemizedlist>
       <listitem><para>Load:
           <itemizedlist>
             <listitem>T1 MRI:<filename>&data_ana;subject01/subject01.nii</filename></listitem>
-            <listitem>Right white mesh mesh:<filename>&data_ana;subject01/subject01_Rwhite.mesh</filename></listitem>
+            <listitem>Right cortical mesh:<filename>&data_ana;subject01/subject01_Rwhite.mesh</filename></listitem>
           </itemizedlist>
         </para></listitem>
       <listitem><para>Select the 2 objects in the anatomist objects list.</para></listitem>
-      <listitem><para>Click on &fusion; and select <emphasis>FusionCutMeshMethod</emphasis> to create a <emphasis>CutMesh</emphasis> object.</para></listitem>
-      <listitem><para>Drag and drop the <emphasis>CutMesh</emphasis> object into a 3d window.</para>
-        <mediaobject>
-          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh1.png" format="PNG"  width="250"/></imageobject>
-          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh1.png" format="PNG"/></imageobject>
-        </mediaobject>
-      </listitem>
-      <listitem><para>Rotate the <emphasis>CutMesh</emphasis> into the window by clicking on the middle button and move simultaneously on the mouse.</para>
-        <mediaobject>
-          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh2.png" format="PNG"  width="250"/></imageobject>
-          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh2.png" format="PNG"/></imageobject>
-        </mediaobject>
-      </listitem>
-      <listitem><para>Unroll the <emphasis>CutMesh</emphasis> of the anatomist object list and drag and drop the <emphasis>BorderPloygon</emphasis> into the 3d window.</para>
-        <mediaobject>
-          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh3.png" format="PNG"  width="250"/></imageobject>
-          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh3.png" format="PNG"/></imageobject>
-        </mediaobject>
-      </listitem>
-      <listitem><para>Drag and drop the <emphasis>subject01.nii</emphasis> into the 3d window.</para>
-        <mediaobject>
-          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh4.png" format="PNG"  width="250"/></imageobject>
-          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh4.png" format="PNG"/></imageobject>
-        </mediaobject>
-      </listitem>
-      <listitem><para>Activate the <emphasis>Mesh cutting</emphasis> control: </para>
-        <itemizedlist>
-          <listitem><para>Right-click on 3d window and select <emphasis>View / Select object</emphasis>.</para></listitem>
-          <listitem><para>Activate the <emphasis>CutMesh</emphasis> object via this browser by selecting with the mouse (the line becomes blue).</para></listitem>
-          <listitem><para>Click on &control-cut; of the 3d window.</para></listitem>
-          <listitem><para>Move the cutting plane on cut mesh as you like. Please refere to the <ulink url='#ana_man%d_ctr_meshcutting'><emphasis>mesh cutting</emphasis></ulink> control section of <emphasis>Manual of Anatomist</emphasis> to know the shortcuts.</para></listitem>
-        </itemizedlist>
-        <mediaobject>
-          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh5.png" format="PNG"  width="250"/></imageobject>
-          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh5.png" format="PNG"/></imageobject>
-        </mediaobject>
-      </listitem>
-    </itemizedlist>
-  </sect1>
-
-  <sect1 id='ana_training%FusionCutMeshMethod_planar' infoid='Mesh cutting and planar'><title> <inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_meshcutting_planar_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_meshcutting_planar_little.png" format="PNG"  /></imageobject></inlinemediaobject> Fusion Mesh cut by a plane </title> 
-    
-    <para>KEYWORDS:  <link linkend='fusioncutmeshmethod_planar'>FusionCutMeshMethod and PlanarFusion3D</link>.</para>	
-    
-    <para>This section is little different from the previous because we are going to handle the PlanarFusion3D. Depending on workstation features, the PlanarFusion3D requires high capacities and may lead to an application crash if the computer can not support it. So, unstable features must be activated. To do so, select <emphasis>Settings -&gt; Preferences -&gt; Application -&gt; Enbale unstable features in this section</emphasis>.</para>
-    
-    <itemizedlist>
-      <listitem><para>Load:
-          <itemizedlist>
-            <listitem>O1 (T1 MRI):<filename>&data_ana;superimpose1/nobias_subject01.ima</filename></listitem>
-            <listitem>O2 (right hemisphere mesh):<filename>&data_ana;superimpose1/subject01_Rhemi.mesh</filename></listitem>
-          </itemizedlist>
-        </para></listitem>
-      <listitem><para>Select O1 and O2 in the anatomist objects list.</para></listitem>
       <listitem><para>Click on &fusion; and select <emphasis>FusionCutMeshMethod</emphasis> to create a <emphasis>CutMesh</emphasis> object.</para></listitem>
       <listitem><para>Drag and drop the <emphasis>CutMesh</emphasis> object into a 3d window.</para>
         <mediaobject>
@@ -921,7 +897,7 @@
           <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh_planar3.png" format="PNG"/></imageobject>
         </mediaobject>
       </listitem>
-      <listitem><para>Drag and drop the <emphasis>nobias_subject01.ima</emphasis> into the 3d window.</para></listitem>
+      <listitem><para>Drag and drop the <emphasis>subject01.nii</emphasis> into the 3d window.</para></listitem>
       <listitem><para>Activate the <emphasis>Mesh cutting</emphasis> control: </para>
         <itemizedlist>
           <listitem><para>Right-click on 3d window and select <emphasis>View / Select object</emphasis>.</para></listitem>
@@ -936,22 +912,125 @@
       </listitem>
     </itemizedlist>
     
-    
   </sect1>
   
+  <sect1>
+    <title>
+      <inlinemediaobject>
+        <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh_small.png" format="PNG" width="30"/></imageobject>
+        <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh_small.png" format="PNG"  /></imageobject>
+      </inlinemediaobject>
+       Mesh cut by a fusion between an anatomical MRI and an activation map </title>
+    
+    <itemizedlist>
+      <listitem>Load:
+        <itemizedlist>
+          <listitem>
+            T1 MRI: <filename>&data_ana;subject01/subject01.nii</filename>
+          </listitem>
+          <listitem>
+            Activation map: <filename>&data_ana;subject01/Audio-Video_T_map.nii</filename>
+          </listitem>
+          <listitem>
+            Head mesh: <filename>&data_ana;subject01/subject01_head.mesh</filename>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <link linkend="ana_training%origin_spm">Apply builtlin referentials</link> for the 2 volumes.
+      </listitem>
+      <listitem>
+        Set the referential of the T1 MRI to the head mesh.
+      </listitem>
+      <listitem>
+        Make a fusion <emphasis>FusionCutMesh</emphasis> between the T1 MRI and the head mesh. A new object <emphasis>CutMesh</emphasis> is created.
+      </listitem>
+      <listitem>
+        Put this object <emphasis>CutMesh</emphasis> in a 3D window.
+      </listitem>
+      <listitem>
+        Select in this window the <emphasis>Cut Control</emphasis>: &control-cut;.
+      </listitem>
+      <listitem>
+        Move the slice plane: <emphasis role="bold">Shift key + middle button + mouse move</emphasis> (rotation) and <emphasis role="bold">Ctrl Key + middle button + mouse move</emphasis>.(translation)
+      </listitem>
+      <listitem>
+        Make a fusion between the T1 MRI and activation map. 
+      </listitem>
+      <listitem>
+        Make a fusion <emphasis>CutMesh</emphasis> between this <emphasis>FUSION2D</emphasis> object et the head mesh and visualize the result.
+        <mediaobject>
+          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh_1.png" format="PNG"  width="200"/></imageobject>
+          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh_1.png" format="PNG" /></imageobject>
+        </mediaobject>
+      </listitem>
+      <listitem>
+        Make a fusion on the <emphasis>CutMesh</emphasis> object alone: it will be cut again by a second slice plane. It is possible to change the orientation of this second plane also.
+        <mediaobject>
+          <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh_2.png" format="PNG"  width="200"/></imageobject>
+          <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_cutmesh_2.png" format="PNG" /></imageobject>
+        </mediaobject>
+      </listitem>
+      
+    </itemizedlist>
+    
+</sect1>
+
+  <sect1>
+    <title>
+      <inlinemediaobject>
+        <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_volrender_small.png" format="PNG" width="30"/></imageobject>
+        <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volrender_small.png" format="PNG"  /></imageobject>
+      </inlinemediaobject>
+      Volume Rendering
+    </title>
+    
+    <para>The volume rendering feature enables to see the content of a volume in 3D by transparency. It is a way to have a look at the data without segmentation steps, but it can be difficult to choose the correct color palette and opacity.
+    </para>
+    <para><emphasis role="bold">Note:</emphasis> This feature uses a lot of graphical card power and a correct driver. So, it may not work or it may be slow on some computers.
+    </para>
+    
+    <itemizedlist>
+      <listitem>Load a T1 MRI: <filename>&data_ana;subject01/subject01.nii</filename>.
+      </listitem>
+      <listitem>Select the volume, click on &fusion; and choose VolumeRendering.
+      </listitem>
+      <listitem>Put the VolumeRendering object in a 3D window.
+      </listitem>
+      <listitem>In this window, open the menu <emphasis>Scene =&gt; Tools</emphasis>.
+      </listitem>
+      <listitem>Check <emphasis>Clipping plane =&gt; Single plane</emphasis>.
+      </listitem>
+      <listitem>Select the oblique view control &fb-oblique;
+      </listitem>
+      <listitem>Rotate the cut plane: <emphasis role="bold">Shift Key + middle button + mouse move</emphasis>.
+      </listitem>
+      <listitem>Modify the color palette, the bounds. You can also create a custom palette with the gradient palette editor.
+      </listitem>
+    </itemizedlist>
+    <mediaobject>
+      <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_volrender_1.png" format="PNG" width="200"/></imageobject>
+      <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volrender_1.png" format="PNG"  /></imageobject>
+    </mediaobject>
+    <para>There is another way cut a volume rendering object by a plane:
+      <listitem>Select the volume rendering object and click on &fusion;</listitem>
+      <listitem>Choose <emphasis>FusionClipMethod</emphasis>. It creates a <emphasis>Clipped object</emphasis>.</listitem>
+      <listitem>Put the object in a 3D window. You can move the cut plane with the control &control-cut;.</listitem>
+    </para>
+  </sect1>
+
   <sect1 id='ana_training%FusionMSliceMethod' infoid='Fusion a volume across many planes'><title> <inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_mslice_method_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_mslice_method_little.png" format="PNG"  /></imageobject></inlinemediaobject> Fusion a volume with itself across many planes </title> 
     
     <para>KEYWORDS:  <link linkend='fusionslicedmethod'>FusionSliceMethod</link>.</para>	
     
     <itemizedlist>
-      <listitem><para>Load O1: <filename>&data_ana;functional/anat.ima</filename></para></listitem>
-      <listitem><para>Select O1 in the Anatomist objects list.</para></listitem>
+      <listitem><para>Load a volume: <filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
+      <listitem><para>Select the volume in the Anatomist objects list.</para></listitem>
       <listitem><para>Click on &fusion; to create a <emphasis>Slice</emphasis> object.</para></listitem>
       <listitem><para>Click on &fusion; to create a <emphasis>Slice (2)</emphasis> object.</para></listitem>
-      <listitem><para>Select the <emphasis>Slice</emphasis>, the <emphasis>Slice (2)</emphasis> and O1 objects and drag them into a sagittal window.</para></listitem>
+      <listitem><para>Select the <emphasis>Slice</emphasis>, the <emphasis>Slice (2)</emphasis> and the initial volume objects and drag them into a sagittal window.</para></listitem>
       <listitem><para>Rotate the objects to view the two planes (click on the middle button and move simultaneously on the mouse).</para></listitem>
       <listitem><para>To view the third plane, we handle the <emphasis>mesh cutting control</emphasis>. To activate/handle this control, select <emphasis>view/select</emphasis> object menu by right-clicking on the window. A browser with the objects list is now diplayed.</para></listitem>
-      
       <listitem><para>Select <emphasis>Slice (2)</emphasis>.</para></listitem>
       <listitem><para>Active by clicking the <emphasis>mesh cutting control</emphasis> &control-cut;.</para></listitem>
       <listitem><para>Move the object with <emphasis role='bold'>Shift + mouse middle button</emphasis>. For more information about this control, place your mouse above the &control-cut; to read the help.</para></listitem>
@@ -976,7 +1055,6 @@
       <listitem><para>Handle any <emphasis>CutMesh</emphasis> fusion and follow the cutting planes in 3d windows.</para></listitem>
     </itemizedlist>
     
-    
     <figure><title>Handle several cutting planes</title>
       <mediaobject>
         <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_several_cuttingplanes2.png" format="PNG"  width="200"/></imageobject>
@@ -984,43 +1062,7 @@
       </mediaobject>
     </figure>
     
-    
   </sect1>
-
-  <sect1><title>Extract a texture</title>
-    <!-- <para>KEYWORDS: <link linkend='fusion2dmethod'>Fusion2DMethod.</link></para> -->
-    <itemizedlist>
-      <listitem><para><link linkend='ana_training%fusion_whitemesh_map'>Do a fusion between a mesh and a volume</link>.</para></listitem>
-      <listitem><para>Right-click on the FUSION3D object.</para></listitem>
-      <listitem><para>Select <emphasis>File -&gt; Export texture</emphasis>.</para></listitem>
-    </itemizedlist>
-    
-    <para>NOTE: this texture corresponds solely to meshes with the same structure.</para>
-    
-  </sect1>
-
-  <sect1><title>Extraction and merging of sulci meshed (from sulci graph) and fusion between them</title>
-    <para>This exercise shows how to extract a graph node mesh (ie sulcus or sulcus part), and merge or rather concatenate several such meshes. Note this example only works on graphs containing meshes.</para>
-    
-    <para><emphasis role="bold">EXTRACTION OF EACH MESH FROM A GRAPH</emphasis></para>
-    <itemizedlist>
-      <listitem><para>Put your sulci graph into a browser.</para></listitem>
-      <listitem><para>Select a node and save its mesh by right-clicking on the mesh (aims_Tmtktri) in a browser and selecting <emphasis>Object-specific</emphasis> <emphasis>File</emphasis>=&gt;<emphasis>Save</emphasis>.</para></listitem>
-      <listitem><para>specify an output file name as <emphasis>NameSulcus1.mesh</emphasis>.</para></listitem>	
-    </itemizedlist>
-    
-    <para><emphasis role="bold">CONCATENATION OF ALL SAVED MESHES</emphasis></para>
-    <itemizedlist>
-      <listitem><para>Usage of the AimsZcat command line:</para>
-        <screen>AimsZCat -i NameSuclcus1.mesh NameSuclcus2.mesh NameSuclcus3.mesh -o AllMesh.mesh</screen>This command has other options, but here we need:
-        <itemizedlist>
-          <listitem><para><emphasis>-i option</emphasis>: list of meshes to concatenate.</para></listitem>
-          <listitem><para><emphasis>-o option</emphasis>: output filename for the concatenated mesh.</para></listitem>
-        </itemizedlist>
-      </listitem>
-    </itemizedlist>
-  </sect1>
-                                              
 		                        
 </chapter>
 
