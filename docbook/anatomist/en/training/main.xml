@@ -54,7 +54,7 @@
 		
 <chapter><title>Basic level</title>
 			
-  <sect1><title>Set up of Anatomist</title>
+  <sect1><title>Anatomist settings</title>
           <para>In order to change the preferences:</para>
           <itemizedlist>
                   <listitem><para><emphasis>Settings =&gt; Preferences</emphasis>.</para></listitem>
@@ -305,8 +305,8 @@
 
   </sect1>
 
-  <sect1 id='ana_training%apply_builtin_ref' infoid='Apply builtin referential (SPM/Nifti)'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  /></imageobject></inlinemediaobject>Apply builtin referential (SPM/Nifti)</title>
-    <para>The option <emphasis>Referential =&gt; Apply builtin referential (SPM/Nifti)</emphasis> extract information about referentials and transformations that is stored in the image files. Indeed, some formats like Analyze and Nifti enable to store this kind of information. Theses transformations are not applied automatically by anatomist by default, but it is possible to change that in <emphasis>Settings =&gt; Preferences =&gt; Volume</emphasis>.</para>
+  <sect1 id='ana_training%apply_builtin_ref' infoid='Apply builtin referential (SPM/NIFTI)'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  /></imageobject></inlinemediaobject>Apply builtin referential (SPM/Nifti)</title>
+    <para>The option <emphasis>Referential =&gt; Apply builtin referential (SPM/NIFTI)</emphasis> extract information about referentials and transformations that is stored in the image files. Indeed, some formats like Analyze and Nifti enable to store this kind of information. Theses transformations are not applied automatically by anatomist by default, but it is possible to change that in <emphasis>Settings =&gt; Preferences =&gt; Volume</emphasis>.</para>
     
     <!-- Apply SPM/Nifti transformations - Differents modalities -->
     <para><emphasis role='bold'>Fusion between an anatomical volume and an activation map</emphasis></para>
@@ -728,7 +728,7 @@
       </para> 
       </listitem>
       <listitem><para>Change the <link linkend='ana_training%change_palette'>color palette</link> of the map.</para></listitem>
-      <listitem><para><link linkend='ana_training%origin_spm'>Apply builtin referentials (SPM/NIFTI)</link> for the map and the T1 MRI.</para></listitem>
+      <listitem><para><link linkend='ana_training%apply_builtin_ref'>Apply builtin referential (SPM/NIFTI)</link> for the map and the T1 MRI.</para></listitem>
       <listitem><para><link linkend='ana_training%load_existent_referential'>Apply the T1 MRI referential to the white matter mesh.</link>.</para>
         <figure><title>After loading referentials</title>
           <mediaobject>
@@ -848,9 +848,9 @@
         </mediaobject>
       </listitem>
       
-      <listitem><para><link linkend='ana_training%fusion_iwhitemesh_tex'>Do a FUSIONMULTITEXTUREMETHOD fusion between a the FUSION3D and the texture</link>. A Multitexture is created. This object cannot be visualized into a window.</para></listitem>
+      <listitem><para>Do a FusionMultiTextureMethod fusion between the FUSION3D and the texture. A Multitexture is created. This object cannot be visualized into a window.</para></listitem>
       
-      <listitem><para>Do a FUSIONTEXSURFMETHOD fusion between the Multitexture and the inflated mesh.</para></listitem>
+      <listitem><para>Do a FusionTexSurfMethod fusion between the Multitexture and the inflated mesh.</para></listitem>
             
             <listitem><para>Place the <emphasis role='bold'>TEXTURED SURF.</emphasis> object in a &window-3d-small;.</para></listitem>
             <listitem>
@@ -937,13 +937,13 @@
         </itemizedlist>
       </listitem>
       <listitem>
-        <link linkend="ana_training%origin_spm">Apply builtlin referentials</link> for the 2 volumes.
+        <link linkend="ana_training%apply_builtin_ref">Apply builtin referentials</link> for the 2 volumes.
       </listitem>
       <listitem>
-        Set the referential of the T1 MRI to the head mesh.
+        <link linkend="ana_training%load_existent_referential">Set the referential of the T1 MRI to the head mesh</link>.
       </listitem>
       <listitem>
-        Make a fusion <emphasis>FusionCutMesh</emphasis> between the T1 MRI and the head mesh. A new object <emphasis>CutMesh</emphasis> is created.
+        <link linkend="ana_training%FusionCutMeshMethod_planar">Make a fusion <emphasis>FusionCutMesh</emphasis></link> between the T1 MRI and the head mesh. A new object <emphasis>CutMesh</emphasis> is created.
       </listitem>
       <listitem>
         Put this object <emphasis>CutMesh</emphasis> in a 3D window.
@@ -1013,9 +1013,11 @@
       <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volrender_1.png" format="PNG"  /></imageobject>
     </mediaobject>
     <para>There is another way cut a volume rendering object by a plane:
+      <itemizedlist>
       <listitem>Select the volume rendering object and click on &fusion;</listitem>
       <listitem>Choose <emphasis>FusionClipMethod</emphasis>. It creates a <emphasis>Clipped object</emphasis>.</listitem>
       <listitem>Put the object in a 3D window. You can move the cut plane with the control &control-cut;.</listitem>
+    </itemizedlist>
     </para>
   </sect1>
 
