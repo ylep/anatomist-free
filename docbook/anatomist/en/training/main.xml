@@ -72,7 +72,7 @@
           </itemizedlist>
   </sect1>
 			
-  <sect1><title>View an object</title>
+  <sect1 id="ana_training%view_object"><title>View an object</title>
           <itemizedlist>
             <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
             <listitem><para>Open an axial window by clicking on &window-axial-small;.</para></listitem>
@@ -143,7 +143,7 @@
   </sect2>
   </sect1>
 			
-  <sect1><title>View meshes</title>
+  <sect1 id="ana_training%view_meshes"><title>View meshes</title>
           <itemizedlist>
                   <listitem><para>Load: 
                                   <itemizedlist>
@@ -558,7 +558,7 @@
               </itemizedlist>
             </sect1>
 
-            <sect1><title>Display a graph of ROI</title>
+            <sect1 id="ana_training%view_roi"><title>Display a graph of ROI</title>
               <itemizedlist>
                 <listitem><para>Load: <filename>&data_ana;roi/basal_ganglia.arg</filename> .</para></listitem>
                 <listitem><para>Place the graph into a 3D window &window-3d-small;.</para></listitem>
@@ -1087,9 +1087,231 @@
           <para>You can also load a .ana file from <emphasis>file  =&gt; open</emphasis> or <emphasis>Replay scenario</emphasis>.</para>
   </sect1>
 </chapter>
-			
-			
-						
+
+<chapter id='ana_training%pyanatomist' infoid='Programming with Anatomist in Python language'>
+  <title>Programming with Anatomist in Python language</title>
+  <para>Anatomist is written in C++ language but has a also a python API: <emphasis role="bold">PyAnatomist</emphasis>. This python API enables to drive Anatomist application through python scripts : using Anatomist, loading volumes, meshes, graphs, viewing them in windows, merging objects, changing color palette, etc... It can be usefull in order to automate a repetitive visualization task or to add features to Anatomist application by developping a python plugin, which is much more easier than developping directly in Anatomist C++ library. Actually, several features in Anatomist have been added via a python plugin like the gradient palette for example. The python API is also used by several viewers in BrainVISA.
+  </para>
+
+ <sect1><title>Description of the API</title>
+   <para>
+  The main entry point is the <emphasis>Anatomist</emphasis> class which must be instantiated before any operation can be performed.
+  It represents Anatomist application. This class contains a number of nested classes: AObject, AWindow... that represent the elements of Anatomist application.
+</para>
+<para>
+  The entry point of this API is the module anatomist.api, you can import it as below :
+  <screen>import anatomist.api as anatomist</screen>
+</para>
+  <para>
+  And then create an instance of Anatomist : 
+  <screen>a=anatomist.Anatomist()</screen>
+</para>
+<para>
+  So you can send commands to Anatomist application, for example creating a window :
+  <screen>window=a.createWindow('3D')</screen>
+</para>
+</sect1>
+
+<sect1><title>Implementation</title>
+  <para>
+  Several means of driving Anatomist in python scripts exist :
+  <itemizedlist>
+    <listitem>Python bindings for the C++ library (SIP bindings). In this mode, all bound features are available. You handle directly the Anatomist objects. But Anatomist is loaded directly in your python program, it is not an independent program in this mode. So the errors that occur in Anatomist are reported in the python script.</listitem>
+    <listitem>Sending commands via a network socket. Anatomist is run in server mode and listen for commands on the socket connection. In this mode, the available features are limited to what can be expressed with Anatomist commands system, so a limited set of features. A list of these commands can be found <ulink url="#anahelp_fr.prog.commands">here</ulink>. You can't handle directly the Anatomist objects, they are represented by a key. But Anatomist application runs in a separate process so potential errors in Anatomist don't crash the application that uses the API.</listitem>
+  </itemizedlist>
+  Behind a general interface, this api provides 2 implementations, one for each method of communication with Anatomist.
+  </para>
+  <para>
+  The implementation that uses the python bindings is called <emphasis>direct</emphasis> implementation and is in the module <emphasis>anatomist.direct.api</emphasis>. The implementation that uses socket communication is called <emphasis>socket</emphasis> implementation and is in the module <emphasis>anatomist.socket.api</emphasis>. By default, the implementation used when you import <emphasis>anatomist.api</emphasis> is the <emphasis>direct</emphasis> implementation.
+</para>
+<para>
+  Another specific implementation for Brainvisa also exists : <emphasis>brainvisa.anatomist</emphasis> module. It enables to use brainvisa database informations on loaded objects to automatically load associated referentials and transformations. 
+  It uses the same api, so it is possible to switch from one implementation to the other.</para>
+<para>
+  By default, brainvisa module uses socket implementation. This way, Brainvisa and Anatomist applications run in separated processes. and potential errors in Anatomist does not crash Brainvisa.
+</para>
+<para>See the python documentation of the python Anatomist API : <ulink url="#epydocpyanatomist%index">epydoc doc</ulink>.</para>
+</sect1>
+<sect1><title>Using the API</title>
+  <para>
+    In this part, we will go back to the previous examples of this tutorial and see how to do the same with a python script. The data for the examples in this section are the same : <ulink url="ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip">ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip</ulink>.
+  </para>
+  <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers usefull features like completion. This program is available in the BrainVISA package. To access it, first run the script  &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh, which adds the programs in BrainVISA package to the available programs in the current shell. And then, run ipython with the option -qthread, which runs a QT event loop, needed for the graphical interface.
+    <screen>
+      &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh
+      ipython -qthread
+    </screen>
+</para>
+<sect2><title>Run Anatomist</title>
+<para>
+  First of all, we need to import anatomist API module. Then we can create an instance of Anatomist class.
+  <screen>
+    import anatomist.api as ana
+    
+    a=ana.Anatomist() 
+  </screen>
+</para>
+</sect2>
+<sect2><title>Load an object</title>
+  <para>
+    In this example, we will put the path to the <emphasis>data_for_anatomist</emphasis> directory in a variable named src. We will use this variable in all the next examples. We will also load a python module named <emphasis>os</emphasis> which has usefull functions to handle files and paths.
+    <screen>
+      import os
+      src="&lt;path to data_for_anatomist directory&gt;"
+      # Load an object
+      t1mri=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01.nii") )
+    </screen>
+  </para>
+</sect2>
+<sect2><title>View an object</title>
+  <para>
+    We open an axial window and add the volume loaded in the previous example in this window.
+    <screen>
+      # view an object
+      axial=a.createWindow("Axial")
+      axial.addObjects(t1mri)
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Windows block</title>
+  <para>
+    We create 4 views in the same windows block and add the image in each views.
+    <screen>
+      # view an object in a 4 views block
+      block=a.createWindowsBlock(2) # 2 columns
+      w1=a.createWindow("Axial", block=block)
+      w2=a.createWindow("Sagittal", block=block)
+      w3=a.createWindow("Coronal", block=block)
+      w4=a.createWindow("3D", block=block)
+      t1mri.addInWindows( [w1, w2, w3, w4] )
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Move the cursor</title>
+  <para>
+    <screen>
+      # show the cursor position
+      print "\nCursor at : ", a.linkCursorLastClickedPosition()
+      # move the linked cursor 
+      w1.moveLinkedCursor([150,100,60])
+      print "\nCursor at : ", a.linkCursorLastClickedPosition()
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Camera</title>
+  <para>
+    This method enables to change the camera parameters of a window. In this example, we change the zoom.
+    <screen>
+      axial.camera(zoom=2) 
+    </screen>
+  </para>
+</sect2>
+<sect2><title>View header information</title>
+  <para>
+    <screen>
+      # view header
+      browser=a.createWindow("Browser")
+      browser.addObjects(t1mri)
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Change the color palette</title>
+  <para>
+    <screen>
+      # color palette
+      palette=a.getPalette("Blue-Green-Red-Yellow")
+      t1mri.setPalette(palette)
+    </screen>
+  </para>
+<sect3><title>Custom palette</title>
+  <para>
+    You can create a new palette by giving the list of RGB parameters of the palette colors.
+    <screen>
+      # custom palette
+      customPalette=a.createPalette("customPalette")
+      colors=[]
+      for x in xrange(255):
+        colors.extend([0, 0, x])
+        
+      customPalette.setColors(colors=colors)
+      t1mri.setPalette(customPalette)
+    </screen>
+  </para>
+</sect3>
+</sect2>
+<sect2><title>View meshes</title>
+  <para>
+    <screen>
+      # view meshes
+      lwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Lwhite.mesh") )
+      rwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Rwhite.mesh") )
+      w3d=a.createWindow("3D")
+      w3d.addObjects([lwhite, rwhite])
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Superimposing</title>
+  <para>
+    <screen>
+      # superimposing
+      a.addObjects(t1mri, w3d)
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Change mesh material</title>
+  <para>
+    <screen>
+      # mesh material
+      head=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "subject01_head.mesh"))
+      head.addInWindows(w3d)
+      material=a.Material(diffuse=[0.8, 0.6, 0.6, 0.5])
+      head.setMaterial(material)
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Change mesh material</title>
+  <para>
+    <screen>
+      brain_mask=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "brain_subject01.nii"))
+      brain_mask.setPalette(a.getPalette("GREEN-ufusion"))
+      # fusion 2D
+      fusion2d=a.fusionObjects([brain_mask, t1mri], "Fusion2DMethod")
+      axial=a.createWindow("Axial")
+      axial.addObjects(fusion2d)
+      # params of the fusion : linear on non null
+      a.execute("Fusion2DParams", object=fusion, mode="linear_on_defined", rate=0.4)
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Load a transformation</title>
+  <para>
+    <screen>
+      t1mri_s2=a.loadObject( os.path.join(src, "data_for_anatomist", "subject02", "sujet02.ima") )
+      t1mri_s2.setPalette("Blue-White")
+      fusion2d=a.fusionObjects([t1mri, t1mri_s2], "Fusion2DMethod")
+      r1=a.createReferential()
+      r2=a.createReferential()
+      cr=a.centralRef
+      t1mri.assignReferential(r1)
+      t1mri_s2.assignReferential(r2)
+      # load a transformation
+      a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject01", "RawT1-subject01_default_acquisition_TO_Talairach-ACPC.trm"), r1, cr)
+      a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject02", "RawT1-sujet02_200810_TO_Talairach-ACPC.trm"), r2, cr)
+      axial=a.createWindow("Axial")
+      axial.addObjects(fusion2d)
+    </screen>
+  </para>
+</sect2>
+<sect2><title>Load an existing referential</title>
+  <para>
+    <screen>
+      lwhite.assignReferential(r1)
+      axial.addObjects(lwhite)
+    </screen>
+  </para>
+</sect2>
+</sect1>
+</chapter>
 <!--
     
 A documenter
