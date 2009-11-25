@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-15"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book
 	[
 	<!ENTITY % entities SYSTEM "catalog.ent">
@@ -1099,7 +1099,7 @@
   It represents Anatomist application. This class contains a number of nested classes: AObject, AWindow... that represent the elements of Anatomist application.
 </para>
 <para>
-  The entry point of this API is the module anatomist.api, you can import it as below :
+  The entry point of this API is the module <emphasis>anatomist.api</emphasis>, you can import it as below :
   <screen>import anatomist.api as anatomist</screen>
 </para>
   <para>
@@ -1131,6 +1131,7 @@
   By default, brainvisa module uses socket implementation. This way, Brainvisa and Anatomist applications run in separated processes. and potential errors in Anatomist does not crash Brainvisa.
 </para>
 <para>See the python documentation of the python Anatomist API : <ulink url="#epydocpyanatomist%index">epydoc doc</ulink>.</para>
+<para>More information about this API and examples available <ulink url="#cartointernet_pg%pyanatomist">here</ulink>.</para>
 </sect1>
 <sect1><title>Using the API</title>
   <para>
@@ -1138,17 +1139,17 @@
   </para>
   <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers usefull features like completion. This program is available in the BrainVISA package. To access it, first run the script  &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh, which adds the programs in BrainVISA package to the available programs in the current shell. And then, run ipython with the option -qthread, which runs a QT event loop, needed for the graphical interface.
     <screen>
-      &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh
-      ipython -qthread
+&lt;brainvisa_installation_directory&gt;/bin/cartopack.sh
+ipython -qthread
     </screen>
 </para>
 <sect2><title>Run Anatomist</title>
 <para>
   First of all, we need to import anatomist API module. Then we can create an instance of Anatomist class.
   <screen>
-    import anatomist.api as ana
-    
-    a=ana.Anatomist() 
+import anatomist.api as ana
+
+a=ana.Anatomist() 
   </screen>
 </para>
 </sect2>
@@ -1156,10 +1157,10 @@
   <para>
     In this example, we will put the path to the <emphasis>data_for_anatomist</emphasis> directory in a variable named src. We will use this variable in all the next examples. We will also load a python module named <emphasis>os</emphasis> which has usefull functions to handle files and paths.
     <screen>
-      import os
-      src="&lt;path to data_for_anatomist directory&gt;"
-      # Load an object
-      t1mri=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01.nii") )
+import os
+src="&lt;path to data_for_anatomist directory&gt;"
+# Load an object
+t1mri=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01.nii") )
     </screen>
   </para>
 </sect2>
@@ -1167,9 +1168,9 @@
   <para>
     We open an axial window and add the volume loaded in the previous example in this window.
     <screen>
-      # view an object
-      axial=a.createWindow("Axial")
-      axial.addObjects(t1mri)
+# view an object
+axial=a.createWindow("Axial")
+axial.addObjects(t1mri)
     </screen>
   </para>
 </sect2>
@@ -1177,24 +1178,24 @@
   <para>
     We create 4 views in the same windows block and add the image in each views.
     <screen>
-      # view an object in a 4 views block
-      block=a.createWindowsBlock(2) # 2 columns
-      w1=a.createWindow("Axial", block=block)
-      w2=a.createWindow("Sagittal", block=block)
-      w3=a.createWindow("Coronal", block=block)
-      w4=a.createWindow("3D", block=block)
-      t1mri.addInWindows( [w1, w2, w3, w4] )
+# view an object in a 4 views block
+block=a.createWindowsBlock(2) # 2 columns
+w1=a.createWindow("Axial", block=block)
+w2=a.createWindow("Sagittal", block=block)
+w3=a.createWindow("Coronal", block=block)
+w4=a.createWindow("3D", block=block)
+t1mri.addInWindows( [w1, w2, w3, w4] )
     </screen>
   </para>
 </sect2>
 <sect2><title>Move the cursor</title>
   <para>
     <screen>
-      # show the cursor position
-      print "\nCursor at : ", a.linkCursorLastClickedPosition()
-      # move the linked cursor 
-      w1.moveLinkedCursor([150,100,60])
-      print "\nCursor at : ", a.linkCursorLastClickedPosition()
+# show the cursor position
+print "\nCursor at : ", a.linkCursorLastClickedPosition()
+# move the linked cursor 
+w1.moveLinkedCursor([150,100,60])
+print "\nCursor at : ", a.linkCursorLastClickedPosition()
     </screen>
   </para>
 </sect2>
@@ -1202,39 +1203,39 @@
   <para>
     This method enables to change the camera parameters of a window. In this example, we change the zoom.
     <screen>
-      axial.camera(zoom=2) 
+axial.camera(zoom=2) 
     </screen>
   </para>
 </sect2>
 <sect2><title>View header information</title>
   <para>
     <screen>
-      # view header
-      browser=a.createWindow("Browser")
-      browser.addObjects(t1mri)
+# view header
+browser=a.createWindow("Browser")
+browser.addObjects(t1mri)
     </screen>
   </para>
 </sect2>
 <sect2><title>Change the color palette</title>
   <para>
     <screen>
-      # color palette
-      palette=a.getPalette("Blue-Green-Red-Yellow")
-      t1mri.setPalette(palette)
+# color palette
+palette=a.getPalette("Blue-Green-Red-Yellow")
+t1mri.setPalette(palette)
     </screen>
   </para>
 <sect3><title>Custom palette</title>
   <para>
     You can create a new palette by giving the list of RGB parameters of the palette colors.
     <screen>
-      # custom palette
-      customPalette=a.createPalette("customPalette")
-      colors=[]
-      for x in xrange(255):
-        colors.extend([0, 0, x])
-        
-      customPalette.setColors(colors=colors)
-      t1mri.setPalette(customPalette)
+# custom palette
+customPalette=a.createPalette("customPalette")
+colors=[]
+for x in xrange(255):
+  colors.extend([0, 0, x])
+  
+customPalette.setColors(colors=colors)
+t1mri.setPalette(customPalette)
     </screen>
   </para>
 </sect3>
@@ -1242,71 +1243,71 @@
 <sect2><title>View meshes</title>
   <para>
     <screen>
-      # view meshes
-      lwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Lwhite.mesh") )
-      rwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Rwhite.mesh") )
-      w3d=a.createWindow("3D")
-      w3d.addObjects([lwhite, rwhite])
+# view meshes
+lwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Lwhite.mesh") )
+rwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Rwhite.mesh") )
+w3d=a.createWindow("3D")
+w3d.addObjects([lwhite, rwhite])
     </screen>
   </para>
 </sect2>
 <sect2><title>Superimposing</title>
   <para>
     <screen>
-      # superimposing
-      a.addObjects(t1mri, w3d)
+# superimposing
+a.addObjects(t1mri, w3d)
     </screen>
   </para>
 </sect2>
 <sect2><title>Change mesh material</title>
   <para>
     <screen>
-      # mesh material
-      head=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "subject01_head.mesh"))
-      head.addInWindows(w3d)
-      material=a.Material(diffuse=[0.8, 0.6, 0.6, 0.5])
-      head.setMaterial(material)
+# mesh material
+head=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "subject01_head.mesh"))
+head.addInWindows(w3d)
+material=a.Material(diffuse=[0.8, 0.6, 0.6, 0.5])
+head.setMaterial(material)
     </screen>
   </para>
 </sect2>
-<sect2><title>Change mesh material</title>
+<sect2><title>Fusion between 2 volumes</title>
   <para>
     <screen>
-      brain_mask=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "brain_subject01.nii"))
-      brain_mask.setPalette(a.getPalette("GREEN-ufusion"))
-      # fusion 2D
-      fusion2d=a.fusionObjects([brain_mask, t1mri], "Fusion2DMethod")
-      axial=a.createWindow("Axial")
-      axial.addObjects(fusion2d)
-      # params of the fusion : linear on non null
-      a.execute("Fusion2DParams", object=fusion, mode="linear_on_defined", rate=0.4)
+brain_mask=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "brain_subject01.nii"))
+brain_mask.setPalette(a.getPalette("GREEN-ufusion"))
+# fusion 2D
+fusion2d=a.fusionObjects([brain_mask, t1mri], "Fusion2DMethod")
+axial=a.createWindow("Axial")
+axial.addObjects(fusion2d)
+# params of the fusion : linear on non null
+a.execute("Fusion2DParams", object=fusion2d, mode="linear_on_defined", rate=0.4)
     </screen>
   </para>
 </sect2>
 <sect2><title>Load a transformation</title>
   <para>
     <screen>
-      t1mri_s2=a.loadObject( os.path.join(src, "data_for_anatomist", "subject02", "sujet02.ima") )
-      t1mri_s2.setPalette("Blue-White")
-      fusion2d=a.fusionObjects([t1mri, t1mri_s2], "Fusion2DMethod")
-      r1=a.createReferential()
-      r2=a.createReferential()
-      cr=a.centralRef
-      t1mri.assignReferential(r1)
-      t1mri_s2.assignReferential(r2)
-      # load a transformation
-      a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject01", "RawT1-subject01_default_acquisition_TO_Talairach-ACPC.trm"), r1, cr)
-      a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject02", "RawT1-sujet02_200810_TO_Talairach-ACPC.trm"), r2, cr)
-      axial=a.createWindow("Axial")
-      axial.addObjects(fusion2d)
+t1mri_s2=a.loadObject( os.path.join(src, "data_for_anatomist", "subject02", "sujet02.ima") )
+t1mri_s2.setPalette("Blue-White")
+fusion2d=a.fusionObjects([t1mri, t1mri_s2], "Fusion2DMethod")
+r1=a.createReferential()
+r2=a.createReferential()
+cr=a.centralRef
+t1mri.assignReferential(r1)
+t1mri_s2.assignReferential(r2)
+# load a transformation
+a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject01", "RawT1-subject01_default_acquisition_TO_Talairach-ACPC.trm"), r1, cr)
+a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject02", "RawT1-sujet02_200810_TO_Talairach-ACPC.trm"), r2, cr)
+axial=a.createWindow("Axial")
+axial.addObjects(fusion2d)
     </screen>
   </para>
 </sect2>
 <sect2><title>Load an existing referential</title>
   <para>
     <screen>
-      lwhite.assignReferential(r1)
-      axial.addObjects(lwhite)
+lwhite.assignReferential(r1)
+axial.addObjects(lwhite)
     </screen>
   </para>
 </sect2>
