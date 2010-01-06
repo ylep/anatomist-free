@@ -63,13 +63,14 @@
           </itemizedlist>
   </sect1>
   
-  <sect1><title>Load an object</title>
+  <sect1 id="ana_training%load_object"><title>Load an object</title>
           <itemizedlist>
                   <listitem><para><emphasis>File =&gt; Open</emphasis>.</para></listitem>
                   <listitem><para>Select your object with the file browser, for instance: </para>
                           <para><filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
                   <listitem><para>This object appears in the left list of the control window.</para></listitem>
           </itemizedlist>
+          <para>See <ulink url="#ana_training%load_object_code">corresponding python script</ulink>.</para>
   </sect1>
 			
   <sect1 id="ana_training%view_object"><title>View an object</title>
@@ -90,6 +91,7 @@
             <listitem><para>Click in one window. Notice that the cursor moves also in the other windows.</para></listitem>
             <listitem><para>It is possible to open several views using the menu <emphasis>Windows -&gt; Open 3D standard views</emphasis> or <emphasis>Open a 4 views block</emphasis>.</para></listitem>
           </itemizedlist>
+          <para>See <ulink url="#ana_training%view_object_code">corresponding python script</ulink>.</para>
   </sect1>
 						
   <sect1 id='ana_training%zoom_trans_rotation' infoid='Zoom, translation and rotation of a volume'><title>Zoom, translation and rotation of a volume</title>
@@ -98,6 +100,7 @@
       <listitem><para>Place your cursor on &fb_trackball; to get information about shorcuts for zoom, rotations, etc.</para></listitem>
       <listitem><para>For example, try to do a rotation: click on the middle button and move simultaneously on the mouse.</para></listitem>
     </itemizedlist>
+    <para>See <ulink url="#ana_training%zoom_trans_rotation_code">corresponding python script</ulink>.</para>
   </sect1>   
 
   <sect1 id='ana_training%reader_header' infoid='Read header information (voxel size, dimension image ...)'><title>Read header information (voxel_size, dimension image ...)</title>
@@ -112,6 +115,7 @@
                           <imageobject role="html"><imagedata fileref="&DIR_IMG;read_header.png" format="PNG" /></imageobject>
                   </mediaobject>
           </figure>
+          <para>See <ulink url="#ana_training%reader_header_code">corresponding python script</ulink>.</para>
   </sect1>
 		
   <sect1 id='ana_training%change_palette' infoid='change the color palette of an object'><title>Modification of color palette</title>
@@ -127,6 +131,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_palette.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
+    <para>See <ulink url="#ana_training%change_palette_code">corresponding python script</ulink>.</para>
     <sect2><title>Gradient Palette</title>
     <para>If you want to create a custom palette, you can use the Gradient palette module.</para>
     <itemizedlist>
@@ -160,6 +165,7 @@
                           <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_exo_handle-2.png" format="PNG"/></imageobject>
                   </mediaobject>
           </figure>
+          <para>See <ulink url="#ana_training%view_meshes_code">corresponding python script</ulink>.</para>
   </sect1>
 						
   <sect1 id='ana_training%superimpose'><title>Superimposing objects</title>
@@ -186,6 +192,7 @@
                           </mediaobject>
                   </listitem>
           </itemizedlist> 
+          <para>See <ulink url="#ana_training%superimpose_code">corresponding python script</ulink>.</para>
   </sect1>
 			
   <sect1 id='ana_training%change_opacity_mesh' infoid='change the opacity of mesh'><title>Change the mesh material</title>
@@ -203,6 +210,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_changeopacity.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
+    <para>See <ulink url="#ana_training%change_opacity_mesh_code">corresponding python script</ulink>.</para>
   </sect1>  
 			
   <sect1 id='ana_training%make_fusion' inofid='Fusion between 2 volumes'><title>Fusion between 2 volumes</title>  
@@ -239,7 +247,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volume_volume.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
-
+    <para>See <ulink url="#ana_training%make_fusion_code">corresponding python script</ulink>.</para>
   </sect1>
 </chapter>
                       
@@ -278,6 +286,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_2_subjects_talairach.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
+    <para>See <ulink url="#ana_training%load_transformation_code">corresponding python script</ulink>.</para>
   </sect1>
   <sect1 id='ana_training%load_existent_referential' infoid='Load an existent referential to an object'><title>Load an existent referential</title>
     <para>You can set an existing referential to an object when several objects are in the same "real world". For example, a mesh created from a T1 MRI is in the same referential as the MRI.
@@ -302,7 +311,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;apply_referential2.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
-
+    <para>See <ulink url="#ana_training%load_existent_referential_code">corresponding python script</ulink>.</para>
   </sect1>
 
   <sect1 id='ana_training%apply_builtin_ref' infoid='Apply builtin referential (SPM/NIFTI)'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  /></imageobject></inlinemediaobject>Apply builtin referential (SPM/Nifti)</title>
@@ -570,6 +579,7 @@
                 <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-1.png" format="PNG"  width="250"/></imageobject>
                 <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-1.png" format="PNG"/></imageobject>
               </mediaobject>
+              <para>See <ulink url="#ana_training%view_roi_code">corresponding python script</ulink>.</para>
             </sect1>
             
             <sect1><title>Display a meshed graph of ROI</title>
@@ -1153,7 +1163,7 @@ a=ana.Anatomist()
   </screen>
 </para>
 </sect2>
-<sect2><title>Load an object</title>
+<sect2 id="ana_training%load_object_code"><title>Load an object</title>
   <para>
     In this example, we will put the path to the <emphasis>data_for_anatomist</emphasis> directory in a variable named src. We will use this variable in all the next examples. We will also load a python module named <emphasis>os</emphasis> which has usefull functions to handle files and paths.
     <screen>
@@ -1163,8 +1173,9 @@ src="&lt;path to data_for_anatomist directory&gt;"
 t1mri=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01.nii") )
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%load_object">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>View an object</title>
+<sect2 id="ana_training%view_object_code"><title>View an object</title>
   <para>
     We open an axial window and add the volume loaded in the previous example in this window.
     <screen>
@@ -1173,6 +1184,7 @@ axial=a.createWindow("Axial")
 axial.addObjects(t1mri)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%view_object">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
 <sect2><title>Windows block</title>
   <para>
@@ -1199,15 +1211,16 @@ print "\nCursor at : ", a.linkCursorLastClickedPosition()
     </screen>
   </para>
 </sect2>
-<sect2><title>Camera</title>
+<sect2 id="ana_training%zoom_trans_rotation_code"><title>Camera</title>
   <para>
     This method enables to change the camera parameters of a window. In this example, we change the zoom.
     <screen>
 axial.camera(zoom=2) 
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%zoom_trans_rotation">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>View header information</title>
+<sect2 id="ana_training%reader_header_code"><title>View header information</title>
   <para>
     <screen>
 # view header
@@ -1215,8 +1228,9 @@ browser=a.createWindow("Browser")
 browser.addObjects(t1mri)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%reader_header">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>Change the color palette</title>
+<sect2 id="ana_training%change_palette_code"><title>Change the color palette</title>
   <para>
     <screen>
 # color palette
@@ -1224,6 +1238,7 @@ palette=a.getPalette("Blue-Green-Red-Yellow")
 t1mri.setPalette(palette)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%change_palette">the corresponding actions in the graphical interface</ulink>.</para>
 <sect3><title>Custom palette</title>
   <para>
     You can create a new palette by giving the list of RGB parameters of the palette colors.
@@ -1240,7 +1255,7 @@ t1mri.setPalette(customPalette)
   </para>
 </sect3>
 </sect2>
-<sect2><title>View meshes</title>
+<sect2 id="ana_training%view_meshes_code"><title>View meshes</title>
   <para>
     <screen>
 # view meshes
@@ -1250,16 +1265,18 @@ w3d=a.createWindow("3D")
 w3d.addObjects([lwhite, rwhite])
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%view_meshes">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>Superimposing</title>
+<sect2 id="ana_training%superimpose_code"><title>Superimposing</title>
   <para>
     <screen>
 # superimposing
 a.addObjects(t1mri, w3d)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%superimpose">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>Change mesh material</title>
+<sect2 id="ana_training%change_opacity_mesh_code"><title>Change mesh material</title>
   <para>
     <screen>
 # mesh material
@@ -1269,8 +1286,9 @@ material=a.Material(diffuse=[0.8, 0.6, 0.6, 0.5])
 head.setMaterial(material)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%change_opacity_mesh">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>Fusion between 2 volumes</title>
+<sect2 id="ana_training%make_fusion_code"><title>Fusion between 2 volumes</title>
   <para>
     <screen>
 brain_mask=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "brain_subject01.nii"))
@@ -1283,8 +1301,10 @@ axial.addObjects(fusion2d)
 a.execute("Fusion2DParams", object=fusion2d, mode="linear_on_defined", rate=0.4)
     </screen>
   </para>
+  <para>It is possible to do different types of fusion using the same method <emphasis>fusionObjects</emphasis> and changing the list of objects and the type of fusion.</para>
+  <para>See <ulink url="#ana_training%make_fusion">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>Load a transformation</title>
+<sect2 id="ana_training%load_transformation_code"><title>Load a transformation</title>
   <para>
     <screen>
 t1mri_s2=a.loadObject( os.path.join(src, "data_for_anatomist", "subject02", "sujet02.ima") )
@@ -1302,15 +1322,28 @@ axial=a.createWindow("Axial")
 axial.addObjects(fusion2d)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%load_transformation">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
-<sect2><title>Load an existing referential</title>
+<sect2 id="ana_training%load_existent_referential_code"><title>Load an existing referential</title>
   <para>
     <screen>
 lwhite.assignReferential(r1)
 axial.addObjects(lwhite)
     </screen>
   </para>
+  <para>See <ulink url="#ana_training%load_existent_referential">the corresponding actions in the graphical interface</ulink>.</para>
+
 </sect2>
+<sect2 id="ana_training%view_roi_code">
+<title>Display a ROI graph</title>
+<screen>
+graph=a.loadObject( os.path.join(src, "data_for_anatomist", "roi", "basal_ganglia.arg") )
+w = a.createWindow( '3D' )
+w.addObjects( graph, add_graph_nodes=True )
+</screen>
+<para>See <ulink url="#ana_training%view_roi">the corresponding actions in the graphical interface</ulink>.</para>
+</sect2>
+
 </sect1>
 </chapter>
 <!--
