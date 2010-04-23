@@ -1217,6 +1217,16 @@ print "\nCursor at : ", a.linkCursorLastClickedPosition()
     <screen>
 axial.camera(zoom=2) 
     </screen>
+    You can also change the rotation of the view by changing the view_quaternion parameters. The rotation is represented by a quaternion which is a vector with 4 parameters. 
+    As the interpretation of quaternions is not easy at first time, it is useful to look at the current value of the parameter in a window with the method getInfos().
+    <screen>
+axial.getInfos()
+axial.camera(view_quaternion=[0.9, -0.2, -0.2, 0.3])
+    </screen>
+    It is possible to change the orientation of the slice plan with the parameter slice_quaternion.
+    <screen>
+axial.camera(slice_quaternion=[0.3, 0.3, 0, 0.9])
+    </screen>
   </para>
   <para>See <ulink url="#ana_training%zoom_trans_rotation">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
