@@ -1303,6 +1303,7 @@ head.setMaterial(material)
     <screen>
 brain_mask=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "brain_subject01.nii"))
 brain_mask.setPalette(a.getPalette("GREEN-ufusion"))
+t1mri.setPalette("B-W LINEAR")
 # fusion 2D
 fusion2d=a.fusionObjects([brain_mask, t1mri], "Fusion2DMethod")
 axial=a.createWindow("Axial")
@@ -1344,6 +1345,23 @@ axial.addObjects(lwhite)
   <para>See <ulink url="#ana_training%load_existent_referential">the corresponding actions in the graphical interface</ulink>.</para>
 
 </sect2>
+<sect2 id="ana_training%apply_builtin_ref_code"><title>Load an existing referential</title>
+  <para>
+    <screen>
+map=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "Audio-Video_T_map.nii" ) )
+map.setPalette("tvalues100-200-100")
+t1mri.applyBuiltinReferential()
+map.applyBuiltinReferential()
+fusion_map=a.fusionObjects([map, t1mri], "Fusion2DMethod")
+axial=a.createWindow("Axial")
+axial.addObjects(fusion_map)
+a.execute("Fusion2DParams", object=fusion_map, mode="linear_on_defined", rate=0.5)
+    </screen>
+  </para>
+  <para>See <ulink url="#ana_training%apply_builtin_ref">the corresponding actions in the graphical interface</ulink>.</para>
+
+</sect2>
+
 <sect2 id="ana_training%view_roi_code">
 <title>Display a ROI graph</title>
 <screen>
