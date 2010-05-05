@@ -1345,7 +1345,7 @@ axial.addObjects(lwhite)
   <para>See <ulink url="#ana_training%load_existent_referential">the corresponding actions in the graphical interface</ulink>.</para>
 
 </sect2>
-<sect2 id="ana_training%apply_builtin_ref_code"><title>Load an existing referential</title>
+<sect2 id="ana_training%apply_builtin_ref_code"><title>Apply builtin referential (SPM/NIFTI)</title>
   <para>
     <screen>
 map=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "Audio-Video_T_map.nii" ) )
