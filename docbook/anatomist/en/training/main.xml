@@ -89,8 +89,16 @@
             <listitem><para>Open other types of windows (sagittal, coronal)</para></listitem>
             <listitem><para>Put the object into these windows by selecting the object and the windows and clicking on &window-add;.</para></listitem>
             <listitem><para>Click in one window. Notice that the cursor moves also in the other windows.</para></listitem>
-            <listitem><para>It is possible to open several views using the menu <emphasis>Windows -&gt; Open 3D standard views</emphasis> or <emphasis>Open a 4 views block</emphasis>.</para></listitem>
+            <listitem><para>It is possible to open several views using the menu <emphasis>Windows -&gt; Open 3D standard views</emphasis> or <emphasis>Open a 4 views block</emphasis>. 
+            A block is a window that can contain several views. To add a window in a block, drag and drop the window item from Anatomist's list of windows to the block. To remove it, use the window menu <emphasis>Window => Detach window</emphasis></para></listitem>
           </itemizedlist>
+          <figure><title>4 views block</title>
+                  <mediaobject>
+                          <imageobject role="fop"><imagedata fileref="&DIR_IMG;windows_block.png" format="PNG"  width="400"/></imageobject>
+                          <imageobject role="html"><imagedata fileref="&DIR_IMG;windows_block.png" format="PNG"/></imageobject>
+                  </mediaobject>
+          </figure>
+          
           <para>See <ulink url="#ana_training%view_object_code">corresponding python script</ulink>.</para>
   </sect1>
 						
