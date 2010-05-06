@@ -246,7 +246,9 @@
     </chapter>
     <!-- fin de configuration -->
     <chapter><title>Windows</title>
-      <para>A window enable to visualize one or several objects. These objects can have the same type (e.g. : 2 meshes for the brain hemispheres) or different types (e.g. : a mesh and a volume). Windows have a name, for example  <emphasis>A(2):anat.vimg</emphasis>. This name means that the window is the second axial window and contains the volume <emphasis>anat.vimg</emphasis>. It is possible to handle windows individually or in groups.</para>
+      <para>A window enable to visualize one or several objects. These objects can have the same type (e.g. : 2 meshes for the brain hemispheres) or different types (e.g. : a mesh and a volume). 
+      Windows have a name, for example  <emphasis>A(2):anat.vimg</emphasis>. This name means that the window is the second axial window and contains the volume <emphasis>anat.vimg</emphasis>. 
+      It is possible to handle windows individually or in groups.</para>
         <para>There are several ways to open a window :
 	<itemizedlist>
           <listitem>Menu <emphasis>Windows => &lt;Choose window's type&gt;</emphasis></listitem>
@@ -367,8 +369,24 @@
           </listitem>
         </orderedlist></para>
       </sect1>
+ 
       <sect1>
-        <title>Windows menu</title>
+        <title>Windows blocks</title>
+        <para>A windows block is a window that can contain several views.</para>
+        <para>Select the image you want to visualize. Open a 4 views block using the <emphasis>Windows => Open a 4 views block</emphasis> menu.</para>
+        <figure>
+            <title>4 views block</title>
+            <mediaobject>
+              <imageobject role="fop"><imagedata fileref="&DIR_IMG;windows_block.png" format="PNG"  width="400"/></imageobject>
+              <imageobject role="html"><imagedata fileref="&DIR_IMG;windows_block.png" format="PNG"/></imageobject>
+            </mediaobject>
+        </figure>	    
+        <para>You can add a new window to the block by dragging the window item from Anatomist's list of windows and dropping it in the block.</para>
+        <para>To remove a window from the block, use the window menu <emphasis>Window => Detach view</emphasis>.</para>
+      </sect1>
+
+      <sect1>
+        <title>Window contextual menu</title>
         <para>Each window has a contextual menu that appears when right-clicking on the window. The menu is explained below :</para>
         <table>
           <title>Windows menu</title>
@@ -387,8 +405,7 @@
                   </para>
                 </entry>
                 <entry>
-                  <para> Opens a <emphasis>browser</emphasis> window that lists the window contained objects. Enables to select an object in the list in order to handle it in the window. 
-                    <!--( faire lien : contr�le de transformation) -->.</para>
+                  <para> Opens a <emphasis>browser</emphasis> window that lists the window contained objects. Enables to select an object in the list in order to handle it in the window.</para>
                 </entry>
               </row>
               <row>
@@ -398,7 +415,7 @@
                   </para>
                 </entry>
                 <entry>
-                  <para> Unselects all selected objects in the window<!--( faire lien : Manipulation d'un graphe) -->.</para>
+                  <para> Unselects all selected objects in the window.</para>
                 </entry>
               </row>
               <row>
@@ -408,7 +425,7 @@
                   </para>
                 </entry>
                 <entry>
-                  <para> Selects all objects contained in the window<!--( faire lien : Manipulation d'un graphe) -->.</para>
+                  <para> Selects all objects contained in the window.</para>
                 </entry>
               </row>
               <row>
@@ -525,7 +542,7 @@
               </row>
               <row>
                 <entry>
-                  <para> Script (pas d'ic�ne)</para>
+                  <para> Script (no icon)</para>
                 </entry>
                 <entry><para>.ana</para></entry>
                 <entry> Script to execute a sequence of actions. For example, a script can be a file containing commands to merge two volumes and load a specific palette. </entry>
