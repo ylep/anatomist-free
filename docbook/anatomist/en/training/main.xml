@@ -1155,10 +1155,9 @@
   <para>
     In this part, we will go back to the previous examples of this tutorial and see how to do the same with a python script. The data for the examples in this section are the same : <ulink url="ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip">ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip</ulink>.
   </para>
-  <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers usefull features like completion. This program is available in the BrainVISA package. To access it, first run the script  &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh, which adds the programs in BrainVISA package to the available programs in the current shell. And then, run ipython with the option -qthread, which runs a QT event loop, needed for the graphical interface.
-    <screen>
-&lt;brainvisa_installation_directory&gt;/bin/cartopack.sh
-ipython -qthread
+  <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers usefull features like completion. This program is available in the BrainVISA package. To access it, first "source" the script  &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh, which adds the programs in BrainVISA package to the available programs in the current shell. And then, run ipython with the option -q4thread, which runs a Qt event loop, needed for the graphical interface.
+    <screen>source &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh
+ipython -q4thread
     </screen>
 </para>
 <sect2><title>Run Anatomist</title>
