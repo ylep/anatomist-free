@@ -1134,8 +1134,8 @@
   <para>
   Several means of driving Anatomist in python scripts exist :
   <itemizedlist>
-    <listitem>Python bindings for the C++ library (SIP bindings). In this mode, all bound features are available. You handle directly the Anatomist objects. But Anatomist is loaded directly in your python program, it is not an independent program in this mode. So the errors that occur in Anatomist are reported in the python script.</listitem>
-    <listitem>Sending commands via a network socket. Anatomist is run in server mode and listen for commands on the socket connection. In this mode, the available features are limited to what can be expressed with Anatomist commands system, so a limited set of features. A list of these commands can be found <ulink url="#anahelp_fr.prog.commands">here</ulink>. You can't handle directly the Anatomist objects, they are represented by a key. But Anatomist application runs in a separate process so potential errors in Anatomist don't crash the application that uses the API.</listitem>
+    <listitem><emphasis role='bold'>Python bindings for the C++ library</emphasis> (SIP bindings). In this mode, all bound features are available. You handle directly the Anatomist objects. But Anatomist is loaded directly in your python program, it is not an independent program in this mode. So the errors that occur in Anatomist are reported in the python script.</listitem>
+    <listitem><emphasis role='bold'>Sending commands via a network socket</emphasis>. Anatomist is run in server mode and listen for commands on the socket connection. In this mode, the available features are limited to what can be expressed with Anatomist commands system, so a limited set of features. A list of these commands can be found <ulink url="#anahelp_fr.prog.commands">here</ulink>. You can't handle directly the Anatomist objects, they are represented by a key. But Anatomist application runs in a separate process so potential errors in Anatomist don't crash the application that uses the API.</listitem>
   </itemizedlist>
   Behind a general interface, this api provides 2 implementations, one for each method of communication with Anatomist.
   </para>
@@ -1379,6 +1379,13 @@ w.addObjects( graph, add_graph_nodes=True )
 <para>See <ulink url="#ana_training%view_roi">the corresponding actions in the graphical interface</ulink>.</para>
 </sect2>
 
+<sect2 id="ana_training%execute_command">
+  <title>Sending a command to Anatomist</title>
+  <para>A lot of commands that can be processed by Anatomist are encapsulted in Anatomist class methods. But some commands, less commonly used are not available through specific methods. Nevertheless, they can be called through a generic method <emphasis>Anatomist.execute(&lt; command name &gt;, **parameters)</emphasis>.</para>
+  <para>The list of available commands is listed in the following page : <ulink url="http://brainvisa.info/doc/anatomist/html/fr/programmation/commands.html">http://brainvisa.info/doc/anatomist/html/fr/programmation/commands.html</ulink>.</para>
+  <para>In the previous examples, we use this method to call Fusion2DParams command which is not encapsulated in a specific method.</para>
+  <screen>a.execute("Fusion2DParams", object=fusion_map, mode="linear_on_defined", rate=0.5)</screen>
+</sect2>
 </sect1>
 </chapter>
 <!--
