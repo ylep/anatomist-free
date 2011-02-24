@@ -1192,6 +1192,11 @@ axial.addObjects(t1mri)
     </screen>
   </para>
   <para>See <ulink url="#ana_training%view_object">the corresponding actions in the graphical interface</ulink>.</para>
+  <para>When opening a new window, it is possible to change its initial position and size with the geometry parameter. This parameter is a list of 4 values (in pixels) : [x, y, width, height]. </para>
+  <screen>
+# customizing the position and size of a new window : the windows will be displayed at position (100, 150) with a size of (300, 300)
+w=a.createWindow("Axial", geometry=[100,150, 300, 300 ])
+  </screen>
 </sect2>
 <sect2><title>Windows block</title>
   <para>
