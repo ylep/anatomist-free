@@ -1148,7 +1148,7 @@
 <para>
   By default, brainvisa module uses socket implementation. This way, Brainvisa and Anatomist applications run in separated processes. and potential errors in Anatomist does not crash Brainvisa.
 </para>
-<para>See the python documentation of the python Anatomist API : <ulink url="#epydocpyanatomist%index">epydoc doc</ulink>.</para>
+<para>See the python documentation of the python Anatomist API : <ulink url="#sphinxpyanatomist%index">sphinx doc</ulink>.</para>
 <para>More information about this API and examples available <ulink url="#cartointernet_pg%pyanatomist">here</ulink>.</para>
 </sect1>
 <sect1><title>Using the API</title>
