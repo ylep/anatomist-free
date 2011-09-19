@@ -634,17 +634,17 @@
             </sect1>
             
             
-            <sect1><title>Copy attribute values from a sulci graph to another</title>
-             <para>From 2 sulci graphs (A and B), you can copy attribute values between graphs. According to the label_property (name or label) of the global attributes for each graph, you can have 4 
-             combining : label-graph_A/label-graph_B, name-graph_A/name-graph_B, label-graph_A/name-graph_B, or name-graph_A/label-graph_B. Note that if your graph don't have the label_property, then the default value is the value of graph parameters =&gt; Use attribute =&gt; label or name.</para>
+            <sect1><title>Copy label values between sulci graph nodes</title>
+             <para>To perform manual labeling (or to correct automatic labelings) in sulci graphs, you can copy and paste label values between graph nodes (inside the same graph or bewteen different graphs). The attribute used to pick / store label values depends on the the label_property (name or label) of the global attributes for each graph, just like nomenclature colors application. Note that if your graph does not have the label_property attribute, then the default value is the value of graph parameters =&gt; Use attribute =&gt; label or name.</para>
+             <para>For instance, to copy/paste bewteen different graphs:</para>
              <itemizedlist>
                 <listitem><para>Load 2 sulci graphs.</para></listitem>
                 <listitem><para>Change or check the value of label_property by clicking on Graph =&gt; Labeling =&gt; Use Automatic Labeling.</para></listitem>
                 <listitem><para>Place each graph into a &window-3d-small;.</para></listitem>
-                <listitem><para>Select a node from graph A.</para></listitem>
-                <listitem><para>Click on space key (to store the attribute value).</para></listitem>
+                <listitem><para>Select a node from graph A (make sure the window is in selection control mode).</para></listitem>
+                <listitem><para>Click on space key (to store the attribute value). The label value and color should appear in a small box in the top toolbar of the window.</para></listitem>
                 <listitem><para>Select a node from graph B.</para></listitem>
-                <listitem><para>Click on ctrl and enter keys (to copy the attribute value).</para></listitem>
+                <listitem><para>Click on &lt;ctrl&gt; and &lt;enter&gt; keys (to copy the attribute value).</para></listitem>
                 <listitem><para><emphasis>Don't forget to save the graph and provide a new name if you don't want to erase the original file</emphasis>.</para></listitem>
               </itemizedlist>
             </sect1>
@@ -718,18 +718,19 @@
   </sect1>
   
   
-  <sect1><title>SULCI GRAPH : copy the label values to name values</title>
-    <para>After an automatic recognition of sulci, it is possible to change the value of recognition. But we don't want to erase the orignal value given by the process. The sulci can have 2 attributes to store an identification value : the label and the name. You can copy all label values towards name values. After you will change the name value and you can keep the original value with label attribute.</para>
-                  <itemizedlist>
-                <listitem><para>Open a sulci graph.</para></listitem>
-                <listitem><para>Click on graph =&gt; Labeling =&gt; Move automatic labeling ('label') to manual ('name').</para></listitem>
-              </itemizedlist>
-    
+  <sect1><title>SULCI GRAPH: copy the label values to name values</title>
+    <para>After an automatic recognition of sulci, it is possible to switch between automatic labeling and manual labeling modes, that is, use the 'name' (manual) or 'label' (automatic) attribute to store labels in graph nodes. You can copy all label values into name values. After that, you can modify the name attributes and keep the original value in the label attribute.</para>
+    <itemizedlist>
+      <listitem><para>Open a sulci graph.</para></listitem>
+      <listitem><para>Click on graph =&gt; Labeling =&gt; Move automatic labeling ('label') to manual ('name').</para></listitem>
+    </itemizedlist>
+
 
   </sect1>
   
   <sect1><title>Surface paint module</title>
-    <para>In order to work with sulci, a module to draw on mesh is now available. Even if the module is only created to work with sulci, you can work without sulci. For the time being, you can watch the following video : <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Pinat movie</ulink> . </para>
+    <para>A surface painting module is present in Anatomist. This tool allows to draw textures on a mesh, using several drawing tools. This module has been primarily developed in the specific aim of drawing sulcal constraints to build a 2D coordinates system on the brain (see the Cortical Surface toolbox in BrainVisa), but can be used in a general way to draw any texture values.</para>
+    <para>For the time being, you can watch the following video : <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Paint movie</ulink> . </para>
 
   </sect1>
   
