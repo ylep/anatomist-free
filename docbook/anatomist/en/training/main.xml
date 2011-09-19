@@ -604,6 +604,22 @@
               </mediaobject>
             </sect1>
             
+            
+            <sect1><title>Display all nodes of sulci graph</title>
+              <itemizedlist>
+                <listitem><para>Load: <filename>&data_ana;subject01/sulci/Lsubject01_default_session_auto.arg</filename>.</para></listitem>
+                <listitem><para>Open a 3D window &window-3d-small;.</para></listitem>
+                <listitem><para>Select your graph in the list of objects and the new 3D window &window-3d-small; with the mouse.</para></listitem>
+                <listitem><para>Select <emphasis>Display =&gt; Dislpay nodes</emphasis> menu by right-clicking on the sulci graph.</para></listitem>
+              </itemizedlist>
+              <mediaobject>
+                <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_diplay_all_nodes.png" format="PNG"  width="250"/></imageobject>
+                <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_diplay_all_nodes.png" format="PNG"/></imageobject>
+              </mediaobject>
+            </sect1>
+            
+            
+            
             <sect1><title>Change the name attribute of a graph node</title>
               <itemizedlist>
                 <listitem><para>Load a sulci graph : <filename>&data_ana;subject01/sulci/Lsubject01_default_session_auto.arg</filename>.</para></listitem>
@@ -616,6 +632,23 @@
                 <listitem><para>Provide a new name if you don't want to erase the original file.</para></listitem>
               </itemizedlist>
             </sect1>
+            
+            
+            <sect1><title>Copy attribute values from a sulci graph to another</title>
+             <para>From 2 sulci graphs (A and B), you can copy attribute values between graphs. According to the label_property (name or label) of the global attributes for each graph, you can have 4 
+             combining : label-graph_A/label-graph_B, name-graph_A/name-graph_B, label-graph_A/name-graph_B, or name-graph_A/label-graph_B. Note that if your graph don't have the label_property, then the default value is the value of graph parameters =&gt; Use attribute =&gt; label or name.</para>
+             <itemizedlist>
+                <listitem><para>Load 2 sulci graphs.</para></listitem>
+                <listitem><para>Change or check the value of label_property by clicking on Graph =&gt; Labeling =&gt; Use Automatic Labeling.</para></listitem>
+                <listitem><para>Place each graph into a &window-3d-small;.</para></listitem>
+                <listitem><para>Select a node from graph A.</para></listitem>
+                <listitem><para>Click on space key (to store the attribute value).</para></listitem>
+                <listitem><para>Select a node from graph B.</para></listitem>
+                <listitem><para>Click on ctrl and enter keys (to copy the attribute value).</para></listitem>
+                <listitem><para><emphasis>Don't forget to save the graph and provide a new name if you don't want to erase the original file</emphasis>.</para></listitem>
+              </itemizedlist>
+            </sect1>
+
 
             <sect1><title>Nomenclature and graph</title>
               <sect2><title>Load and use a nomenclature</title>
@@ -670,7 +703,7 @@
                 <listitem><para>Open any volume.</para></listitem>
                 <listitem><para>Draw a ROI graph with 2 regions. The names must be exactly region_A and region_B to link with the nomenclature.</para></listitem>
                 <listitem><para>Load <emphasis>my_nomenclature.hie</emphasis> in your Anatomist session.</para></listitem>
-                <listitem><para>Update the display by selecting and de-selecting of <emphasis>Use Nomenclature/colors bindings</emphasis>  in the <emphasis>Settings -gt; graph paremeters</emphasis> <!-- and check that <emphasis>Use attribute</emphasis> is set to <emphasis>name</emphasis> in <emphasis>Settings =&gt; Graph parameters</emphasis>. In fact, the <emphasis>name/label</emphasis> values can be a source of mistakes.--><!-- Label attribute is used in advanced level.--></para></listitem>
+                <listitem><para>Update the display by selecting and de-selecting of <emphasis>Use Nomenclature/colors bindings</emphasis>  in the <emphasis>Settings -&gt; graph paremeters</emphasis> <!-- and check that <emphasis>Use attribute</emphasis> is set to <emphasis>name</emphasis> in <emphasis>Settings =&gt; Graph parameters</emphasis>. In fact, the <emphasis>name/label</emphasis> values can be a source of mistakes.--><!-- Label attribute is used in advanced level.--></para></listitem>
                 <listitem><para>You can switch to the selection mode with &fb_select;.</para></listitem>
               </itemizedlist>
               
@@ -683,6 +716,24 @@
               
     </sect2>
   </sect1>
+  
+  
+  <sect1><title>SULCI GRAPH : copy the label values to name values</title>
+    <para>After an automatic recognition of sulci, it is possible to change the value of recognition. But we don't want to erase the orignal value given by the process. The sulci can have 2 attributes to store an identification value : the label and the name. You can copy all label values towards name values. After you will change the name value and you can keep the original value with label attribute.</para>
+                  <itemizedlist>
+                <listitem><para>Open a sulci graph.</para></listitem>
+                <listitem><para>Click on graph =&gt; Labeling =&gt; Move automatic labeling ('label') to manual ('name').</para></listitem>
+              </itemizedlist>
+    
+
+  </sect1>
+  
+  <sect1><title>Surface paint module</title>
+    <para>In order to work with sulci, a module to draw on mesh is now available. Even if the module is only created to work with sulci, you can work without sulci. For the time being, you can watch the following video : <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Pinat movie</ulink> . </para>
+
+  </sect1>
+  
+  
   <sect1><title>Extraction and merging of sulci meshed (from sulci graph) and fusion between them</title>
     <para>This exercise shows how to extract a graph node mesh (ie sulcus or sulcus part), and merge or rather concatenate several such meshes. Note this example only works on graphs containing meshes.</para>
     
