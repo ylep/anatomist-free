@@ -635,11 +635,11 @@
             
             
             <sect1><title>Copy label values between sulci graph nodes</title>
-             <para>To perform manual labeling (or to correct automatic labelings) in sulci graphs, you can copy and paste label values between graph nodes (inside the same graph or bewteen different graphs). The attribute used to pick / store label values depends on the the label_property (name or label) of the global attributes for each graph, just like nomenclature colors application. Note that if your graph does not have the label_property attribute, then the default value is the value of graph parameters =&gt; Use attribute =&gt; label or name.</para>
+             <para>To perform manual labelling (or to correct automatic labellings) in sulci graphs, you can copy and paste label values between graph nodes (inside the same graph or between different graphs). The attribute used to pick / store label values depends on the the label_property (name or label) of the global attributes for each graph, just like nomenclature colors application. Note that if your graph does not have the label_property attribute, then the default value is the value of graph parameters =&gt; Use attribute =&gt; label or name.</para>
              <para>For instance, to copy/paste bewteen different graphs:</para>
              <itemizedlist>
                 <listitem><para>Load 2 sulci graphs.</para></listitem>
-                <listitem><para>Change or check the value of label_property by clicking on Graph =&gt; Labeling =&gt; Use Automatic Labeling.</para></listitem>
+                <listitem><para>Change or check the value of label_property by clicking on Graph =&gt; Labelling =&gt; Use Automatic Labelling.</para></listitem>
                 <listitem><para>Place each graph into a &window-3d-small;.</para></listitem>
                 <listitem><para>Select a node from graph A (make sure the window is in selection control mode).</para></listitem>
                 <listitem><para>Click on space key (to store the attribute value). The label value and color should appear in a small box in the top toolbar of the window.</para></listitem>
@@ -719,10 +719,10 @@
   
   
   <sect1><title>SULCI GRAPH: copy the label values to name values</title>
-    <para>After an automatic recognition of sulci, it is possible to switch between automatic labeling and manual labeling modes, that is, use the 'name' (manual) or 'label' (automatic) attribute to store labels in graph nodes. You can copy all label values into name values. After that, you can modify the name attributes and keep the original value in the label attribute.</para>
+    <para>After an automatic recognition of sulci, it is possible to switch between automatic labelling and manual labelling modes, that is, use the 'name' (manual) or 'label' (automatic) attribute to store labels in graph nodes. You can copy all label values into name values. After that, you can modify the name attributes and keep the original value in the label attribute.</para>
     <itemizedlist>
       <listitem><para>Open a sulci graph.</para></listitem>
-      <listitem><para>Click on graph =&gt; Labeling =&gt; Move automatic labeling ('label') to manual ('name').</para></listitem>
+      <listitem><para>Click on graph =&gt; Labelling =&gt; Move automatic labelling ('label') to manual ('name').</para></listitem>
     </itemizedlist>
 
 
