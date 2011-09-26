@@ -139,6 +139,12 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_palette.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
+    <para>Try to change the palette boundaries using the following <emphasis role='bold'>keyboard shortcuts</emphasis>:</para>
+    <itemizedlist>
+      <listitem><para><emphasis>CTRL</emphasis> key + right button click and move the mouse up and down: you change the <emphasis role='bold'>max</emphasis> boundary of the palette.</para></listitem>
+      <listitem><para><emphasis>CTRL</emphasis> key + right button click and move the mouse left and right: you change the <emphasis role='bold'>min</emphasis> boundary of the palette.</para></listitem>
+    </itemizedlist>
+
     <para>See <ulink url="#ana_training%change_palette_code">corresponding python script</ulink>.</para>
     <sect2><title>Gradient Palette</title>
     <para>If you want to create a custom palette, you can use the Gradient palette module.</para>

@@ -465,7 +465,7 @@
                   </para>
                 </entry>
                 <entry>
-                  <para> This menu appears if the window contains a graph with selected nodes. Graphs are structured objects compound of nodes, which have their own properties, and relations between nodes. This menu shows and selects neighbouring nodes in the graph. It is usefull to explore a region without missing a node. </para>
+                  <para> This menu appears if the window contains a graph with selected nodes. Graphs are structured objects compound of nodes, which have their own properties, and relations between nodes. This menu shows and selects neighbouring nodes in the graph. It is useful to explore a region without missing a node. </para>
                 </entry>
               </row>
               <row>
@@ -687,6 +687,12 @@
             </para>
             <para>
               In medical imaging, we generally use 3D (or 4D) volumes of scalar values: each voxel represents a scalar value (or a grey level). Grey levels may be associated to colors via a palette. A palette is a table that associates colors to voxels values. Anatomist palettes can be modified using the values <emphasis>min</emphasis> (minimum value for the voxels of the volume) and <emphasis>max</emphasis> (maximum value for the voxels of the volume). Changing these boundaries modifies the field of voxels values where the palette applies. So one may "zoom" on a part of the histogram. The same applies to scalar textures mapped on a mesh.
+            </para>
+            <para>The min and max boundaries of the palette can also be changed directly in the visualization window without opening the palette menu. The following keyboard shortcuts can be used to do so:
+              <itemizedlist>
+              <listitem>CTRL key + Right clic button and move the mouse up and down: changes the max boundary</listitem>
+              <listitem>CTRL key + Right clic button and move the mouse left and right: changes the min boundary</listitem>
+            </itemizedlist>
             </para>
             <para>A number of palettes are available and any user can add his own personal palettes.</para>
             <para>NOTE : The default palette for a volume is <emphasis>B-W LINEAR</emphasis>, and <emphasis>Min</emphasis> and <emphasis>Max</emphasis> bounds are set so that they contain 99% of histogram values.
@@ -1087,7 +1093,7 @@
           <emphasis>Icon</emphasis> : &fb_control_transfo;
         </para>
         <para>
-          <emphasis>Description : </emphasis>Enables to move an object in a view in order to make manual registration. It can be usefull to initialize a registration method with translation parameters. You can get theses parameters in the .trm file obtained from this registration. See the part <link linkend="ana_man%manual_registration">manual registration</link> for more details. 
+          <emphasis>Description : </emphasis>Enables to move an object in a view in order to make manual registration. It can be useful to initialize a registration method with translation parameters. You can get theses parameters in the .trm file obtained from this registration. See the part <link linkend="ana_man%manual_registration">manual registration</link> for more details. 
         </para>
         <figure><title><emphasis>Transformation control</emphasis> keyboard shortcuts</title>
           <mediaobject>
@@ -1561,7 +1567,7 @@
 
  		<sect2><title>Referential of an object</title>
 			<sect3><title>Definition</title>
-        		<para>Each object has an associated referential. Referentials are usefull to compare objects. Without referentials each objects would be in its own coordinates system (sampling of the real world according to volume dimensions and voxels size) and objects coming from different modalities or acquisition wouldn't be comparable. With identified referentials and transformations to move from one to another, it is possible to put objects in the same referentials in order to superimpose or merge them in a consistent way.</para>
+        		<para>Each object has an associated referential. Referentials are useful to compare objects. Without referentials each objects would be in its own coordinates system (sampling of the real world according to volume dimensions and voxels size) and objects coming from different modalities or acquisition wouldn't be comparable. With identified referentials and transformations to move from one to another, it is possible to put objects in the same referentials in order to superimpose or merge them in a consistent way.</para>
 			</sect3>
 
 			<sect3><title>Why and how changing the referential of an object ?</title>
@@ -1717,7 +1723,7 @@
                 <sect2 id="ana_man%apply_builtin_referential" infoid="Apply builtin referential SPM/NIFTI">
                   <title>Using transformation information contained in SPM/NIFTI headers</title>
                   <para>SPM and NIFTI formats can put informations about referentials and transformations in the header file.This information can be found in attributes <emphasis>spm_origin, referentials, transformations</emphasis>.
-                    It deals with referentials used in SPM. It can be usefull to load these referentials and transformations when you have several images which are aligned in one of these referentials.</para> 
+                    It deals with referentials used in SPM. It can be useful to load these referentials and transformations when you have several images which are aligned in one of these referentials.</para> 
                   <para>The Anatomist feature <emphasis>Apply builtin referential</emphasis> (in object menu -> referential) loads the referentials and transformations mentionned in the header. If there is no trnaformation information, the feature does nothing. You can see the new referentials and transformations in the referentials window (in settings menu). The referential assigned to the object also changes. But by default, the display doesn't changes. Indeed, default window's referential is <emphasis>Talairach AC/PC Anatomist</emphasis> and there's generally no link between this referential and referential of the object. If there is a tranformation between object's referential and another referential and you change the window's referential to this destination referential, the display will change. </para>
                   <para>If you set the user level to <emphasis>Expert</emphasis>, you can see another transformation when using <emphasis>Apply builtin referential</emphasis> : the transformation between the referential of the data on disk and the referential of the loaded object. This information is in <emphasis>storage_to_memory</emphasis> attribute. </para>
         </sect2>
