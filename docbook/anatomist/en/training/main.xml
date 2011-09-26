@@ -260,7 +260,7 @@
 </chapter>
                       
 <chapter><title>Handling referentials and transformations</title>
-  <para>In the previous examples, data came from one subject and one modality, so all images were in the same referential. With data from different subjects and modalities, it is more complicated, we have to take care about the different referentials. See <ulink url="#ana_man%load_and_display_objects">Anatomist manual</ulink> for details about referentials management.</para>
+  <para>In the previous examples, data came from one subject and one modality, so all images were in the same referential. With data from different subjects and modalities, it is more complicated, we have to take care about the different referentials. See <ulink url="#ana_man%load_and_display_objects">Anatomist manual</ulink> and <ulink url="#ana_intro_ref">a presentation</ulink> about for details about referentials management.</para>
   
   <!-- Loading trm files - Different subjects -->
   <sect1 id='ana_training%load_transformation' infoid='load a transformation'><title>Load a transformation</title>
@@ -1160,7 +1160,7 @@
 
 <chapter id='ana_training%pyanatomist' infoid='Programming with Anatomist in Python language'>
   <title>Programming with Anatomist in Python language</title>
-  <para>Anatomist is written in C++ language but has a also a python API: <emphasis role="bold">PyAnatomist</emphasis>. This python API enables to drive Anatomist application through python scripts : using Anatomist, loading volumes, meshes, graphs, viewing them in windows, merging objects, changing color palette, etc... It can be usefull in order to automate a repetitive visualization task or to add features to Anatomist application by developping a python plugin, which is much more easier than developping directly in Anatomist C++ library. Actually, several features in Anatomist have been added via a python plugin like the gradient palette for example. The python API is also used by several viewers in BrainVISA.
+  <para>Anatomist is written in C++ language but has also a python API: <emphasis role="bold">PyAnatomist</emphasis>. This python API enables to drive Anatomist application through python scripts : using Anatomist, loading volumes, meshes, graphs, viewing them in windows, merging objects, changing color palettes, etc... It can be useful in order to automate a repetitive visualization task or to add features to Anatomist application by developping a python plugin, which is much more easier than developping directly in Anatomist C++ library. Actually, several features in Anatomist have been added via a python plugin like the gradient palette for example. The python API is also used by several viewers in BrainVISA.
   </para>
 
  <sect1><title>Description of the API</title>
@@ -1207,9 +1207,8 @@
   <para>
     In this part, we will go back to the previous examples of this tutorial and see how to do the same with a python script. The data for the examples in this section are the same : <ulink url="ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip">ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip</ulink>.
   </para>
-  <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers usefull features like completion. This program is available in the BrainVISA package. To access it, first "source" the script  &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh, which adds the programs in BrainVISA package to the available programs in the current shell. And then, run ipython with the option -q4thread, which runs a Qt event loop, needed for the graphical interface.
-    <screen>source &lt;brainvisa_installation_directory&gt;/bin/cartopack.sh
-ipython -q4thread
+  <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers useful features like automatic completion. This program is available in the BrainVISA package with all other executable programs in the <emphasis>bin</emphasis> directory of the BrainVISA package directory. <emphasis>IPython</emphasis> should be run with the option <emphasis>-q4thread</emphasis>, which runs a Qt event loop, needed for the graphical interface.
+    <screen>&lt;brainvisa_installation_directory&gt;/bin/ipython -q4thread
     </screen>
 </para>
 <sect2><title>Run Anatomist</title>
@@ -1224,7 +1223,7 @@ a=ana.Anatomist()
 </sect2>
 <sect2 id="ana_training%load_object_code"><title>Load an object</title>
   <para>
-    In this example, we will put the path to the <emphasis>data_for_anatomist</emphasis> directory in a variable named src. We will use this variable in all the next examples. We will also load a python module named <emphasis>os</emphasis> which has usefull functions to handle files and paths.
+    In this example, we will put the path to the <emphasis>data_for_anatomist</emphasis> directory in a variable named src. We will use this variable in all the next examples. We will also load a python module named <emphasis>os</emphasis> which has useful functions to handle files and paths.
     <screen>
 import os
 src="&lt;path to data_for_anatomist directory&gt;"
