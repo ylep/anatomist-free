@@ -1217,19 +1217,20 @@
   <para>
     In this part, we will go back to the previous examples of this tutorial and see how to do the same with a python script. The data for the examples in this section are the same : <ulink url="ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip">ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip</ulink>.
   </para>
+  <para>The following examples use the general API functions that are available in both direct and socket implementations.</para>
   <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers useful features like automatic completion. This program is available in the BrainVISA package with all other executable programs in the <emphasis>bin</emphasis> directory of the BrainVISA package directory. <emphasis>IPython</emphasis> should be run with the option <emphasis>-q4thread</emphasis>, which runs a Qt event loop, needed for the graphical interface.
     <screen>&lt;brainvisa_installation_directory&gt;/bin/ipython -q4thread
     </screen>
 </para>
 <sect2><title>Run Anatomist</title>
 <para>
-  First of all, we need to import anatomist API module. Then we can create an instance of Anatomist class.
+  First of all, we need to import anatomist API module. Here, in a Python shell, the default implementation is the direct one (Python bindings).</para>
+<para>Then we can create an instance of Anatomist class.</para>
   <screen>
 import anatomist.api as ana
 
 a=ana.Anatomist() 
   </screen>
-</para>
 </sect2>
 <sect2 id="ana_training%load_object_code"><title>Load an object</title>
   <para>
@@ -1452,6 +1453,11 @@ w.addObjects( graph, add_graph_nodes=True )
   <para>In the previous examples, we use this method to call Fusion2DParams command which is not encapsulated in a specific method.</para>
   <screen>a.execute("Fusion2DParams", object=fusion_map, mode="linear_on_defined", rate=0.5)</screen>
 </sect2>
+</sect1>
+<sect1><title>Using direct implementation</title>
+  <para>When you use the direct implementation of Anatomist Python API, more features are available. Indeed, each C++ class and function that are declared in the SIP bindings are available in Python. Moreover, the Python script and Anatomist objects share memory, so lower level manipulations are possible.</para>
+  <para>See the <ulink url="#doxyana%index">Anatomist doxygen documentation</ulink> about the C++ API to have more information about the classes and functions that may be available in Python (if the bindings are done).</para>
+  <para>In this mode, it is also possible to interact on objects directly and interactively with Python Aims API. See more details about that in <ulink url="#aims_training%pyaims_pyanatomist">PyAims / PyAnatomist integration part in Aims tutorial</ulink>.</para>
 </sect1>
 </chapter>
 <!--
