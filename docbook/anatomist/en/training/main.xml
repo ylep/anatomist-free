@@ -250,7 +250,7 @@
             </mediaobject>
           </figure></para></listitem>
       <listitem><para>Place this new object in a window.</para></listitem>
-      <listitem><para>By default, all volumes have the same color palette. So we will need <link linkend='ana_training%change_palette'>to change</link> this for one of the two volumes to help differentiate them. For instance, choose the <emphasis>GREEN-ufusion</emphasis> palette for the brain mask.</para></listitem>
+      <listitem><para>By default, all volumes have the same color palette. So we will need <link linkend='ana_training%change_palette'>to change</link> this for one of the two volumes to help differentiate them. For instance, choose the <emphasis>GREEN-ufusion</emphasis> palette for the brain mask. Note that it is also possible to use the contextual menu <emphasis>Color => Set distinct palette</emphasis>, Anatomist will try to set automatically an appropriate palette for the object.</para></listitem>
       <listitem><para>It is possible to change the parameters of the fusion by right-clicking on the fusion object (Fusion2D) and select <emphasis>Fusion => Control 2D fusion</emphasis>.</para></listitem>
       <listitem><para>Set the <emphasis>mapping mode</emphasis> to <emphasis>Linear</emphasis> or <emphasis>Linear on non-nul</emphasis>.</para></listitem>
       <listitem><para>You can change the <emphasis>mixing rate</emphasis> between objects to see more one or the other.</para></listitem>
@@ -383,13 +383,15 @@
   </sect1>
                         
   <sect1 id='ana_training%radio_neuro_aimsrc'><title>Radiological/neurological convention and usage of aimsrc configuration</title>
+    <warning>This part of the tutorial is related to display problems that can occur when using <emphasis role="bold">Analyze format</emphasis>. It is highly recommended to use Nifti format instead of Analyze format. Indeed, Analyze format used to lack information about convention, which leads to ambiguities in the way of displaying images.</warning>
+
     <para>KEYWORDS: .aimsrc file, minf file.</para>
-    <para>Before beginning, making a difference between the Anatomist display, how data are stored and how data are read:
+    <para>Before beginning, please note the difference between the Anatomist display, how data are stored and how data are read:
     </para>
     <itemizedlist>
       <listitem><para><emphasis role='bold'>What does "the Anatomist display" mean</emphasis>: the display is independant of storing and reading data on your disk. You can display data in neurological convention even if they are stored and read like radiological data. It depends on settings (<emphasis>Settings -&gt; Preferences -&gt; Windows</emphasis>).</para></listitem>
       <listitem><para><emphasis role='bold'>How data is stored</emphasis>: this corresponds to the file organization. By using our tools (Aims Library), data is considered in radiological convention.</para></listitem>
-      <listitem><para><emphasis role='bold'>How data is read</emphasis>: attributes contained in .aimsrs and .minf file can give additional information. For instance, the <emphasis>spm_radio_convention</emphasis> indicates that the data is in radiological convention if value is 1 otherwise SPM data will read in neurological convention.</para></listitem>
+      <listitem><para><emphasis role='bold'>How data is read</emphasis>: attributes contained in .aimsrc and .minf file can give additional information. For instance, the <emphasis>spm_radio_convention</emphasis> indicates that the data is in radiological convention if value is 1 otherwise SPM data will read in neurological convention.</para></listitem>
       <!-- <listitem><para>The display is independant of stocked data on your disk: you can display radiological data with a neurological convention. This depends on settings.</para></listitem> -->
       <!-- <listitem><para>The display depends both aimsrc and .minf file.</para></listitem>-->
       <!-- <listitem><para>The .minf file is read in first (spm_radio_convention and spm_normalized attributes), then the aimsrc file.</para></listitem>-->
@@ -402,7 +404,7 @@
     </para>
     
     
-    <para>Here we have many examples of configuration. Tests are run with an analyze data set with or without the .minf file. If you want to try them, then you must create the .minf file (&lt;name_data&gt;.img.minf) and the .aimsrc (if your user account doesn't have) with a text file editor. In order to try the configurations, you can use the following demonstration data, which can be found in the <filename>&data_ana;right_and_left</filename> directory. A correct display will be verified by visualization of the lesion located to right hemisphere. Note the following, first the data is stored in radiological convention and second the data is normalized with SPM2. In other words normalized data is in radiological convention, but <emphasis role='bold'>WARNING</emphasis> the output convention after normalisation depends on your SPM configuration. In our case, we considere that the input and output convention after SPM2 normalization are the same.</para> 
+    <para>Here we have many examples of configuration. Tests are run with an analyze data set with or without the .minf file. If you want to try them, then you must create the .minf file (&lt;name_data&gt;.img.minf) and the .aimsrc (if your user account doesn't have it) with a text file editor. In order to try the configurations, you can use the following demonstration data, which can be found in the <filename>&data_ana;right_and_left</filename> directory. A correct display will be checked by visualizing a lesion located in the right hemisphere. Note that the data is stored in radiological convention and normalized with SPM2. In other words, normalized data is in radiological convention, but <emphasis role='bold'>WARNING</emphasis> the output convention after normalisation depends on your SPM configuration. In our case, we considere that the input and output convention after SPM2 normalization are the same.</para> 
     
     <table><title>minf/aimsrc files</title>
       <tgroup align="justify" cols="3">
@@ -579,6 +581,8 @@
                 <listitem><para><emphasis>Session =&gt; Save As</emphasis>.</para></listitem>
                 <listitem><para>Click <emphasis>Ok</emphasis>.</para></listitem>
               </itemizedlist>
+              <warning>Be careful to draw in a window which is in the same referential than the volume. Indeed, the voxels are drawn in the referential of the view, so, if it is not the referential of the volume, the voxels of the ROI and the voxels of the volume won't be in the same orientation.</warning>
+              <para>See the <ulink url="#ana_man%roi_toolbox">ROI drawing toolbox chapter</ulink> in Anatomist manual for more details about the ROI drawing toolbox.</para>
             </sect1>
 
             <sect1 id="ana_training%view_roi"><title>Display a graph of ROI</title>
@@ -1204,7 +1208,7 @@
   Another specific implementation for Brainvisa also exists : <emphasis>brainvisa.anatomist</emphasis> module. It enables to use brainvisa database informations on loaded objects to automatically load associated referentials and transformations. 
   It uses the same api, so it is possible to switch from one implementation to the other.</para>
 <para>
-  By default, brainvisa module uses socket implementation. This way, Brainvisa and Anatomist applications run in separated processes. and potential errors in Anatomist does not crash Brainvisa.
+  By default, brainvisa module uses the socket implementation. This way, Brainvisa and Anatomist applications live in separated processes. So potential errors in Anatomist does not crash Brainvisa. Moreover, Anatomist and BrainVISA doesn't share the same Qt event loop (graphical interface), so BrainVISA GUI is not blocked during Anatomist windows loading.
 </para>
 <para>See the python documentation of the python Anatomist API : <ulink url="#sphinxpyanatomist%index">sphinx doc</ulink>.</para>
 <para>More information about this API and examples available <ulink url="#cartointernet_pg%pyanatomist">here</ulink>.</para>
