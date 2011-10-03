@@ -1774,6 +1774,7 @@
 	      
             </para>
           </listitem>
+          <listitem>Be careful to draw in a window which is in the same referential than the volume. Indeed, the voxels are drawn in the referential of the view, so if it is not the referential of the volume, the voxels of the ROI and the voxels of the volume won't be in the same orientation.</listitem>
         </itemizedlist></para>
 	
       <sect1>
