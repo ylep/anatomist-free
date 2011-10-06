@@ -793,6 +793,12 @@
               </tgroup>
             </table>
           </sect3>
+          <sect3><title>Set distinct palette sub-menu</title>
+            <para>When using this menu, Anatomist tries to set an appropriate palette to the object according to its content and to the other loaded objects. For example, Anatomist will choose a one-color palette for a binary image, and a palette with colors distinct from other objects palettes to enable easy combinations of objects.</para>
+          </sect3>
+          <sect3><title>Show/Hide palette sub-menu</title>
+            <para>This menu enables to display the object's palette near the window which contains it. When clicking again on the menu, the palette is hidden.</para>
+          </sect3>
           <sect3><title><emphasis>Gradient palette</emphasis> sub-menu</title>
             <para>The palette menu only permits to select an already defined palette and to change its bounds. This new menu enables to create your own palette. The gradient palette edition window show the palette as gradients on RGB + opacity channels. For each channel, you can change the curve. By default each channel function is linear and the result is a gray gradation palette.
             </para>
@@ -847,7 +853,7 @@
             </table>
           </sect3>
           <sect3>
-            <title>Texture</title>
+            <title>Texturing</title>
             <!-- texturing geo modifier le materiau pour voir 1 effet -->
             <para>This menu applies to the texture part of objects. Choose <emphasis>Color => Texturing</emphasis> in <emphasis>Object-specific</emphasis> menu or by right-click on the object.</para>
             <table>
@@ -1768,6 +1774,7 @@
 	      
             </para>
           </listitem>
+          <listitem>Be careful to draw in a window which is in the same referential than the volume. Indeed, the voxels are drawn in the referential of the view, so if it is not the referential of the volume, the voxels of the ROI and the voxels of the volume won't be in the same orientation.</listitem>
         </itemizedlist></para>
 	
       <sect1>
