@@ -1169,6 +1169,15 @@
           </mediaobject>
         </figure>	  
       </sect1>
+      <sect1>
+        <title>Surface paint module</title>
+        <para>
+          <emphasis>Icon</emphasis> : &palette;
+        </para>
+        <para>
+          <emphasis>Description</emphasis> : This control appears when a mesh is opened in a 3D window using the &sulci; button in Anatomist main window. It is available when the mesh object is selected. See the part about the <link linkend="ana_man%surfpaint">Surface paint module</link> for more details.</para>
+      </sect1>
+
       <sect1 id="ana_man%d_ctr_meshcutting" infoid="mesh cutting control description">
         <title>Mesh cutting control</title>
         <para>
@@ -2658,6 +2667,56 @@ jusqu'a ce que la taille de la region depasse la taille max donnee, ou que le ni
 	
       </sect1>
      
+    </chapter>
+    <chapter id="ana_man%surfpaint"><title>Surface paint module</title>
+      <para>A surface painting module is present in Anatomist. This tool allows to draw textures on a mesh, using several drawing tools. This module has been primarily developed in the specific aim of drawing sulcal constraints to build a 2D coordinates system on the brain (see the Cortical Surface toolbox in BrainVisa), but can be used in a general way to draw any texture values.</para>
+      <para>A demonstration video is available here: <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Paint movie</ulink>.</para>
+      <para>To use this module:
+        <itemizedlist>
+          <listitem><para>Load a mesh.</para></listitem>
+          <listitem><para>Select it and click on &sulci; in Anatomist main window.</para></listitem>
+          <listitem><para>Click on the <emphasis>Ok</emphasis> button on the new popup window. The options in this window are useful only to build a 2D coordinates system on the cortical surface.</para></listitem>
+          <listitem><para>A new 3D window containing the mesh opens.</para></listitem>
+          <listitem><para>Select the mesh using the selection control &fb_select; and clicking on the mesh in the 3D window or using the right-click menu <emphasis>View/select objects</emphasis>.</para></listitem>
+          <listitem><para>A new control &palette; should be available in the 3D window. Select it.</para></listitem>
+          <listitem><para>Several new icons and parameters are now available in the 3D window to allow drawing on the surface.</para></listitem>
+        </itemizedlist>
+      </para>
+      <para>The following table shows the meaning of the buttons and actions in this tool:
+        
+        <table><title>Surface paint module actions</title><tgroup align="justify" cols="2"> <thead>
+              <row><entry>Action</entry><entry>Description</entry></row></thead> <tbody> 
+              <row><entry>&stylo;</entry>
+                <entry><para>Manual drawing on the mesh (unconstrained).</para></entry></row> 
+              
+              <row><entry>&erase;</entry>
+                <entry><para>Erase a drawing.</para></entry></row> 
+              
+              <row><entry>Texture value</entry>
+                <entry><para>Change the current texture value used to draw on the mesh.</para></entry></row> 
+
+              <row><entry>&magic;</entry>
+                <entry><para>Fill a closed region. The points included in the region are computed and shown to the user who must validate the drawing.</para></entry></row> 
+
+              <row><entry>&valide;</entry>
+                <entry><para>Validate a drawing suggested by an automatic tool like the magic wand or the constrained paths.</para></entry></row> 
+
+              <row><entry>&clear;</entry>
+                <entry><para>Undo a drawing suggested by an automatic tool like the magic wand or the constrained paths.</para></entry></row> 
+
+              <row><entry>&shortest;</entry>
+                <entry><para>Draw the shortest path between 2 points. The tool suggests a path that must be validated with &valide;.</para></entry></row> 
+
+              <row><entry>&sulci;</entry>
+                <entry><para>Draw with anatomical constraints. The drawing path is computed trying to follow the depth of the sulci.</para></entry></row> 
+              
+              <row><entry>&gyri;</entry>
+                <entry><para>Draw with anatomical constraints. The drawing path is computed trying to follow the top of the gyri.</para></entry></row> 
+
+              <row><entry>&surfpaint_save;</entry>
+                <entry><para>Save the drawing in a texture file.</para></entry></row> 
+            </tbody></tgroup></table>
+            </para>
     </chapter>
     <chapter id="ana_man%handling_graph" infoid="handling a graph">
       <title>Handling a graph</title>

@@ -740,7 +740,7 @@
   
   <sect1><title>Surface paint module</title>
     <para>A surface painting module is present in Anatomist. This tool allows to draw textures on a mesh, using several drawing tools. This module has been primarily developed in the specific aim of drawing sulcal constraints to build a 2D coordinates system on the brain (see the Cortical Surface toolbox in BrainVisa), but can be used in a general way to draw any texture values.</para>
-    <para>A demonstration video is available here: <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Paint movie</ulink> . </para>
+    <para>A demonstration video is available here: <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Paint movie</ulink>.</para>
     
     <sect2><title>Basic drawing</title>
     <itemizedlist>
