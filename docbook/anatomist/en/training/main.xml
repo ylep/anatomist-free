@@ -11,7 +11,6 @@
 <book id="ana_training%book">
 		
 <bookinfo code='ana_training'><title>The Anatomist tutorial</title>
-        <!--<author> <firstname>DENGHIEN</firstname> <surname>Isabelle</surname></author> <date>06/2004</date>-->
         
 </bookinfo>
 	
@@ -67,7 +66,7 @@
           <itemizedlist>
                   <listitem><para><emphasis>File =&gt; Open</emphasis>.</para></listitem>
                   <listitem><para>Select your object with the file browser, for instance: </para>
-                          <para><filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
+                          <para><filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
                   <listitem><para>This object appears in the left list of the control window.</para></listitem>
           </itemizedlist>
           <para>See <ulink url="#ana_training%load_object_code">corresponding python script</ulink>.</para>
@@ -75,7 +74,7 @@
 			
   <sect1 id="ana_training%view_object"><title>View an object</title>
           <itemizedlist>
-            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
+            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
             <listitem><para>Open an axial window by clicking on &window-axial-small;.</para></listitem>
             <listitem><para>Put the object (the volume) into this window: drag and drop this object into the window.</para></listitem>
           </itemizedlist>
@@ -113,7 +112,7 @@
 
   <sect1 id='ana_training%reader_header' infoid='Read header information (voxel size, dimension image ...)'><title>Read header information (voxel_size, dimension image ...)</title>
           <itemizedlist>
-            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
+            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
                   <listitem><para>Drag and drop on &window-browser-small;.</para></listitem>
                   <listitem><para>Unroll the tree and read the information.</para></listitem>
           </itemizedlist>
