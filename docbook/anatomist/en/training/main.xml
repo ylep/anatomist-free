@@ -11,7 +11,6 @@
 <book id="ana_training%book">
 		
 <bookinfo code='ana_training'><title>The Anatomist tutorial</title>
-        <!--<author> <firstname>DENGHIEN</firstname> <surname>Isabelle</surname></author> <date>06/2004</date>-->
         
 </bookinfo>
 	
@@ -67,7 +66,7 @@
           <itemizedlist>
                   <listitem><para><emphasis>File =&gt; Open</emphasis>.</para></listitem>
                   <listitem><para>Select your object with the file browser, for instance: </para>
-                          <para><filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
+                          <para><filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
                   <listitem><para>This object appears in the left list of the control window.</para></listitem>
           </itemizedlist>
           <para>See <ulink url="#ana_training%load_object_code">corresponding python script</ulink>.</para>
@@ -75,7 +74,7 @@
 			
   <sect1 id="ana_training%view_object"><title>View an object</title>
           <itemizedlist>
-            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
+            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
             <listitem><para>Open an axial window by clicking on &window-axial-small;.</para></listitem>
             <listitem><para>Put the object (the volume) into this window: drag and drop this object into the window.</para></listitem>
           </itemizedlist>
@@ -113,7 +112,7 @@
 
   <sect1 id='ana_training%reader_header' infoid='Read header information (voxel size, dimension image ...)'><title>Read header information (voxel_size, dimension image ...)</title>
           <itemizedlist>
-            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename> .</para></listitem>
+            <listitem><para>Load <filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
                   <listitem><para>Drag and drop on &window-browser-small;.</para></listitem>
                   <listitem><para>Unroll the tree and read the information.</para></listitem>
           </itemizedlist>
@@ -740,8 +739,52 @@
   
   <sect1><title>Surface paint module</title>
     <para>A surface painting module is present in Anatomist. This tool allows to draw textures on a mesh, using several drawing tools. This module has been primarily developed in the specific aim of drawing sulcal constraints to build a 2D coordinates system on the brain (see the Cortical Surface toolbox in BrainVisa), but can be used in a general way to draw any texture values.</para>
-    <para>For the time being, you can watch the following video : <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Paint movie</ulink> . </para>
+    <para>A demonstration video is available here: <ulink url="http://pages-perso.esil.univmed.fr/~le-troter/movies/files/page4-1006-pop.html">Surface Paint movie</ulink>.</para>
+    
+    <sect2><title>Basic drawing</title>
+    <itemizedlist>
+      <listitem><para>Load a mesh: <filename>&data_ana;subject01/subject01_Lwhite.mesh</filename>.</para></listitem>
+      <listitem><para>Select it and click on &sulci;.</para></listitem>
+      <listitem><para>Click on the <emphasis>Ok</emphasis> button on the new popup window. The options in this window are useful only to build a 2D coordinates system on the cortical surface.</para></listitem>
+      <listitem><para>A new 3D window containing the mesh opens.</para></listitem>
+      <listitem><para>Select the mesh using the selection control &fb_select; and clicking on the mesh in the 3D window or using the right-click menu <emphasis>View/select objects</emphasis>.</para></listitem>
+      <listitem><para>A new control &palette; should be available in the 3D window. Select it.</para></listitem>
+      <listitem><para>Several new icons and parameters are now available in the 3D window to allow drawing on the surface.</para></listitem>
+      <listitem><para>To draw, click on the &stylo; icon and maintain left mouse button while moving the mouse on the mesh.</para></listitem>
+      <listitem><para>The drawing will be saved in a texture file which associates a value to each point of the mesh. You can change the current texture value in the text field labelled <emphasis>Texture value</emphasis>. The colors associated to each texture value depends on the color palette of the texture. To change it, select the object <emphasis>TexConstraint</emphasis> in Anatomist main window and use the contextual menu <emphasis>Color -> Palette</emphasis></para></listitem>
+      <listitem><para>To erase a drawing, click on the &erase; icon and maintain left mouse button while moving the mouse on the mesh.</para></listitem>
+      <listitem><para>It is possible to fill a closed region using the magic wand icon &magic;, then clicking on the region to fill and validate the selection with &valide; icon.</para></listitem>
+      <listitem><para>When the drawing is finished, save it in a texture file using the &surfpaint_save; icon. Select the location, type a file name. It is possible to save in tex (<emphasis>*.tex</emphasis>) or gifti (<emphasis>*.gii</emphasis>) formats.</para></listitem>
+    </itemizedlist>
+    <figure><title>Surface paint window</title>
+      <mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;surfpaint.png" format="PNG" 
+                                                      width="600"/></imageobject>
+        <imageobject role="html"><imagedata  fileref="&DIR_IMG;surfpaint.png" format="PNG"/></imageobject></mediaobject>
+    </figure>
 
+  </sect2>
+    <sect2><title>Constrained drawing</title>
+      <para>It is also possible to draw according anatomical constraints. For example, following the depth of the sulci or the top of the gyri.</para>
+    <itemizedlist>
+      <listitem><para> To do so, select a constraint by choosing an icon among &shortest; for unconstrained path, &sulci; for drawing paths following the sulci or &gyri; for drawing paths following the gyri.</para></listitem>
+      <listitem><para> Then draw on the mesh by clicking on a first point that will be the beginning of the path and a second that will be the end of the path, the tool will automatically compute a path between the 2 points according to the selected constraint.</para></listitem>
+      <listitem><para> To really write the computed path, you have to validate it using the &valide; icon.</para></listitem>
+      <listitem><para> If you want to remove the computed path, you can use the &clear; icon.</para></listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2><title>Reload a drawing</title>
+    <itemizedlist>
+      <listitem><para> Load the mesh: <filename>&data_ana;subject01/subject01_Lwhite.mesh</filename>.</para></listitem>
+      <listitem><para> Load the previously saved texture file.</para></listitem>
+      <listitem><para> Do a <link linkend="ana_training%fusion_mesh_tex">FusionTexSurfMethod fusion</link> between the mesh and the texture.</para></listitem>
+      <listitem><para> Select the fusion object in Anatomist main window and click on the &sulci; icon.</para></listitem>
+      <listitem><para>A new 3D window containing the mesh opens.</para></listitem>
+      <listitem><para>Select the mesh using the selection control &fb_select; and clicking on the mesh in the 3D window or using the right-click menu <emphasis>View/select objects</emphasis>.</para></listitem>
+      <listitem><para>The new control &palette; should be available in the 3D window. Select it.</para></listitem>
+      <listitem><para>You can now go on with the drawing on the surface of the mesh.</para></listitem>
+    </itemizedlist>
+    <note><para>When visualizing such a texture on a mesh, it is better to check the option <emphasis>RGB space interpolation (label textures)</emphasis> in the texturing params of the texture object (<emphasis>Contextual menu -> Color -> Texturing</emphasis>). This way, the interpolation is done on the RGB colors of the palette, not on the value of the texture.</para></note>
+  </sect2>
   </sect1>
   
   
