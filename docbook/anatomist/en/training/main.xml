@@ -327,10 +327,10 @@
     <para>See <ulink url="#ana_training%load_existent_referential_code">corresponding python script</ulink>.</para>
   </sect1>
 
-  <sect1 id='ana_training%apply_builtin_ref' infoid='Apply builtin referential (SPM/NIFTI)'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  /></imageobject></inlinemediaobject>Apply builtin referential (SPM/Nifti)</title>
-    <para>The option <emphasis>Referential =&gt; Apply builtin referential (SPM/NIFTI)</emphasis> extract information about referentials and transformations that is stored in the image files. Indeed, some formats like Analyze and Nifti enable to store this kind of information. Theses transformations are not applied automatically by anatomist by default, but it is possible to change that in <emphasis>Settings =&gt; Preferences =&gt; Volume</emphasis>.</para>
+  <sect1 id='ana_training%load_referential_info' infoid='Load referential information from header'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  /></imageobject></inlinemediaobject>Load referential information from file header</title>
+    <para>The option <emphasis>Referential =&gt; Load information from file header</emphasis> extract information about referentials and transformations that is stored in the image files. Indeed, some formats like Analyze and Nifti enable to store this kind of information. Theses transformations are not applied automatically by anatomist by default, but it is possible to change that in <emphasis>Settings =&gt; Preferences =&gt; Volume</emphasis>.</para>
     
-    <!-- Apply SPM/Nifti transformations - Differents modalities -->
+    <!-- Apply transformations - Differents modalities -->
     <para><emphasis role='bold'>Fusion between an anatomical volume and an activation map</emphasis></para>
     <itemizedlist>
       <listitem><para>Load:
@@ -340,7 +340,7 @@
           </itemizedlist>
         </para></listitem>
       <listitem><para><link linkend='ana_training%make_fusion'>Fusion the 2 images</link>.Not that they are not well superimposed because they are not in the same referential. But they are in Nifti format and contains information about a transformation to the referential <emphasis>Talairach-MNI Template-SPM</emphasis>.</para></listitem>
-      <listitem><para>For each volume, right-click the <emphasis>Referential =&gt; Apply builtin referential (SPM/Nifti).</emphasis> </para></listitem>
+      <listitem><para>For each volume, right-click the <emphasis>Referential =&gt; Load information from file header.</emphasis> </para></listitem>
       <listitem><para>Look at the fusion, the 2 images are now well superimposed.</para></listitem>
       <listitem><para>Change the point of view by changing the referential of the window: click on the colored bar at the top of the window and choose <emphasis>Talairach-MNI Template-SPM</emphasis>. Notice the change of orientation.</para></listitem>
     </itemizedlist>
@@ -378,7 +378,7 @@
       <listitem><para>You will be able to <link linkend='ana_training%load_transformation'>reload this transformation</link> this transformation later or for instance read/use the information file to initiate a registration algorithm.</para></listitem>
     </itemizedlist>
     
-    <para>NOTE: use this toolbox carefully because you <emphasis role='bold'>manually</emphasis> handle the registration. In fact the human eye cannot drive a registration as well as a specific algorithm. For example, a basic error is to align correctly in axial and do not check the alignment of the head outline in sagittal and coronal view. However this tool can be very interesting to initiate the translation parameters of an algorithm.</para>
+    <warning>Use this toolbox carefully because you <emphasis role='bold'>manually</emphasis> handle the registration. In fact the human eye cannot drive a registration as well as a specific algorithm. For example, a basic error is to align correctly in axial and do not check the alignment of the head outline in sagittal and coronal view. However this tool can be very interesting to initiate the translation parameters of an algorithm.</warning>
   </sect1>
                         
   <sect1 id='ana_training%radio_neuro_aimsrc'><title>Radiological/neurological convention and usage of aimsrc configuration</title>
@@ -567,7 +567,7 @@
   
 </chapter>
                       
-<chapter><title>Handling region of interest and sulci graphs</title>
+<chapter><title>Handling regions of interest and sulci graphs</title>
             <sect1 id='ana_training%draw_roi'><title>Draw regions of interest (graph of ROIs)</title>
               <itemizedlist>
                 <listitem><para>Load any volume.</para></listitem>
@@ -586,11 +586,10 @@
 
             <sect1 id="ana_training%view_roi"><title>Display a graph of ROI</title>
               <itemizedlist>
-                <listitem><para>Load: <filename>&data_ana;roi/basal_ganglia.arg</filename> .</para></listitem>
+                <listitem><para>Load <filename>&data_ana;roi/basal_ganglia.arg</filename>.</para></listitem>
                 <listitem><para>Place the graph into a 3D window &window-3d-small;.</para></listitem>
-                <listitem><para>An empty window is displayed. To view the object, select the nodes of the graph.</para></listitem>
-                <listitem><para>Select <emphasis>view/select object</emphasis> menu by right-clicking on the 3D window. A browser with the graph is now diplayed.</para></listitem>
-                <listitem><para>To display one or several nodes, unroll the graph and select them.</para></listitem>
+                <listitem><para>To select a specific region, click on the <emphasis>view/select object</emphasis> menu by right-clicking on the 3D window. A browser with the graph object is now diplayed.</para></listitem>
+                <listitem><para>To select one or several regions, unroll the graph and select the corresponding nodes.</para></listitem>
               </itemizedlist>
               <mediaobject>
                 <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-1.png" format="PNG"  width="250"/></imageobject>
@@ -601,11 +600,10 @@
             
             <sect1><title>Display a meshed graph of ROI</title>
               <itemizedlist>
-                <listitem><para>Load: <filename>&data_ana;roi/mbasal_ganglia.arg</filename>.</para></listitem>
+                <listitem><para>Load <filename>&data_ana;roi/mbasal_ganglia.arg</filename>.</para></listitem>
                 <listitem><para>Place the graph into a 3D window &window-3d-small;.</para></listitem>
-                <listitem><para><!-- Nothing is displayed because we must select the nodes of the graph.-->An empty window is displayed. To view the object, select the nodes of the graph.</para></listitem>
-                <listitem><para>Select <emphasis>view/select object</emphasis> menu by right-clicking on the 3D window. A browser with the graph is now diplayed.</para></listitem>
-                <listitem><para>To display one or several nodes, unroll the graph and select them.</para></listitem>
+                <listitem><para>To select a specific region, click on the <emphasis>view/select object</emphasis> menu by right-clicking on the 3D window. A browser with the graph is now diplayed.</para></listitem>
+                <listitem><para>To select one or several regions, unroll the graph and select the corresponding nodes.</para></listitem>
               </itemizedlist>
               <mediaobject>
                 <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-2.png" format="PNG"  width="250"/></imageobject>
@@ -614,24 +612,35 @@
             </sect1>
             
             
-            <sect1><title>Display all nodes of sulci graph</title>
+            <sect1><title>Display only selected nodes of a sulci graph</title>
               <itemizedlist>
-                <listitem><para>Load: <filename>&data_ana;subject01/sulci/Lsubject01_default_session_auto.arg</filename>.</para></listitem>
+                <listitem><para>Load <filename>&data_ana;subject01/sulci/Lsubject01_default_session_auto.arg</filename>.</para></listitem>
                 <listitem><para>Open a 3D window &window-3d-small;.</para></listitem>
                 <listitem><para>Select your graph in the list of objects and the new 3D window &window-3d-small; with the mouse.</para></listitem>
-                <listitem><para>Select <emphasis>Display =&gt; Dislpay nodes</emphasis> menu by right-clicking on the sulci graph.</para></listitem>
+                <listitem><para>Select <emphasis>Display =&gt; Add without nodes</emphasis> menu by right-clicking on the sulci graph.</para></listitem>
+                <listitem><para>An empty window is displayed. To view a sulcus, you have to select it in the graph.</para></listitem>
+                <listitem><para>Select <emphasis>view/select object</emphasis> menu by right-clicking on the 3D window. A browser with the graph is now diplayed.</para></listitem>
+                <listitem><para>To display one or several nodes, unroll the graph and select them.</para></listitem>
               </itemizedlist>
+              <para>
               <mediaobject>
-                <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_diplay_all_nodes.png" format="PNG"  width="250"/></imageobject>
-                <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_diplay_all_nodes.png" format="PNG"/></imageobject>
+                <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_display_nodes.png" format="PNG"  width="250"/></imageobject>
+                <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_display_nodes.png" format="PNG"/></imageobject>
               </mediaobject>
+              </para>
+              <para>
+              <mediaobject>
+                <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_display_nodes2.png" format="PNG"  width="250"/></imageobject>
+                <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_display_nodes2.png" format="PNG"/></imageobject>
+              </mediaobject>
+              </para>
             </sect1>
             
             
             
             <sect1><title>Change the name attribute of a graph node</title>
               <itemizedlist>
-                <listitem><para>Load a sulci graph : <filename>&data_ana;subject01/sulci/Lsubject01_default_session_auto.arg</filename>.</para></listitem>
+                <listitem><para>Load a sulci graph: <filename>&data_ana;subject01/sulci/Lsubject01_default_session_auto.arg</filename>.</para></listitem>
                 <listitem><para>Place it into a &window-browser-small;.</para></listitem>
                 <listitem><para>Select a node.</para></listitem>
                 <listitem><para><emphasis>Right-click =&gt; Modify name</emphasis>.</para></listitem>
@@ -662,9 +671,9 @@
             <sect1><title>Nomenclature and graph</title>
               <sect2><title>Load and use a nomenclature</title>
               <itemizedlist>
-                <listitem><para>Load: <filename>&data_ana;roi/basal_ganglia.hie</filename> .</para></listitem>
+                <listitem><para>Load <filename>&data_ana;roi/basal_ganglia.hie</filename>.</para></listitem>
                 <listitem><para>Place the nomenclature into a browser &window-browser-small;.</para></listitem>
-                <listitem><para>Load: <filename>&data_ana;roi/basal_ganglia.arg</filename> .</para></listitem>
+                <listitem><para>Load <filename>&data_ana;roi/basal_ganglia.arg</filename>.</para></listitem>
                 <listitem><para>Place the graph into a 3D window &window-3d-small;.</para></listitem>
                 <listitem><para>Select <emphasis>central</emphasis>, <emphasis>hemisph_left</emphasis> <!-- and <emphasis>hemisph_right</emphasis>--> in the browser of the <filename>basal_ganglia.hie</filename>.</para></listitem>
                 <listitem><para>Note that you can handle the ROIs by using the <emphasis>selection control</emphasis>  &fb_select; of the 3D window. Click on this control, and now select different parts of the graph.
@@ -674,8 +683,8 @@
                 <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-3.png" format="PNG"  width="300"/></imageobject>
                 <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-3.png" format="PNG"/></imageobject>
               </mediaobject>
-              <para>NOTE: if the specific colors are not displayed, see <emphasis>Settings =&gt; Graph parameters	=&gt; Colors 2D/3D</emphasis> 
-                and activate/deactivate the <emphasis>Use nomenclature / Colors binding</emphasis> option.</para>
+              <warning>If the specific colors are not displayed, see <emphasis>Settings =&gt; Graph parameters	=&gt; Colors 2D/3D</emphasis> 
+                and activate/deactivate the <emphasis>Use nomenclature / Colors binding</emphasis> option.</warning>
             </sect2>
             
             <sect2 id='ana_training%write_nomenclature' infoid='Write a nomenclature'><title>Write a simple nomenclature (.hie) </title>
@@ -851,7 +860,7 @@
       </para> 
       </listitem>
       <listitem><para>Change the <link linkend='ana_training%change_palette'>color palette</link> of the map.</para></listitem>
-      <listitem><para><link linkend='ana_training%apply_builtin_ref'>Apply builtin referential (SPM/NIFTI)</link> for the map and the T1 MRI.</para></listitem>
+      <listitem><para><link linkend='ana_training%load_referential_info'>Load referential information from file header</link> for the map and the T1 MRI.</para></listitem>
       <listitem><para><link linkend='ana_training%load_existent_referential'>Apply the T1 MRI referential to the white matter mesh.</link>.</para>
         <figure><title>After loading referentials</title>
           <mediaobject>
@@ -901,10 +910,10 @@
       </mediaobject>
     </figure>
     
-    <para>NOTE: the step order is very important because if you directly do a fusion between the inflated mesh and the map, then the result will be 
+    <warning>The steps order is very important because if you directly do a fusion between the inflated mesh and the map, then the result will be 
       wrong. In fact the white mesh and the inflated mesh are two meshes sharing the same structure (number of vertices and polygons), only the location of vertices differ, so they can be assigned the same textures. But 3D fusions for mesh-map and inflated mesh-map do not produce the same result since in a 3D fusion, the 3D location of points is actually taken into account. 
       So you have to fusion first mesh and map to make an activation texture processing the correct points location, and then report this texture onto the inflated mesh in the second fusion (textured surface).
-    </para>
+    </warning>
     
   </sect1>    
 
@@ -915,7 +924,7 @@
       <listitem><para>Select <emphasis>File -&gt; Export texture</emphasis>.</para></listitem>
     </itemizedlist>
     
-    <para>NOTE: this texture corresponds solely to meshes with the same structure.</para>
+    <note>This texture corresponds solely to meshes with the same structure.</note>
   </sect1>
 
   <sect1 id='ana_training%fusion_mesh_tex' infoid='Fusion between a mesh and texture'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_mesh_tex_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_mesh_tex_little.png" format="PNG"  /></imageobject></inlinemediaobject> Fusion between an inflated cortical surface mesh and a texture</title>
@@ -943,7 +952,7 @@
       </mediaobject>
     </figure>
     
-    <para>NOTE: <!-- you can do this kind of fusion because the mesh and the texture must have the same number of point -->this kind of fusion is only possible if the texture has been specifically made for the corresponding mesh: the number of vertices, and their order, must match.</para>
+    <note>This kind of fusion is only possible if the texture has been specifically made for the corresponding mesh: the number of vertices, and their order, must match.</note>
   </sect1>    
 
   <sect1 id='ana_training%fusion_multitexture'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_multitexture_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_multitexture_little.png" format="PNG"  /></imageobject></inlinemediaobject> Multitexture : Inflated cortical surface mesh with an activation map and a curvature texture</title>
@@ -985,7 +994,7 @@
             
           </itemizedlist>
           
-          <para>NOTE: in the snapshot above, we used the 4D objects.</para>
+          <note>In the snapshot above, we used the 4D objects.</note>
 
   </sect1>
   
@@ -1060,7 +1069,7 @@
         </itemizedlist>
       </listitem>
       <listitem>
-        <link linkend="ana_training%apply_builtin_ref">Apply builtin referentials</link> for the 2 volumes.
+        <link linkend="ana_training%load_referential_info">Load referential information from file header</link> for the 2 volumes.
       </listitem>
       <listitem>
         <link linkend="ana_training%load_existent_referential">Set the referential of the T1 MRI to the head mesh</link>.
@@ -1110,8 +1119,8 @@
     
     <para>The volume rendering feature enables to see the content of a volume in 3D by transparency. It is a way to have a look at the data without segmentation steps, but it can be difficult to choose the correct color palette and opacity.
     </para>
-    <para><emphasis role="bold">Note:</emphasis> This feature uses a lot of graphical card power and a correct driver. So, it may not work or it may be slow on some computers.
-    </para>
+    <warning>This feature uses a lot of graphical card power and a correct driver. So, it may not work or it may be slow on some computers.
+    </warning>
     
     <itemizedlist>
       <listitem>Load a T1 MRI: <filename>&data_ana;subject01/subject01.nii</filename>.
@@ -1444,19 +1453,19 @@ axial.addObjects(lwhite)
   <para>See <ulink url="#ana_training%load_existent_referential">the corresponding actions in the graphical interface</ulink>.</para>
 
 </sect2>
-<sect2 id="ana_training%apply_builtin_ref_code"><title>Apply builtin referential (SPM/NIFTI)</title>
+<sect2 id="ana_training%load_referential_info_code"><title>Load referential information from file header</title>
   <para>
     <screen>map=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "Audio-Video_T_map.nii" ) )
 map.setPalette("tvalues100-200-100")
-t1mri.applyBuiltinReferential()
-map.applyBuiltinReferential()
+t1mri.loadReferentialFromHeader()
+map.loadReferentialFromHeader()
 fusion_map=a.fusionObjects([map, t1mri], "Fusion2DMethod")
 axial=a.createWindow("Axial")
 axial.addObjects(fusion_map)
 a.execute("Fusion2DParams", object=fusion_map, mode="linear_on_defined", rate=0.5)
 </screen>
   </para>
-  <para>See <ulink url="#ana_training%apply_builtin_ref">the corresponding actions in the graphical interface</ulink>.</para>
+  <para>See <ulink url="#ana_training%load_referential_info">the corresponding actions in the graphical interface</ulink>.</para>
 
 </sect2>
 

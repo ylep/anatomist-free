@@ -206,7 +206,7 @@
             <listitem>
               <para>
                 <emphasis>Use referential / transformations information found in objects headers (SPM, NIFTI...) </emphasis>: if a loaded image has <emphasis>spm_origin, transformations, or referentials</emphasis> attributes in its header, it is possible to automatically load the corresponding referentials and transformations in Anatomist.
-                See <xref linkend="ana_man%apply_builtin_referential"/> to know more about this feature.</para>
+                See <xref linkend="ana_man%load_referential_info"/> to know more about this feature.</para>
             </listitem>
           </itemizedlist>
         </sect2>
@@ -229,7 +229,7 @@
         <para>You can start Anatomist with a customized configuration even if you share the same user with other people. To use a particular profile, start Anatomist with a profile name (even if it doesn't exists yet). For example : </para>
         <screen>anatomist -u toto</screen>
         <para>and then save preferences to keep them for a further session.</para>
-        <para>Every profile has its own configuration directory, which is localized according to the system (<emphasis>user</emphasis> is the login used to connect to the computer, it can be for example your name) : </para>
+        <para>Every profile has its own configuration directory, which is localized according to the system (<emphasis>user</emphasis> is the login used to connect to the computer, it can be for example your name): </para>
         <itemizedlist>
           <listitem>
             <para>Under Linux :</para>
@@ -605,7 +605,7 @@
           </itemizedlist>
         </para>
         <para>The loaded files appear in Anatomist main window's left panel.</para>
-        <para>NOTE : it is also possible to drag and drop an object from Anatomist to a console or a file explorer in order to copy the file or the filename. </para>
+        <note>It is also possible to drag and drop an object from Anatomist to a console or a file explorer in order to copy the file or the filename. </note>
       </sect1>
       
       <sect1>
@@ -614,7 +614,7 @@
 	<!-- Vous pouvez consulter en annexe les attributs de quelques
 	objets comme les formats <link linkend="ana_man%a_fGIS">GIS</link>, <link linkend="ana_man%a_fDICOM">DICOM</link>, ou <link linkend="ana_man%a_fANALYZE">les graphes</link>.-->
 	</para>
-        <para>NOTE : Putting an object in a browser doesn't always enable to see its attributes, it depends on the type of the object. Indeed, a browser also enable to see structure of complex objects, like graph nodes.</para>
+        <note>Putting an object in a browser doesn't always enable to see its attributes, it depends on the type of the object. Indeed, a browser also enable to see structure of complex objects, like graph nodes.</note>
       </sect1>
       <sect1>
         <title>Objects visualization</title>
@@ -630,10 +630,15 @@
           <para>Likewise, there are several ways to remove an object from a window :</para>
           <itemizedlist>
             <listitem><para>Select the object and the window and click on <emphasis>Remove</emphasis> button in the left menu bar.</para></listitem>
-            <listitem><para>Select the object and the window and click on <emphasis>Objects => Remove objects from windows</emphasis>menu.</para></listitem>
+            <listitem><para>Select the object and the window and click on <emphasis>Objects => Remove objects from windows</emphasis> menu.</para></listitem>
           </itemizedlist>
-        <para>It is also possible to <emphasis role="bold">copy all objects from a window to another window</emphasis> : drag and drop the source window on the destination window. This will open all visible objects of the source window in the destination window.
+        <sect2><title>Copy Objects from one window to another</title>
+        <para>It is possible to <emphasis role='bold'>copy all objects</emphasis> from a window to another window: drag and drop any point of the source window border in the destination window. This will open all visible objects of the source window in the destination window.
         </para>
+        <para>
+        Press CTRL key during the drag and drop if you want to <emphasis role='bold'>copy only the currently selected objects</emphasis> of the source window.
+        </para>
+        </sect2>
         </sect1>
       <sect1><title>Objects menu</title>
         Some actions on objects are available through a right click menu. These actions depend on the type of object. Some actions are added by Anatomist plugins and may not be available in all configurations (it depends on the plugin dependencies).
@@ -695,10 +700,10 @@
             </itemizedlist>
             </para>
             <para>A number of palettes are available and any user can add his own personal palettes.</para>
-            <para>NOTE : The default palette for a volume is <emphasis>B-W LINEAR</emphasis>, and <emphasis>Min</emphasis> and <emphasis>Max</emphasis> bounds are set so that they contain 99% of histogram values.
+            <note>The default palette for a volume is <emphasis>B-W LINEAR</emphasis>, and <emphasis>Min</emphasis> and <emphasis>Max</emphasis> bounds are set so that they contain 99% of histogram values.
             <!-- Sometimes volumes can appear with a 'white translucent film' effect, du to palette bounds incorrect values. To correct this effect, you can modify <emphasis>Min</emphasis> and <emphasis>Max</emphasis> bounds values. -->
             The default palette for a mesh texture is a <emphasis>Blue-Red</emphasis> gradient.
-            </para>
+            </note>
             <para>RGB and RGBA volumes do not have any palette yet.
             </para>
             <para>Some textures are 2D: each mesh vertex has 2 different texture values, which may be interpreted as a 2D coordinate on a palette image. For this it is possible to use a 2D image as a palette, or to mix two 1D palettes.
@@ -1031,7 +1036,7 @@
       <sect1 id="ana_man%d_ctr" infoid="section/controls definition">
         <title>What is a control ?</title>
         <para>A control defines the way mouse and keyboard act on a window or an object. It can also be associated to a toolbox (regions of interest drawing for example). According to the type of objects contained in the window, some action modes can be disabled. For example, the selection mode has no effect on a volume because there are no areas to select on a volume. But you can select areas in a ROI graph (graph nodes).</para>
-        <para>Note : some controls are available only on <emphasis>selected</emphasis> objects. You can select objects in a window via the right click menu <emphasis>view / select objects</emphasis>.</para>
+        <note>Some controls are available only on <emphasis>selected</emphasis> objects. You can select objects in a window via the right click menu <emphasis>view / select objects</emphasis>.</note>
         
       </sect1>
       <sect1 id="ana_man%d_ctr_def" infoid="default control description">
@@ -1288,10 +1293,10 @@
           </mediaobject>
         </figure>
 	
-	<para>NOTE : Since the last version of Anatomist, it is possible to create multi-fusion, that is to say fusionning more than 2 objects. For volumes, here is the method : with for example 3 volumes (V1, V2 and V3), Anatomist 	actually fusion the last volume and the volume above in the list (V2 and V3 gives V23). Then, from this fusion object, it creates a new fusion with the volume above (V23 and V1 gives V23_1). To set parameters for each fusion, you have to select the fusion's second volume. For example, to set parameters for fusion V23_1, you must select V2.</para>
+	<note>It is possible to create multi-fusion, that is to say fusionning more than 2 objects. For volumes, here is the method : with for example 3 volumes (V1, V2 and V3), Anatomist 	actually fusion the last volume and the volume above in the list (V2 and V3 gives V23). Then, from this fusion object, it creates a new fusion with the volume above (V23 and V1 gives V23_1). To set parameters for each fusion, you have to select the fusion's second volume. For example, to set parameters for fusion V23_1, you must select V2.</note>
 	
-        <para>NOTE : In this example, we didn't have to matter about objects referential management because the brain mask (brain_lesson1.ima) have been generated from the anatomy, so objects are in the same referential. But if we had done a fusion between an anatomical volume and an activation map (which is in another referential since this map comes from a functional volume), we would have to handle referentials to put the objects in a coherent coordinates system. 
-	</para>
+        <note>In this example, we didn't have to matter about objects referential management because the brain mask (brain_lesson1.ima) have been generated from the anatomy, so objects are in the same referential. But if we had done a fusion between an anatomical volume and an activation map (which is in another referential since this map comes from a functional volume), we would have to handle referentials to put the objects in a coherent coordinates system. 
+	</note>
 	</sect2>
         
 	<sect2>
@@ -1402,10 +1407,10 @@
         </itemizedlist>
       </sect2>
         
-            <para>NOTE: be aware that all this is only a visualization toy and is not very robust: no real interpolation of the volume values is performed to get a continuous intersection 
+            <note>Be aware that all this is only a visualization toy and is not very robust: no real interpolation of the volume values is performed to get a continuous intersection 
               along the mesh: especially the methods taking points along normals can produce inaccurate results on high curvature regions (produce discontinuities, map the same voxel 
               value on several vertices etc). The sphere mode is more robust but involves an averaging (blurring) effet, and can take values outside the brain or grey matter ...
-            </para>
+            </note>
             
         </sect2>
     </sect1> 
@@ -1451,8 +1456,8 @@
         </itemizedlist>
 
 		
-	<para>NOTE : if <emphasis>spm_radio_convention</emphasis> attribute value is 1, data in ANALYZE format is in radiological convention on disk. Else, if <emphasis>spm_radio_convention</emphasis> value is 0, data is in neurological convention.</para>
-	<para>NOTE : <link linkend="ana_man%a_aimsrc"><emphasis role="bold">.aimsrc file configuration</emphasis></link></para>
+	<note><para>If <emphasis>spm_radio_convention</emphasis> attribute value is 1, data in ANALYZE format is in radiological convention on disk. Else, if <emphasis>spm_radio_convention</emphasis> value is 0, data is in neurological convention.</para>
+	<para>See <link linkend="ana_man%a_aimsrc"><emphasis role="bold">.aimsrc file configuration</emphasis></link></para></note>
 	
 	</sect3>
 
@@ -1487,7 +1492,7 @@
 	'spm_output_spm2_normalization' : 1,
 	}
         </screen></para>
-	<para>NOTE : we won't deal with the case where input data is in radio convention and output data (normalized data) in neuro convention.</para>
+	<note>We won't deal with the case where input data is in radio convention and output data (normalized data) in neuro convention.</note>
 
 	</sect3>
 
@@ -1539,7 +1544,7 @@
                 <emphasis role="bold">Talairach-MNI template-SPM referential</emphasis> : Transformation applicated if the volume is normalized. </para>
             </listitem>
           </itemizedlist>
-          <para>NOTE : Anatomist always loads a transformation from Talairach-AC/PC-Anatomist referential to Talairach-MNI template-SPM referential.</para>
+          <note>Anatomist always loads a transformation from Talairach-AC/PC-Anatomist referential to Talairach-MNI template-SPM referential.</note>
         </sect3>
       </sect2>
       <sect2><title>Linked cursor position</title>
@@ -1735,12 +1740,12 @@
                 
 		</sect2>
 
-                <sect2 id="ana_man%apply_builtin_referential" infoid="Apply builtin referential SPM/NIFTI">
+                <sect2 id="ana_man%load_referential_info" infoid="Load referential information from file header">
                   <title>Using transformation information contained in SPM/NIFTI headers</title>
                   <para>SPM and NIFTI formats can put informations about referentials and transformations in the header file.This information can be found in attributes <emphasis>spm_origin, referentials, transformations</emphasis>.
                     It deals with referentials used in SPM. It can be useful to load these referentials and transformations when you have several images which are aligned in one of these referentials.</para> 
-                  <para>The Anatomist feature <emphasis>Apply builtin referential</emphasis> (in object menu -> referential) loads the referentials and transformations mentionned in the header. If there is no trnaformation information, the feature does nothing. You can see the new referentials and transformations in the referentials window (in settings menu). The referential assigned to the object also changes. But by default, the display doesn't changes. Indeed, default window's referential is <emphasis>Talairach AC/PC Anatomist</emphasis> and there's generally no link between this referential and referential of the object. If there is a tranformation between object's referential and another referential and you change the window's referential to this destination referential, the display will change. </para>
-                  <para>If you set the user level to <emphasis>Expert</emphasis>, you can see another transformation when using <emphasis>Apply builtin referential</emphasis> : the transformation between the referential of the data on disk and the referential of the loaded object. This information is in <emphasis>storage_to_memory</emphasis> attribute. </para>
+                  <para>The Anatomist feature <emphasis>Load information from file header</emphasis> (in object menu -> referential) loads the referentials and transformations mentionned in the header. If there is no transformation information, the feature does nothing. You can see the new referentials and transformations in the referentials window (in settings menu). The referential assigned to the object also changes. But by default, the display doesn't changes. Indeed, default window's referential is <emphasis>Talairach AC/PC Anatomist</emphasis> and there's generally no link between this referential and the referential of the object. If there is a transformation between object's referential and another referential and you change the window's referential to this destination referential, the display will change. </para>
+                  <para>If you set the user level to <emphasis>Expert</emphasis>, you can see another transformation when using <emphasis>Load information from file header</emphasis>: the transformation between the referential of the data on disk and the referential of the loaded object. This information is in <emphasis>storage_to_memory</emphasis> attribute. </para>
         </sect2>
 
     </sect1>
@@ -2730,21 +2735,18 @@ jusqu'a ce que la taille de la region depasse la taille max donnee, ou que le ni
         <title>Browsing a graph through its nodes.</title>
         <para>Follow these steps :<itemizedlist>
             <listitem>
-              <para>Put the graph in a 3D window. The nodes are not visible yet. Indeed, for big graph, it is more convenient to see only chosen nodes rather than all nodes.</para>
+              <para>Put the graph in a 3D window.</para>
             </listitem>
             <listitem>
               <para>Right click on the window and select the menu <emphasis>View / select objects</emphasis>. A browser window opens. </para>
             </listitem>
             <listitem>
-              <para>Then, you can select the nodes you want to see by clicking on it in the browser window.</para>
-            </listitem>
-            <listitem>
-              <para>When a node is selected in the browser window, it becomes visible as an object in the 3D window.</para>
+              <para>Then, you can select a node in the browser window, it will be highlighted in the 3D window. </para>
             </listitem>
           </itemizedlist>
         </para>
         <para>
-          If you want to see <emphasis role="bold">all the nodes of a graph</emphasis>, you can use the object menu <emphasis>Display -> Display nodes</emphasis> available by right clicking on the graph. Selects a window and use this feature, the graph will be loaded in the window and its nodes become visible. If there is no opened window, Anatomist will open a new 3D window and load the graph in it. If there are several windows and none is selected, Anatomist will load the graph in each window. 
+        If you don't want to see all the nodes of the graph because it is a big graph and you want to see only chosen nodes, you can use the object menu <emphasis>Display -> Add without nodes</emphasis> available by right clicking on the graph. Selects a window and use this feature, the graph will be loaded in the window but its node won't be visible. If there is no opened window, Anatomist will open a new 3D window and load the graph in it. If there are several windows and none is selected, Anatomist will load the graph in each window. Then, you can use the menu <emphasis>View / select objects</emphasis> to select the nodes you want to see.
         </para>
       </sect1>
       <sect1>
@@ -2949,7 +2951,7 @@ There are several ways :
 
 <qandaentry>
 <question><para><emphasis role='bold'>Why do I see a gap when I merge 2 normalized volumes ? </emphasis></para> </question>
-<answer><para><emphasis>Indeed, Anatomist and SPM doesn't manage referentials in the same way. Particularly, it is not the same voxel that is considered as the origin of the volume. But information about referentials, transformations is generally written in the file header and Anatomist can read this information and load the corresponding referentials and transformations. To do that, use the option <link linkend="ana_man%apply_builtin_referential">Apply SPM/NIFTI Referential</link>.
+<answer><para><emphasis>Indeed, Anatomist and SPM doesn't manage referentials in the same way. Particularly, it is not the same voxel that is considered as the origin of the volume. But information about referentials, transformations is generally written in the file header and Anatomist can read this information and load the corresponding referentials and transformations. To do that, use the menu <link linkend="ana_man%load_referential_info">Referential -> Load information from file header</link>.
 </emphasis></para> </answer>
 </qandaentry>
 
