@@ -1067,7 +1067,12 @@
             <imageobject role="html"><imagedata fileref="&DIR_IMG;fb_mselect.png" format="PNG"/></imageobject>
           </mediaobject>
         </figure>		  
-        
+        <para>The selection control allows to "select" objects in Anatomist windows by clicking on them in 3D views. Selected objects become highlighted, and can then be used for specific operations.
+        </para>
+        <para>The default highlighting of selected object changes their color in 3D visualizations, using a red color (by default). Alternative selection highlighting can be chosen, either in the "graph parameters" windows (accessed via the menus of the main window), or in a specific tools panel in the controls parameters box (accessed via the F1 key in 3D views), in the "selection" tab. Highlighting can then be displayed by outlining selected objects, an/or by drawing a parallelepipedic box around seleced objects.
+        </para>
+        <para>When selecting graph nodes, specific options can decide whether to also show graph relations attached to selected nodes. These are controlled in the selection tab of the controls tools window. In "Basic" mode, relations are not handled by the selection control. In "Intersection" mode, relations linking selected nodes are displayed. In "Union" mode, relations attached to any of the selected nodes are displayed. This graph relations display mode can be useful for complex graphs carrying multimodal structural relational data, such as fibers connecting cortical regions.
+        </para>
       </sect1>
       <sect1>
         <title>Oblique view control</title>
@@ -2727,7 +2732,7 @@ jusqu'a ce que la taille de la region depasse la taille max donnee, ou que le ni
       <title>Handling a graph</title>
       <para>As we saw before, graphs enable to represent structured data with nodes and associated attributes. Graphs also have global attributes defining characteristics shared by all nodes, as for example voxels size. Nodes also can be linked by relations. This is used in sulci graphs to represent several units extracted from a sulcus. You can see these relations by selecting the neighbours of a node.</para>
 	
-	<para>The main attributes in graph nodes (for sulci and ROI graphs) are <emphasis>name</emphasis> and <emphasis>label</emphasis>. These 2 attributes have the same role : naming a node. Then, it is possible to make a link with a nomenclature file in order to associate a color to each value of attributes <emphasis>name</emphasis> or <emphasis>label</emphasis>.</para>
+      <para>Graph nodes contain structures labels (for sulci and ROI graphs), which may be stored in two possible attributes, <emphasis>name</emphasis> and <emphasis>label</emphasis>. These two attributes have the same role : naming a node. Then, it is possible to make a link with a nomenclature file in order to associate a color to each value of attributes <emphasis>name</emphasis> or <emphasis>label</emphasis>.</para>
 	<para>
         <emphasis>So, what's the use having 2 different attributes with the same role ?</emphasis> In some case, we need a double identification. For example, in a automatic sulci recognition, nodes are renamed by <emphasis>computer experts</emphasis>. When consulting the results, you might want to rename a sulcus and keep the original identification, which is highly recommended.</para>
 
@@ -2742,6 +2747,10 @@ jusqu'a ce que la taille de la region depasse la taille max donnee, ou que le ni
             </listitem>
             <listitem>
               <para>Then, you can select a node in the browser window, it will be highlighted in the 3D window. </para>
+            </listitem>
+            <listitem>
+              <para>Conversely, when the selection control is active in a 3D window, clicking on a node in the 3D view will select it, both in 3D views and in browser windows. See next section for details.
+              </para>
             </listitem>
           </itemizedlist>
         </para>
