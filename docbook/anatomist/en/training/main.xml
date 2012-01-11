@@ -756,7 +756,6 @@
       <listitem><para>Select it and click on &sulci;.</para></listitem>
       <listitem><para>Click on the <emphasis>Ok</emphasis> button on the new popup window. The options in this window are useful only to build a 2D coordinates system on the cortical surface.</para></listitem>
       <listitem><para>A new 3D window containing the mesh opens.</para></listitem>
-      <listitem><para>Select the mesh using the selection control &fb_select; and clicking on the mesh in the 3D window or using the right-click menu <emphasis>View/select objects</emphasis>.</para></listitem>
       <listitem><para>A new control &palette; should be available in the 3D window. Select it.</para></listitem>
       <listitem><para>Several new icons and parameters are now available in the 3D window to allow drawing on the surface.</para></listitem>
       <listitem><para>To draw, click on the &stylo; icon and maintain left mouse button while moving the mouse on the mesh.</para></listitem>
@@ -766,8 +765,7 @@
       <listitem><para>When the drawing is finished, save it in a texture file using the &surfpaint_save; icon. Select the location, type a file name. It is possible to save in tex (<emphasis>*.tex</emphasis>) or gifti (<emphasis>*.gii</emphasis>) formats.</para></listitem>
     </itemizedlist>
     <figure><title>Surface paint window</title>
-      <mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;surfpaint.png" format="PNG" 
-                                                      width="600"/></imageobject>
+      <mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;surfpaint.png" format="PNG" width="600"/></imageobject>
         <imageobject role="html"><imagedata  fileref="&DIR_IMG;surfpaint.png" format="PNG"/></imageobject></mediaobject>
     </figure>
 
@@ -788,12 +786,13 @@
       <listitem><para> Do a <link linkend="ana_training%fusion_mesh_tex">FusionTexSurfMethod fusion</link> between the mesh and the texture.</para></listitem>
       <listitem><para> Select the fusion object in Anatomist main window and click on the &sulci; icon.</para></listitem>
       <listitem><para>A new 3D window containing the mesh opens.</para></listitem>
-      <listitem><para>Select the mesh using the selection control &fb_select; and clicking on the mesh in the 3D window or using the right-click menu <emphasis>View/select objects</emphasis>.</para></listitem>
       <listitem><para>The new control &palette; should be available in the 3D window. Select it.</para></listitem>
       <listitem><para>You can now go on with the drawing on the surface of the mesh.</para></listitem>
     </itemizedlist>
     <note><para>When visualizing such a texture on a mesh, it is better to check the option <emphasis>RGB space interpolation (label textures)</emphasis> in the texturing params of the texture object (<emphasis>Contextual menu -> Color -> Texturing</emphasis>). This way, the interpolation is done on the RGB colors of the palette, not on the value of the texture.</para></note>
   </sect2>
+  <para>More functionalities are available in the SurfPaint module but will not be discussed here in the tutorial. Please refer to <ulink url='#ana_man%book'>the complete manual</ulink> to get more information.
+  </para>
   </sect1>
   
   
