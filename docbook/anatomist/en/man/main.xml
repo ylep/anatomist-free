@@ -2687,7 +2687,6 @@ jusqu'a ce que la taille de la region depasse la taille max donnee, ou que le ni
           <listitem><para>Select it and click on &sulci; in Anatomist main window.</para></listitem>
           <listitem><para>Click on the <emphasis>Ok</emphasis> button on the new popup window. The options in this window are useful only to build a 2D coordinates system on the cortical surface.</para></listitem>
           <listitem><para>A new 3D window containing the mesh opens.</para></listitem>
-          <listitem><para>Select the mesh using the selection control &fb_select; and clicking on the mesh in the 3D window or using the right-click menu <emphasis>View/select objects</emphasis>.</para></listitem>
           <listitem><para>A new control &palette; should be available in the 3D window. Select it.</para></listitem>
           <listitem><para>Several new icons and parameters are now available in the 3D window to allow drawing on the surface.</para></listitem>
         </itemizedlist>
@@ -2697,34 +2696,50 @@ jusqu'a ce que la taille de la region depasse la taille max donnee, ou que le ni
         <table><title>Surface paint module actions</title><tgroup align="justify" cols="2"> <thead>
               <row><entry>Action</entry><entry>Description</entry></row></thead> <tbody> 
               <row><entry>&stylo;</entry>
-                <entry><para>Manual drawing on the mesh (unconstrained).</para></entry></row> 
-              
+                <entry><para>Manual drawing on the mesh (unconstrained).</para></entry></row>
+
+              <row><entry>&colorpicker;</entry>
+                <entry><para>Texture value picking tool. Click on the mesh to select the texture value at the selected position. This value will be used in the following drawing operations. </para></entry></row>
+
               <row><entry>&erase;</entry>
-                <entry><para>Erase a drawing.</para></entry></row> 
-              
-              <row><entry>Texture value</entry>
-                <entry><para>Change the current texture value used to draw on the mesh.</para></entry></row> 
+                <entry><para>Erase a drawing. Restores the initial texture values at erased positions.</para></entry></row>
 
               <row><entry>&magic;</entry>
-                <entry><para>Fill a closed region. The points included in the region are computed and shown to the user who must validate the drawing.</para></entry></row> 
+                <entry><para>Fill a closed region. The points included in the region are computed and shown to the user who must validate the drawing. A tolerance may be set to adjust the selected region boundaries on continuous floating point textures.</para></entry></row>
+
+              <row><entry>&shortest;</entry>
+                <entry><para>Draw the shortest path between 2 points. The tool suggests a path that must be validated with &valide;.</para></entry></row>
+
+              <row><entry>&sulci;</entry>
+                <entry><para>Draw with anatomical constraints. The drawing path is computed trying to follow the depth of the sulci.</para></entry></row>
+
+              <row><entry>&gyri;</entry>
+                <entry><para>Draw with anatomical constraints. The drawing path is computed trying to follow the top of the gyri.</para></entry></row>
+
+              <row><entry>&magicbrush;</entry>
+                <entry><para>Magic brush. Draws on the mesh, in the same way as the draw tool, but draws continuous lines by adding junction segments as needed.</para></entry></row>
 
               <row><entry>&valide;</entry>
                 <entry><para>Validate a drawing suggested by an automatic tool like the magic wand or the constrained paths.</para></entry></row> 
 
               <row><entry>&clear;</entry>
-                <entry><para>Undo a drawing suggested by an automatic tool like the magic wand or the constrained paths.</para></entry></row> 
+                <entry><para>Cancel a drawing suggested by an automatic tool like the magic wand or the constrained paths.</para></entry></row>
 
-              <row><entry>&shortest;</entry>
-                <entry><para>Draw the shortest path between 2 points. The tool suggests a path that must be validated with &valide;.</para></entry></row> 
-
-              <row><entry>&sulci;</entry>
-                <entry><para>Draw with anatomical constraints. The drawing path is computed trying to follow the depth of the sulci.</para></entry></row> 
-              
-              <row><entry>&gyri;</entry>
-                <entry><para>Draw with anatomical constraints. The drawing path is computed trying to follow the top of the gyri.</para></entry></row> 
+              <row><entry>&distmap;</entry>
+                <entry><para>Distance maps tool. Click on the mesh: it will fills the texture with the geodesic distance to the click point. position</para></entry></row>
 
               <row><entry>&surfpaint_save;</entry>
-                <entry><para>Save the drawing in a texture file.</para></entry></row> 
+                <entry><para>Save the drawing in a texture file.</para></entry></row>
+
+              <row><entry>Texture value</entry>
+                <entry><para>Change the current texture value used to draw on the mesh.</para></entry></row>
+
+              <row><entry>Tolerance</entry>
+                <entry><para>Determines the tolerance on velues selected by the magic wand tool.</para></entry></row>
+
+              <row><entry>Tension</entry>
+                <entry><para>Changes the smoothness of curves drawn by the geodesic path tools (with constraints).</para></entry></row>
+
             </tbody></tgroup></table>
             </para>
     </chapter>
