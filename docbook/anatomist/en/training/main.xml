@@ -1219,6 +1219,51 @@
   </sect1>
 </chapter>
 
+<chapter id='ana_training%anaSimpleViewer' infoid='AnaSimpleViewer'>
+<title>AnaSimpleViewer: A simplified version of Anatomist</title>
+
+<para>Since Anatomist 3.2.1, a new simplified viewer application has been developed: <emphasis>anasimpleviewer.py</emphasis>. It offers a simple and easy interface in a single window using a fixed 4-views layout, which is more classical and more convenient for inexperienced users. It is a restricted and constrained use of Anatomist capabilities. It has been developed quickly, at first to show that developing simple custom applications using Anatomist libraries is not so difficult and may be done quite fast in Python language. But the resulting application can be quite useful and easier to use for people who use mainly basic features of Anatomist.</para>
+
+<para>This application is inlcuded in BrainVISA package and can be run using the script <emphasis>anasimpleviewer.py</emphasis> which is located in the <emphasis>bin</emphasis> directory of the BrainVISA package.</para>
+
+<para>To visualize an image in the 4 classical views with this tool, just click on the menu <emphasis>File -&gt; Open</emphasis> and select the file in the file browser.</para>
+
+<section><title>Grahical user interface</title>
+
+    <figure><title>Anatomist Simple Viewer user interface</title>
+      <mediaobject>
+        <imageobject role="fop"><imagedata fileref="&DIR_IMG;anasimpleviewer.png" format="PNG"  width="600"/></imageobject>
+        <imageobject role="html"><imagedata fileref="&DIR_IMG;anasimpleviewer.png" format="PNG"/></imageobject>
+      </mediaobject>
+    </figure>
+    
+    <para><emphasis role="bold">1</emphasis>: This panel contains the list of loaded images. It is possible to hide or visualize an image by selecting it in the panel and using the toolbar buttons &window-remove; and &window-add;.</para>
+    
+    <para><emphasis role="bold">2</emphasis>: This panel displays the coordinates at the current cursor position in millimeters in the MNI referential. It is also possible to change manually the coordinates indicated in the x, y, z and t fields to change the cursor position.</para>
+    
+    <para><emphasis role="bold">3</emphasis>: This panel displays the voxel value at the current position of the cursor in the visible objects.</para>
+    
+    <para><emphasis role="bold">4</emphasis>: 4 windows representing the images according 4 views: coronal, sagittal, axial and 3D. A few actions are possible on these viewers:</para>
+    <itemizedlist>
+    <listitem><emphasis role="bold">Zoom</emphasis>: using the mouse wheel.</listitem>
+    <listitem><emphasis role="bold">Move the camera</emphasis>: only possible in the 3D view by moving the mouse while the middle button is clicked.</listitem>
+    <listitem><emphasis role="bold">Change the contrast</emphasis>: it is possible to change the minimum and maximum values of the color palette by moving the mouse while clicking on the right button of the mouse. Moving horizontally from left to right increases the minimum border of the palette. Moving from vertically from bottom to top decreases the maxiumum border of the color palette and so increases the contrast.</listitem>
+    </itemizedlist>
+    
+    <para>It is possible to open several images, they will be automatically added to the views using superimposing of fusion when needed. AnaSimpleViewer also tries to set a suited palette to volumes according to their types. See an example below with an MRI, a brain mask and an hemisphere mesh:</para>
+    
+    <figure><title>Visualizing several images with AnaSimpleViewer</title>
+      <mediaobject>
+        <imageobject role="fop"><imagedata fileref="&DIR_IMG;anasimpleviewer_multiobjects.png" format="PNG"  width="600"/></imageobject>
+        <imageobject role="html"><imagedata fileref="&DIR_IMG;anasimpleviewer_multiobjects.png" format="PNG"/></imageobject>
+      </mediaobject>
+    </figure>
+    
+    <para>This simplified version of Anatomist has been developped using PyAnatomist, the Python API for Anatomist. To know more about how to program your own application with this API, see the <link linkend='ana_training%pyanatomist'>next chapter</link>.</para>
+</section>
+
+</chapter>
+
 <chapter id='ana_training%pyanatomist' infoid='Programming with Anatomist in Python language'>
   <title>Programming with Anatomist in Python language</title>
   <para>Anatomist is written in C++ language but has also a python API: <emphasis role="bold">PyAnatomist</emphasis>. This python API enables to drive Anatomist application through python scripts : using Anatomist, loading volumes, meshes, graphs, viewing them in windows, merging objects, changing color palettes, etc... It can be useful in order to automate a repetitive visualization task or to add features to Anatomist application by developping a python plugin, which is much more easier than developping directly in Anatomist C++ library. Actually, several features in Anatomist have been added via a python plugin like the gradient palette for example. The python API is also used by several viewers in BrainVISA.
