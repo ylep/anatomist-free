@@ -207,9 +207,27 @@
               <para>
                 <emphasis>Use referential / transformations information found in objects headers (SPM, NIFTI...) </emphasis>: if a loaded image has <emphasis>spm_origin, transformations, or referentials</emphasis> attributes in its header, it is possible to automatically load the corresponding referentials and transformations in Anatomist.
                 See <xref linkend="ana_man%load_referential_info"/> to know more about this feature.</para>
-            </listitem>
+            </listitem> 
+            <listitem>
+              <para>
+                <emphasis>Assume all "scanner-based" referentials are the same</emphasis>: by default they are considered all different.</para>
+            </listitem>            
           </itemizedlist>
         </sect2>
+        
+        <sect2>
+          <title><emphasis>OpenGL</emphasis> menu
+          </title>
+          <figure><title><emphasis>OpenGL</emphasis> tab</title>
+               <mediaobject>
+                 <imageobject role="fop"><imagedata fileref="&DIR_IMG;settings5_opengl.png" format="PNG"  width="430"/></imageobject>
+                 <imageobject role="html"><imagedata fileref="&DIR_IMG;settings5_opengl.png" format="PNG"/></imageobject>
+    </mediaobject>
+              </figure>     
+    
+              <para>Used in advanced level user to set the number of texture in case of graphic card problems.</para>
+        </sect2>
+        
       </sect1>
       <sect1>
         <title>Preferences validation</title>
@@ -578,6 +596,11 @@
 		<entry><para>Object created by merging objects with CutMesh method (for example : merging a volume and a mesh).</para></entry>
               </row>
               <row>
+                <entry>&list_volrender;</entry>
+                <entry><para>Volume Rendering Fusion</para></entry>
+                <entry>See <xref linkend="ana_man%object_menu"/>.</entry>
+              </row> 
+              <row>
                 <entry>&list_planarfusion;</entry>
                 <entry><para>PlanarFusion3D object</para></entry>
 		<entry><para>Object (textured plan) obtained by merging a mesh slice plan (Planar mesh) and a volume. For example, in a FusionCutMeshMethod fusion between a volume and a mesh, PlanarFusion3D object will be the textured plan of the volume according to the slice plan of the mesh.</para></entry>
@@ -640,7 +663,7 @@
         </para>
         </sect2>
         </sect1>
-      <sect1><title>Objects menu</title>
+      <sect1 id='ana_man%object_menu' moreinfo='menu des objets'><title>Objects menu</title>
         Some actions on objects are available through a right click menu. These actions depend on the type of object. Some actions are added by Anatomist plugins and may not be available in all configurations (it depends on the plugin dependencies).
         <itemizedlist>
           <listitem>File: enables to reload, save and rename an object.</listitem>
@@ -3034,7 +3057,7 @@ You can run an Aims command with --version option, for example AimsFileInfo --ve
 
 <qandaentry>
   <question><para><emphasis role='bold'>Is it possible to draw a ROI on a mesh with Anatomist ? </emphasis></para> </question>
-  <answer><para><emphasis>No. </emphasis></para> </answer>
+  <answer><para><emphasis>Yes, it is possible since 4.1 version. Please, see <link linkend="ana_man%surfpaint">Surface paint module</link>. </emphasis></para> </answer>
 </qandaentry>
 
 </qandaset>

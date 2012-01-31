@@ -573,6 +573,7 @@
                 <listitem><para>Load any volume.</para></listitem>
                 <listitem><para>Place it into a window.</para></listitem>
                 <listitem><para>Click on &fb_roi; of this window.</para></listitem>
+                <listitem><para>Select the <emphasis>RoiManagement</emphasis> panel.</para></listitem>
                 <listitem><para><emphasis>Session =&gt; New</emphasis>.</para></listitem>
                 <listitem><para><emphasis>Region =&gt; New</emphasis> and provide a name.</para></listitem>
                 <listitem><para>Change the brush: <emphasis>Paint =&gt; Disk</emphasis>, <emphasis>Bush Radius = 7</emphasis>.</para></listitem>
