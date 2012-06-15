@@ -315,10 +315,16 @@
                 <entry>&window-profile-small;</entry>
                 <entry><para> Profile - Visualization of grey levels range along an axis.</para></entry>
               </row>
+              <row>
+                <entry>&window-histogram-small;</entry>
+                <entry><para> Histogram - Visualization of grey levels histogram.</para></entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
-        <para>You can switch from one type to another by clicking on the icons on window's top bar. </para>
+        <para>Additional windows types may be provided in plugins.
+        </para>
+        <para>2D and 3D windows are actually different modes of the same window type: you can switch from one type to another by clicking on the icons on window's top bar. </para>
 
         <sect2 id="ana_man%a_winoblique" infoid="utilisation de la vue oblique">
           <title>Oblique window</title>
@@ -401,6 +407,7 @@
         </figure>	    
         <para>You can add a new window to the block by dragging the window item from Anatomist's list of windows and dropping it in the block.</para>
         <para>To remove a window from the block, use the window menu <emphasis>Window => Detach view</emphasis>.</para>
+        <para>It is also possible to reorganize the block by changing the views layout, using the options in the block window menu.</para>
       </sect1>
 
       <sect1>
@@ -1074,8 +1081,29 @@
             <imageobject role="fop"><imagedata fileref="&DIR_IMG;fb_mtrackball.png" format="PNG"  width="180"/></imageobject>
             <imageobject role="html"><imagedata fileref="&DIR_IMG;fb_mtrackball.png" format="PNG"/></imageobject>
           </mediaobject>
-        </figure>	
-        
+        </figure>
+
+        <sect2><title>Linked cursor</title>
+        </sect2>
+
+        <sect2><title>Camera: rotation, zoom, translation</title>
+        </sect2>
+
+        <sect2><title>View setup</title>
+          <para>Fullscreen, hiding tools and menu...
+          </para>
+        </sect2>
+
+        <sect2><title>Objects</title>
+          <para>removing objects: DEL key</para>
+        </sect2>
+
+        <sect2><title>Slices and time handling</title>
+        </sect2>
+
+        <sect2><title>Colormaps handling</title>
+        </sect2>
+
       </sect1>
       <sect1>
         <title>Selection control</title>
@@ -1089,13 +1117,32 @@
             <imageobject role="fop"><imagedata fileref="&DIR_IMG;fb_mselect.png" format="PNG"  width="180"/></imageobject>
             <imageobject role="html"><imagedata fileref="&DIR_IMG;fb_mselect.png" format="PNG"/></imageobject>
           </mediaobject>
-        </figure>		  
-        <para>The selection control allows to "select" objects in Anatomist windows by clicking on them in 3D views. Selected objects become highlighted, and can then be used for specific operations.
+        </figure>
+
+        <sect2><title>Selection</title>
+          <para>The selection control allows to "select" objects in Anatomist windows by clicking on them in 3D views. Selected objects become highlighted, and can then be used for specific operations.
+          </para>
+          <para>The default highlighting of selected object changes their color in 3D visualizations, using a red color (by default), and displays a bounding box wireframe around selected objects. Alternative selection highlighting can be chosen, either in the "graph parameters" windows (accessed via the menus of the main window), or via extension modules, in a specific tools panel in the controls parameters box (accessed via the F1 key in 3D views), in the "selection" tab. Highlighting can then be displayed by outlining selected objects, an/or by drawing a parallelepipedic box around seleced objects.
+          </para>
+          <para>When selecting graph nodes, specific options can decide whether to also show graph relations attached to selected nodes. These are controlled in the selection tab of the controls tools window. In "Basic" mode, relations are not handled by the selection control. In "Intersection" mode, relations linking selected nodes are displayed. In "Union" mode, relations attached to any of the selected nodes are displayed. This graph relations display mode can be useful for complex graphs carrying multimodal structural relational data, such as fibers connecting cortical regions.
+          </para>
+        </sect2>
+
+        <sect2><title>Labels copy/paste tool</title>
+          <para>The selection control also brings access to a ROI and sulci renaming tool: labels can be picked on a selected "graph" node (using the space key), and pasted onto other selected nodes (from the same graph or another one), using the ctrl+return key combination. The current which has been copied is visible on the top toolbar button.
+          </para>
+        </sect2>
+
+        <sect2><title>Graph labels display as text</title>
+        <para>The A key activates (or desactivates) a "graph annotation" mode, which displays the labels of the regins in a graph as text in 3D.
+        <figure><title>Graph "annotation" mode</title>
+          <mediaobject>
+            <imageobject role="fop"><imagedata fileref="&DIR_IMG;grpahannote.jpg" format="JPG"  width="500"/></imageobject>
+            <imageobject role="html"><imagedata fileref="&DIR_IMG;graphannote.jpg" format="JPG"/></imageobject>
+          </mediaobject>
+        </figure>
         </para>
-        <para>The default highlighting of selected object changes their color in 3D visualizations, using a red color (by default). Alternative selection highlighting can be chosen, either in the "graph parameters" windows (accessed via the menus of the main window), or via extension modules, in a specific tools panel in the controls parameters box (accessed via the F1 key in 3D views), in the "selection" tab. Highlighting can then be displayed by outlining selected objects, an/or by drawing a parallelepipedic box around seleced objects.
-        </para>
-        <para>When selecting graph nodes, specific options can decide whether to also show graph relations attached to selected nodes. These are controlled in the selection tab of the controls tools window. In "Basic" mode, relations are not handled by the selection control. In "Intersection" mode, relations linking selected nodes are displayed. In "Union" mode, relations attached to any of the selected nodes are displayed. This graph relations display mode can be useful for complex graphs carrying multimodal structural relational data, such as fibers connecting cortical regions.
-        </para>
+        </sect2>
       </sect1>
       <sect1>
         <title>Oblique view control</title>
@@ -1224,7 +1271,29 @@
           </mediaobject>
         </figure>	  
       </sect1>
-      
+
+      <sect1 id="ana_man%d_ctr_foldsplit" infoid="Fold split description">
+        <title>Fold split control</title>
+
+        <para>
+          <emphasis>Icon</emphasis> : &control-foldsplit;
+        </para>
+        <figure><title><emphasis>Fold split control</emphasis> keyborad shortcuts</title>
+          <mediaobject>
+            <imageobject role="fop"><imagedata fileref="&DIR_IMG;mcontrol-foldsplit.png" format="PNG"  width="200"/></imageobject>
+            <imageobject role="html"><imagedata fileref="&DIR_IMG;mcontrol-foldsplit.png" format="PNG"/></imageobject>
+          </mediaobject>
+        </figure>
+        <para>This specialized control allows to manually cut a sulci graph node into several parts. It can be done by selecting a single point (by clicking on a sulcus node at the desired position), or by selected several points which will be linked to form a cut line: Ctrl + left click sets points (the order is important), then the S key proposes a split line joining the selected points. When a split line (purple voxels line) is proposed, the user can validate and actually split by hitting (or re-hitting) the S key. Actions can be aborted before the split is actually done, by hitting the ESC key.
+        </para>
+        <para>A more automatic mode allows to automatically subdivize large nodes: clicking on a node with Ctrl + right click will subdivize a single node.
+        </para>
+        <para>Shift + right click on any node of a graph will apply the automatic subdivizion of all large nodes of a graph.
+        </para>
+        <para>Note that after splitting, nodes are not automatically remeshed, graph relations have been altered, and all morphometric measurements on altered nodes are out of date. To be usable for sulci recognition and morphometry, the graph should go through an update process, which is available in BrainVISA.
+        </para>
+      </sect1>
+
     </chapter>
    
     <chapter><title>Combining objects</title>
