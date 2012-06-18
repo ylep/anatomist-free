@@ -251,7 +251,7 @@
       <listitem><para>Place this new object in a window.</para></listitem>
       <listitem><para>By default, all volumes have the same color palette. So we will need <link linkend='ana_training%change_palette'>to change</link> this for one of the two volumes to help differentiate them. For instance, choose the <emphasis>GREEN-ufusion</emphasis> palette for the brain mask. Note that it is also possible to use the contextual menu <emphasis>Color => Set distinct palette</emphasis>, Anatomist will try to set automatically an appropriate palette for the object.</para></listitem>
       <listitem><para>It is possible to change the parameters of the fusion by right-clicking on the fusion object (Fusion2D) and select <emphasis>Fusion => Control 2D fusion</emphasis>.</para></listitem>
-      <listitem><para>Set the <emphasis>mapping mode</emphasis> to <emphasis>Linear</emphasis> or <emphasis>Linear on non-nul</emphasis>.</para></listitem>
+      <listitem><para>Set the <emphasis>mapping mode</emphasis> to <emphasis>Linear</emphasis> or <emphasis>Linear / A if B is white</emphasis>. Many modes have been added in Anatomist 4.3, allowing more flexibility according to the data to mix.</para></listitem>
       <listitem><para>You can change the <emphasis>mixing rate</emphasis> between objects to see more one or the other.</para></listitem>
     </itemizedlist>    
     <figure><title>Fusion volume/volume.</title>
@@ -259,6 +259,10 @@
         <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_volume_volume.png" format="PNG"  width="250"/></imageobject>
         <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volume_volume.png" format="PNG" /></imageobject>
       </mediaobject>
+      <inlinemediaobject>
+        <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_volume_volume_modes.png" format="PNG"  width="250"/></imageobject>
+        <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volume_volume_modes.png" format="PNG" /></imageobject>
+      </inlinemediaobject>
     </figure>
     <para>See <ulink url="#ana_training%make_fusion_code">corresponding python script</ulink>.</para>
   </sect1>

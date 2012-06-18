@@ -75,6 +75,7 @@
       <para>See <ulink url="#ana_training%book"> Anatomist tutorial</ulink> page. </para>
     </chapter>
 
+
     <chapter><title>Configuration</title>
       <sect1>
         <title>Configuration menus</title>
@@ -263,16 +264,31 @@
       </sect1>
     </chapter>
     <!-- fin de configuration -->
+
+
     <chapter><title>Windows</title>
       <para>A window enable to visualize one or several objects. These objects can have the same type (e.g. : 2 meshes for the brain hemispheres) or different types (e.g. : a mesh and a volume). 
       Windows have a name, for example  <emphasis>A(2):anat.vimg</emphasis>. This name means that the window is the second axial window and contains the volume <emphasis>anat.vimg</emphasis>. 
       It is possible to handle windows individually or in groups.</para>
-        <para>There are several ways to open a window :
-	<itemizedlist>
-          <listitem>Menu <emphasis>Windows => &lt;Choose window's type&gt;</emphasis></listitem>
-          <listitem>Click on window type icon</listitem>
+      <para>There are several ways to open a window :
+      <itemizedlist>
+        <listitem>Menu <emphasis>Windows => &lt;Choose window's type&gt;</emphasis></listitem>
+        <listitem>Click on window type icon</listitem>
+      </itemizedlist>
+      </para>
+      <sect2><title>Finding windows</title>
+        <para>When using Anatomist intensively, users often get entangled in several dozens of Anatomist windows. Windows titles and numbering is often not enough to distinguish them in the main control window and on the desktop. To help finding out the correspondance between windows listed in the control window and the actual displayed ones, there are some hints:
+        <itemizedlist>
+          <listitem>Moving the mouse cursor over a window name in the main control window should highlight the corresponding view (in light blue). (this feature appeared in Anatomist 4.3).
+          </listitem>
+          <listitem>In the same way, when dragging objects onto windows in the control window, the target window(s) will also highlight in light blue.
+          </listitem>
+          <listitem>double-clicking on a window in the list will make the corresponding window to get displayed on top, and to un-iconify if it was iconified or hidden.
+          </listitem>
         </itemizedlist>
-       </para>
+        </para>
+      </sect2>
+
       <sect1>
         <title>Windows types</title>
         <para>Windows enable to visualize objects after their loading. Note that visualization is different from loading. Indeed, loading gives raw data that can be visualized in various way. For example, you can change the display convention without modifying the data. See <xref linkend="ana_man%load_and_display_objects"/> for more details.</para>
@@ -1395,29 +1411,37 @@
         <note>In this example, we didn't have to matter about objects referential management because the brain mask (brain_lesson1.ima) have been generated from the anatomy, so objects are in the same referential. But if we had done a fusion between an anatomical volume and an activation map (which is in another referential since this map comes from a functional volume), we would have to handle referentials to put the objects in a coherent coordinates system. 
 	</note>
 	</sect2>
-        
+
 	<sect2>
-          <title>Type of fusions</title>
+          <title>Types of fusions</title>
             <para>The following table show which type of fusion is available according to the type of objects :
-              
+
               <table><title>Fusion descriptions</title><tgroup align="justify" cols="3"> <thead>
                     <row><entry>Objects</entry><entry>Fusion name</entry><entry>Description</entry></row></thead> <tbody> 
-                    <row><entry><para>Only one image</para><mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_slice_method_little.png" format="PNG"  width="20"/></imageobject> <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_slice_method_little.png" format="PNG"/></imageobject></mediaobject> </entry>
+                    <row><entry><para>Only one volume or 2D fusion</para><mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_slice_method_little.png" format="PNG"  width="20"/></imageobject> <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_slice_method_little.png" format="PNG"/></imageobject></mediaobject> </entry>
                       <entry>FusionSliceMethod</entry> <entry><para>Fusion allowing to cut a volume across itself: to view/intersect 2 different slices of the same volume in the same window. 	</para> </entry></row> 
                     
-                    <row><entry><para>2 or many images <mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  width="20"/></imageobject> <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"/></imageobject></mediaobject></para></entry> <entry>Fusion2DMethod</entry> <entry><para>The volumes are merged in one volume. A voxel of the resulting volume is a combination of the same voxel in each original volume. </para></entry></row> 
+                    <row><entry><para>2 or more volumes<mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  width="20"/></imageobject> <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"/></imageobject></mediaobject></para></entry> <entry>Fusion2DMethod</entry> <entry><para>The volumes are merged in one volume. A voxel of the resulting volume is a combination of the same voxel in each original volume. </para></entry></row>
                     
                     <row><entry><para>Volume + Mesh <mediaobject><imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_iwhitemesh_little.png" format="PNG"  width="20"/></imageobject> <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_iwhitemesh_little.png" format="PNG"/></imageobject></mediaobject> </para></entry><entry>Fusion3DMethod</entry> <entry><para>Maps on the mesh a texture corrsponding to the volume values.</para></entry></row>
                     
-                    <row><entry><para>Volume + Mesh</para></entry><entry>FusionCutMeshMethod</entry> <entry><para>Mesh cut by a plane: the cutting plane will have the texture of the volume slice. When you put this object in a 3D window, the "cut mesh" control is available. It enables to control the orientation of the slice (<emphasis>shift</emphasis>) and its position (<emphasis>ctrl</emphasis>) against the mesh. </para></entry> </row>
+                    <row><entry><para>Mesh + (Volume or 2D fusion)</para></entry><entry>FusionCutMeshMethod</entry> <entry><para>Mesh cut by a plane: the cutting plane will have the texture of the volume slice. When you put this object in a 3D window, the "cut mesh" control is available. It enables to control the orientation of the slice (<emphasis>shift</emphasis>) and its position (<emphasis>ctrl</emphasis>) against the mesh. </para></entry> </row>
                     
                     <row><entry><para>2 textures</para></entry><entry>FusionTextureMethod</entry> <entry><para>Creates a 2D texture from two 1D textures.</para></entry></row> 
                     
-                    <row><entry><para>2 textures</para></entry><entry>FusionMulitTextureMethod</entry> <entry><para>Multi-texture: allows to map several textures on a mesh.</para></entry></row> 
+                    <row><entry><para>Several textures</para></entry><entry>FusionMulitTextureMethod</entry> <entry><para>Multi-texture: allows to map several textures on a mesh.</para></entry></row>
                     
                     <row><entry><para>Mesh + Mesh</para></entry><entry>SurfaceMatcher</entry> <entry><para>Matching surfaces. This object gives access to a surface deformation algorithm. It tries to transform one surface into the other.</para></entry></row> 
                     <row><entry><para>Mesh + Texture</para></entry><entry>FusionTexSurfMethod</entry><entry><para>Textured surface.</para></entry></row>
                     
+                    <row><entry><para>Any object(s)</para></entry><entry>FusionClipMethod</entry> <entry><para>Clipping: clips objects with a clipping plane. One side of the plane is cut and not displayed.</para></entry></row>
+
+                    <row><entry><para>Volume or 2D fusion</para></entry><entry>FusionRGBAVolumeMethod</entry> <entry><para>Converts an intensity-based volume (normally using a colormap) into a RGBA volume representation.</para></entry></row>
+
+                    <row><entry><para>Volume or 2D fusion</para></entry><entry>VolumeRenderingFusionMethod</entry> <entry><para>Displays a volumic object in 3D using intensities transparency on the whole volume.</para></entry></row>
+
+                    <row><entry><para>Textured mesh + another mesh</para></entry><entry>Interpoler</entry> <entry><para>Allows to map and interpolate textures from a mesh to another mesh with a different geometry. To obtain reasonable results, it is recommended to use a "SurfaceMatcher" first, it will warp a surface towards the other one</para></entry></row>
+
                   </tbody></tgroup></table>
             </para>
          
