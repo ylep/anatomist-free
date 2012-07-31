@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE book
 	[
 	<!ENTITY % entities SYSTEM "catalog.ent">
@@ -865,7 +865,7 @@
       </listitem>
       <listitem><para>Change the <link linkend='ana_training%change_palette'>color palette</link> of the map.</para></listitem>
       <listitem><para><link linkend='ana_training%load_referential_info'>Load referential information from file header</link> for the map and the T1 MRI.</para></listitem>
-      <listitem><para><link linkend='ana_training%load_existent_referential'>Apply the T1 MRI referential to the white matter mesh.</link>.</para>
+      <listitem><para><link linkend='ana_training%load_existent_referential'>Apply the T1 MRI referential to the white matter mesh</link>.</para>
         <figure><title>After loading referentials</title>
           <mediaobject>
             <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_whitemesh_3.png" format="PNG"  width="200"/></imageobject>
@@ -1039,7 +1039,7 @@
           <listitem><para>Right-click on 3d window and select <emphasis>View / Select object</emphasis>.</para></listitem>
           <listitem><para>Activate the <emphasis>CutMesh</emphasis> object via this browser by selecting with the mouse (the line becomes blue).</para></listitem>
           <listitem><para>Click on &control-cut; of the 3d window.</para></listitem>
-          <listitem><para>Move the cutting plane on the cut mesh as you like. Please refere to the <ulink url='#ana_man%d_ctr_meshcutting'><emphasis>mesh cutting</emphasis></ulink> control section of <emphasis>Manual of Anatomist</emphasis> to know the shortcuts.</para></listitem>
+          <listitem><para>Move the cutting plane on the cut mesh as you like. Please refere to the mesh cutting control section of <emphasis>Manual of Anatomist</emphasis> to know the shortcuts.</para></listitem>
         </itemizedlist>
         <mediaobject>
           <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_cutmesh_planar4.png" format="PNG"  width="150"/></imageobject>
@@ -1298,7 +1298,7 @@
   Several means of driving Anatomist in python scripts exist :
   <itemizedlist>
     <listitem><emphasis role='bold'>Python bindings for the C++ library</emphasis> (SIP bindings). In this mode, all bound features are available. You handle directly the Anatomist objects. But Anatomist is loaded directly in your python program, it is not an independent program in this mode. So the errors that occur in Anatomist are reported in the python script.</listitem>
-    <listitem><emphasis role='bold'>Sending commands via a network socket</emphasis>. Anatomist is run in server mode and listen for commands on the socket connection. In this mode, the available features are limited to what can be expressed with Anatomist commands system, so a limited set of features. A list of these commands can be found <ulink url="#anahelp_fr.prog.commands">here</ulink>. You can't handle directly the Anatomist objects, they are represented by a key. But Anatomist application runs in a separate process so potential errors in Anatomist don't crash the application that uses the API.</listitem>
+    <listitem><emphasis role='bold'>Sending commands via a network socket</emphasis>. Anatomist is run in server mode and listen for commands on the socket connection. In this mode, the available features are limited to what can be expressed with Anatomist commands system, so a limited set of features. A list of these commands can be found <ulink url="#anahelp_en.commands">here</ulink>. You can't handle directly the Anatomist objects, they are represented by a key. But Anatomist application runs in a separate process so potential errors in Anatomist don't crash the application that uses the API.</listitem>
   </itemizedlist>
   Behind a general interface, this api provides 2 implementations, one for each method of communication with Anatomist.
   </para>
@@ -1550,17 +1550,17 @@ Visualiser l'activation de facon "saturee" par rapport au fond des sillons :_
 2) fusion entre la carte d'activation et le maillage de la matiere blanche (qqs chose comme Lwhite.mesh) = FUSION3D
 3) extraire la texture de la FUSION3D comme un nouvel objet
 4) fusion (FusionTextureMethod) entre la nouvelle texture et la texture du fond des sillons (qqs chose comme Lwhite_curv.tex) = TEXTURE
-5) fusion entre TEXTURE et le maillage gonflé (qqs chose comme Lwhite_inflated.mesh) = TEXTURED SURF.
+5) fusion entre TEXTURE et le maillage gonfle (qqs chose comme Lwhite_inflated.mesh) = TEXTURED SURF.
 6) placer le TEXTURED SURF dans une fenetre 3D
 7) modifier la palette de TEXURE en choisissant le fichier mis dans le dossier rgb (s'il n'apparait pas dans la liste des palettes, c'est que vous l'avez mal place ou essayer de relancer anatomist)
-8) voila ce j'obtiens avec mes données cf : fond_sillon+act.jpg
+8) voila ce j'obtiens avec mes donees cf : fond_sillon+act.jpg
 9) vous pouvez jouer sur les bornes de la palette la '1st dimension setting' et egalement avec la '2nd dimension setting'
 10) A vous de jouer !
 
 
- Selection d'1 point depuis des coordonnées :_
-Je vous ai montre comment positionner un point (des coordonnées) par le menu  'scene -> Manually specify linked cursor position'.
-Il faut bien comprendre que ces coordonnées font reference au curseur liée qui fait lui mm reference au referentiel de la fenetre. Petite subtlité au passage, le referentiel de la fenetre n'est pas forcement celui de l'objet qu'il contient. Cad que mon objet (mon image) peut etre dans un referentiel rouge et ma fenetre dans un referentiel jaune.  On peut modifier le referentiel de la fenetre en cliquant sur la barre de couleur situee sur la fenetre.
+ Selection d'1 point depuis des coordonnees :_
+Je vous ai montre comment positionner un point (des coordonnees) par le menu  'scene -> Manually specify linked cursor position'.
+Il faut bien comprendre que ces coordonnees font reference au curseur liée qui fait lui mm reference au referentiel de la fenetre. Petite subtlite au passage, le referentiel de la fenetre n'est pas forcement celui de l'objet qu'il contient. Cad que mon objet (mon image) peut etre dans un referentiel rouge et ma fenetre dans un referentiel jaune.  On peut modifier le referentiel de la fenetre en cliquant sur la barre de couleur situee sur la fenetre.
 Donc si on veut chercher un point par rapport aux coordonnees SPM_Talairach, il faut etre capable de placer notre objet dans ce referentiel.
 Si je prends l'exemple d'une anatomie (T1) traitee par brainvisa, je vous ai explique que nous pouvions recuperer une transfo qui va de la T1_TO_Talairach.trm.
 Puis dans le pakage, il y a la transfo cartopack-stable/share/shfj-3.1/transformation/talairach_TO_spm_template_novoxels.trm.
@@ -1573,7 +1573,7 @@ Ce qu'il faut faire :
 6)  charger la T1 dans une fenetre
 7) modifier le referentiel de la fenetre en cliquant sur la barre de couleur situee sur la fenetre par exemple la couleur du referentiel 3
 8) utiliser le menu  'scene -> Manually specify linked cursor position' pour rechercher par exemple 0 0 0
-9) Vous pouvez utiliser dans les données de demos : data_for_anatomist/referential/ref_TO_talairach
+9) Vous pouvez utiliser dans les donnees de demos : data_for_anatomist/referential/ref_TO_talairach
 
     
 -->
