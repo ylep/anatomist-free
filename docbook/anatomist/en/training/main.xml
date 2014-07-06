@@ -69,7 +69,7 @@
                           <para><filename>&data_ana;subject01/subject01.nii</filename></para></listitem>
                   <listitem><para>This object appears in the left list of the control window.</para></listitem>
           </itemizedlist>
-          <para>See <ulink url="#ana_training%load_object_code">corresponding python script</ulink>.</para>
+          <para>See <ulink url="#sphinxpyanatomist%tutorial_load-an-object">corresponding python script</ulink>.</para>
   </sect1>
 			
   <sect1 id="ana_training%view_object"><title>View an object</title>
@@ -98,7 +98,7 @@
                   </mediaobject>
           </figure>
           
-          <para>See <ulink url="#ana_training%view_object_code">corresponding python script</ulink>.</para>
+          <para>See <ulink url="#sphinxpyanatomist%tutorial_view-an-object">corresponding python script</ulink>.</para>
   </sect1>
 						
   <sect1 id='ana_training%zoom_trans_rotation' infoid='Zoom, translation and rotation of a volume'><title>Zoom, translation and rotation of a volume</title>
@@ -107,7 +107,7 @@
       <listitem><para>Place your cursor on &fb_trackball; to get information about shorcuts for zoom, rotations, etc.</para></listitem>
       <listitem><para>For example, try to do a rotation: click on the middle button and move simultaneously on the mouse.</para></listitem>
     </itemizedlist>
-    <para>See <ulink url="#ana_training%zoom_trans_rotation_code">corresponding python script</ulink>.</para>
+    <para>See <ulink url="#sphinxpyanatomist%tutorial_camera">corresponding python script</ulink>.</para>
   </sect1>   
 
   <sect1 id='ana_training%reader_header' infoid='Read header information (voxel size, dimension image ...)'><title>Read header information (voxel_size, dimension image ...)</title>
@@ -122,7 +122,7 @@
                           <imageobject role="html"><imagedata fileref="&DIR_IMG;read_header.png" format="PNG" /></imageobject>
                   </mediaobject>
           </figure>
-          <para>See <ulink url="#ana_training%reader_header_code">corresponding python script</ulink>.</para>
+          <para>See <ulink url="#sphinxpyanatomist%tutorial_view-header-information">corresponding python script</ulink>.</para>
   </sect1>
 		
   <sect1 id='ana_training%change_palette' infoid='change the color palette of an object'><title>Modification of color palette</title>
@@ -144,7 +144,7 @@
       <listitem><para><emphasis>CTRL</emphasis> key + right button click and move the mouse left and right: you change the <emphasis role='bold'>min</emphasis> boundary of the palette.</para></listitem>
     </itemizedlist>
 
-    <para>See <ulink url="#ana_training%change_palette_code">corresponding python script</ulink>.</para>
+    <para>See <ulink url="#sphinxpyanatomist%tutorial_change-the-color-palette">corresponding python script</ulink>.</para>
     <sect2><title>Gradient Palette</title>
     <para>If you want to create a custom palette, you can use the Gradient palette module.</para>
     <itemizedlist>
@@ -178,7 +178,7 @@
                           <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_exo_handle-2.png" format="PNG"/></imageobject>
                   </mediaobject>
           </figure>
-          <para>See <ulink url="#ana_training%view_meshes_code">corresponding python script</ulink>.</para>
+          <para>See <ulink url="#sphinxpyanatomist%tutorial_view-meshes">corresponding python script</ulink>.</para>
   </sect1>
 						
   <sect1 id='ana_training%superimpose'><title>Superimposing objects</title>
@@ -205,7 +205,7 @@
                           </mediaobject>
                   </listitem>
           </itemizedlist> 
-          <para>See <ulink url="#ana_training%superimpose_code">corresponding python script</ulink>.</para>
+          <para>See <ulink url="#sphinxpyanatomist%tutorial_superimposing">corresponding python script</ulink>.</para>
   </sect1>
 			
   <sect1 id='ana_training%change_opacity_mesh' infoid='change the opacity of mesh'><title>Change the mesh material</title>
@@ -223,7 +223,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_changeopacity.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
-    <para>See <ulink url="#ana_training%change_opacity_mesh_code">corresponding python script</ulink>.</para>
+    <para>See <ulink url="#sphinxpyanatomist%tutorial_change-mesh-material">corresponding python script</ulink>.</para>
   </sect1>  
 			
   <sect1 id='ana_training%make_fusion' inofid='Fusion between 2 volumes'><title>Fusion between 2 volumes</title>  
@@ -264,7 +264,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_volume_volume_modes.png" format="PNG" /></imageobject>
       </inlinemediaobject>
     </figure>
-    <para>See <ulink url="#ana_training%make_fusion_code">corresponding python script</ulink>.</para>
+    <para>See <ulink url="#sphinxpyanatomist%tutorial_fusion-between-two-volumes">corresponding python script</ulink>.</para>
   </sect1>
 </chapter>
                       
@@ -303,7 +303,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_2_subjects_talairach.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
-    <para>See <ulink url="#ana_training%load_transformation_code">corresponding python script</ulink>.</para>
+    <para>See <ulink url="#sphinxpyanatomist%tutorial_load-a-transformation">corresponding python script</ulink>.</para>
   </sect1>
   <sect1 id='ana_training%load_existent_referential' infoid='Load an existent referential to an object'><title>Load an existent referential</title>
     <para>You can set an existing referential to an object when several objects are in the same "real world". For example, a mesh created from a T1 MRI is in the same referential as the MRI.
@@ -328,7 +328,7 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;apply_referential2.png" format="PNG" /></imageobject>
       </mediaobject>
     </figure>
-    <para>See <ulink url="#ana_training%load_existent_referential_code">corresponding python script</ulink>.</para>
+    <para>See <ulink url="#sphinxpyanatomist%tutorial_load-an-existing-referential">corresponding python script</ulink>.</para>
   </sect1>
 
   <sect1 id='ana_training%load_referential_info' infoid='Load referential information from header'><title><inlinemediaobject> <imageobject role="fop"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG" width="30"/></imageobject><imageobject role="html"><imagedata fileref="&DIR_IMG;fusion_map_anat_little.png" format="PNG"  /></imageobject></inlinemediaobject>Load referential information from file header</title>
@@ -600,7 +600,7 @@
                 <imageobject role="fop"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-1.png" format="PNG"  width="250"/></imageobject>
                 <imageobject role="html"><imagedata fileref="&DIR_IMG;ana_training_exo_roi-1.png" format="PNG"/></imageobject>
               </mediaobject>
-              <para>See <ulink url="#ana_training%view_roi_code">corresponding python script</ulink>.</para>
+              <para>See <ulink url="#sphinxpyanatomist%tutorial_display-a-roi-graph">corresponding python script</ulink>.</para>
             </sect1>
             
             <sect1><title>Display a meshed graph of ROI</title>
@@ -1269,278 +1269,6 @@
 
 </chapter>
 
-<chapter id='ana_training%pyanatomist' infoid='Programming with Anatomist in Python language'>
-  <title>Programming with Anatomist in Python language</title>
-  <para>Anatomist is written in C++ language but has also a python API: <emphasis role="bold">PyAnatomist</emphasis>. This python API enables to drive Anatomist application through python scripts : using Anatomist, loading volumes, meshes, graphs, viewing them in windows, merging objects, changing color palettes, etc... It can be useful in order to automate a repetitive visualization task or to add features to Anatomist application by developping a python plugin, which is much more easier than developping directly in Anatomist C++ library. Actually, several features in Anatomist have been added via a python plugin like the gradient palette for example. The python API is also used by several viewers in BrainVISA.
-  </para>
-
- <sect1><title>Description of the API</title>
-   <para>
-  The main entry point is the <emphasis>Anatomist</emphasis> class which must be instantiated before any operation can be performed.
-  It represents Anatomist application. This class contains a number of nested classes: AObject, AWindow... that represent the elements of Anatomist application.
-</para>
-<para>
-  The entry point of this API is the module <emphasis>anatomist.api</emphasis>, you can import it as below :
-  <screen>import anatomist.api as anatomist</screen>
-</para>
-  <para>
-  And then create an instance of Anatomist : 
-  <screen>a=anatomist.Anatomist()</screen>
-</para>
-<para>
-  So you can send commands to Anatomist application, for example creating a window :
-  <screen>window=a.createWindow('3D')</screen>
-</para>
-</sect1>
-
-<sect1><title>Implementation</title>
-  <para>
-  Several means of driving Anatomist in python scripts exist :
-  <itemizedlist>
-    <listitem><emphasis role='bold'>Python bindings for the C++ library</emphasis> (SIP bindings). In this mode, all bound features are available. You handle directly the Anatomist objects. But Anatomist is loaded directly in your python program, it is not an independent program in this mode. So the errors that occur in Anatomist are reported in the python script.</listitem>
-    <listitem><emphasis role='bold'>Sending commands via a network socket</emphasis>. Anatomist is run in server mode and listen for commands on the socket connection. In this mode, the available features are limited to what can be expressed with Anatomist commands system, so a limited set of features. A list of these commands can be found <ulink url="#anahelp_en.commands">here</ulink>. You can't handle directly the Anatomist objects, they are represented by a key. But Anatomist application runs in a separate process so potential errors in Anatomist don't crash the application that uses the API.</listitem>
-  </itemizedlist>
-  Behind a general interface, this api provides 2 implementations, one for each method of communication with Anatomist.
-  </para>
-  <para>
-  The implementation that uses the python bindings is called <emphasis>direct</emphasis> implementation and is in the module <emphasis>anatomist.direct.api</emphasis>. The implementation that uses socket communication is called <emphasis>socket</emphasis> implementation and is in the module <emphasis>anatomist.socket.api</emphasis>. By default, the implementation used when you import <emphasis>anatomist.api</emphasis> is the <emphasis>direct</emphasis> implementation.
-</para>
-<para>
-  Another specific implementation for Brainvisa also exists : <emphasis>brainvisa.anatomist</emphasis> module. It enables to use brainvisa database informations on loaded objects to automatically load associated referentials and transformations. 
-  It uses the same api, so it is possible to switch from one implementation to the other.</para>
-<para>
-  By default, brainvisa module uses the socket implementation. This way, Brainvisa and Anatomist applications live in separated processes. So potential errors in Anatomist does not crash Brainvisa. Moreover, Anatomist and BrainVISA doesn't share the same Qt event loop (graphical interface), so BrainVISA GUI is not blocked during Anatomist windows loading.
-</para>
-<para>See the python documentation of the python Anatomist API : <ulink url="#sphinxpyanatomist%index">sphinx doc</ulink>.</para>
-<para>More information about this API and examples available <ulink url="#cartointernet_pg%pyanatomist">here</ulink>.</para>
-</sect1>
-<sect1><title>Using the API</title>
-  <para>
-    In this part, we will go back to the previous examples of this tutorial and see how to do the same with a python script. The data for the examples in this section are the same : <ulink url="ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip">ftp://ftp.cea.fr/pub/dsv/anatomist/data/demo_data.zip</ulink>.
-  </para>
-  <para>The following examples use the general API functions that are available in both direct and socket implementations.</para>
-  <para>To run the following examples, we will use an interactive python shell <emphasis>IPython</emphasis>. It is much more practical than the classic python shell because it offers useful features like automatic completion. This program is available in the BrainVISA package with all other executable programs in the <emphasis>bin</emphasis> directory of the BrainVISA package directory. <emphasis>IPython</emphasis> should be run with the option <emphasis>-q4thread</emphasis>, which runs a Qt event loop, needed for the graphical interface.
-    <screen>&lt;brainvisa_installation_directory&gt;/bin/ipython -q4thread
-    </screen>
-</para>
-<sect2><title>Run Anatomist</title>
-<para>
-  First of all, we need to import anatomist API module. Here, in a Python shell, the default implementation is the direct one (Python bindings).</para>
-<para>Then we can create an instance of Anatomist class.</para>
-  <screen>import anatomist.api as ana
-
-a=ana.Anatomist()
-</screen>
-</sect2>
-<sect2 id="ana_training%load_object_code"><title>Load an object</title>
-  <para>
-    In this example, we will put the path to the <emphasis>data_for_anatomist</emphasis> directory in a variable named src. We will use this variable in all the next examples. We will also load a python module named <emphasis>os</emphasis> which has useful functions to handle files and paths.
-    <screen>import os
-src="&lt;path to data_for_anatomist directory&gt;"
-# Load an object
-t1mri=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01.nii") )
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%load_object">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%view_object_code"><title>View an object</title>
-  <para>
-    We open an axial window and add the volume loaded in the previous example in this window.
-    <screen># view an object
-axial=a.createWindow("Axial")
-axial.addObjects(t1mri)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%view_object">the corresponding actions in the graphical interface</ulink>.</para>
-  <para>When opening a new window, it is possible to change its initial position and size with the geometry parameter. This parameter is a list of 4 values (in pixels) : [x, y, width, height]. </para>
-  <screen># customizing the position and size of a new window : the windows will be displayed at position (100, 150) with a size of (300, 300)
-w=a.createWindow("Axial", geometry=[100,150, 300, 300 ])
-</screen>
-</sect2>
-<sect2><title>Windows block</title>
-  <para>
-    We create 4 views in the same windows block and add the image in each views.
-    <screen># view an object in a 4 views block
-block=a.createWindowsBlock(2) # 2 columns
-w1=a.createWindow("Axial", block=block)
-w2=a.createWindow("Sagittal", block=block)
-w3=a.createWindow("Coronal", block=block)
-w4=a.createWindow("3D", block=block)
-t1mri.addInWindows( [w1, w2, w3, w4] )
-</screen>
-  </para>
-</sect2>
-<sect2><title>Move the cursor</title>
-  <para>
-    <screen># show the cursor position
-print "\nCursor at : ", a.linkCursorLastClickedPosition()
-# move the linked cursor 
-w1.moveLinkedCursor([150,100,60])
-print "\nCursor at : ", a.linkCursorLastClickedPosition()
-</screen>
-  </para>
-</sect2>
-<sect2 id="ana_training%zoom_trans_rotation_code"><title>Camera</title>
-  <para>
-    This method enables to change the camera parameters of a window. In this example, we change the zoom.
-    <screen>axial.camera(zoom=2) 
-</screen>
-    You can also change the rotation of the view by changing the view_quaternion parameters. The rotation is represented by a quaternion which is a vector with 4 parameters. 
-    As the interpretation of quaternions is not easy at first time, it is useful to look at the current value of the parameter in a window with the method getInfos().
-    <screen>axial.getInfos()
-axial.camera(view_quaternion=[0.9, -0.2, -0.2, 0.3])
-</screen>
-    It is possible to change the orientation of the slice plan with the parameter slice_quaternion.
-    <screen>axial.camera(slice_quaternion=[0.3, 0.3, 0, 0.9])
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%zoom_trans_rotation">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%reader_header_code"><title>View header information</title>
-  <para>
-    <screen># view header
-browser=a.createWindow("Browser")
-browser.addObjects(t1mri)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%reader_header">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%change_palette_code"><title>Change the color palette</title>
-  <para>
-    <screen># color palette
-palette=a.getPalette("Blue-Green-Red-Yellow")
-t1mri.setPalette(palette)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%change_palette">the corresponding actions in the graphical interface</ulink>.</para>
-<sect3><title>Custom palette</title>
-  <para>
-    You can create a new palette by giving the list of RGB parameters of the palette colors.
-    <screen># custom palette
-customPalette=a.createPalette("customPalette")
-colors=[]
-for x in xrange(255):
-  colors.extend([0, 0, x])
-
-customPalette.setColors(colors=colors)
-t1mri.setPalette(customPalette)
-</screen>
-  </para>
-</sect3>
-</sect2>
-<sect2 id="ana_training%view_meshes_code"><title>View meshes</title>
-  <para>
-    <screen># view meshes
-lwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Lwhite.mesh") )
-rwhite=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "subject01_Rwhite.mesh") )
-w3d=a.createWindow("3D")
-w3d.addObjects([lwhite, rwhite])
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%view_meshes">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%superimpose_code"><title>Superimposing</title>
-  <para>
-    <screen># superimposing
-a.addObjects(t1mri, w3d)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%superimpose">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%change_opacity_mesh_code"><title>Change mesh material</title>
-  <para>
-    <screen># mesh material
-head=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "subject01_head.mesh"))
-head.addInWindows(w3d)
-material=a.Material(diffuse=[0.8, 0.6, 0.6, 0.5])
-head.setMaterial(material)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%change_opacity_mesh">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%make_fusion_code"><title>Fusion between 2 volumes</title>
-  <para>
-    <screen>brain_mask=a.loadObject(os.path.join(src, "data_for_anatomist", "subject01", "brain_subject01.nii"))
-brain_mask.setPalette(a.getPalette("GREEN-ufusion"))
-t1mri.setPalette("B-W LINEAR")
-# fusion 2D
-fusion2d=a.fusionObjects([brain_mask, t1mri], "Fusion2DMethod")
-axial=a.createWindow("Axial")
-axial.addObjects(fusion2d)
-# params of the fusion : linear on non null
-a.execute("Fusion2DParams", object=fusion2d, mode="linear_on_defined", rate=0.4)
-</screen>
-  </para>
-  <para>It is possible to do different types of fusion using the same method <emphasis>fusionObjects</emphasis> and changing the list of objects and the type of fusion.</para>
-  <para>See <ulink url="#ana_training%make_fusion">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%load_transformation_code"><title>Load a transformation</title>
-  <para>
-    <screen>t1mri_s2=a.loadObject( os.path.join(src, "data_for_anatomist", "subject02", "sujet02.ima") )
-t1mri_s2.setPalette("Blue-White")
-fusion2d=a.fusionObjects([t1mri, t1mri_s2], "Fusion2DMethod")
-r1=a.createReferential()
-r2=a.createReferential()
-cr=a.centralRef
-t1mri.assignReferential(r1)
-t1mri_s2.assignReferential(r2)
-# load a transformation
-a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject01", "RawT1-subject01_default_acquisition_TO_Talairach-ACPC.trm"), r1, cr)
-a.loadTransformation( os.path.join(src, "data_for_anatomist", "subject02", "RawT1-sujet02_200810_TO_Talairach-ACPC.trm"), r2, cr)
-axial=a.createWindow("Axial")
-axial.addObjects(fusion2d)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%load_transformation">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-<sect2 id="ana_training%load_existent_referential_code"><title>Load an existing referential</title>
-  <para>
-    <screen>lwhite.assignReferential(r1)
-axial.addObjects(lwhite)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%load_existent_referential">the corresponding actions in the graphical interface</ulink>.</para>
-
-</sect2>
-<sect2 id="ana_training%load_referential_info_code"><title>Load referential information from file header</title>
-  <para>
-    <screen>map=a.loadObject( os.path.join(src, "data_for_anatomist", "subject01", "Audio-Video_T_map.nii" ) )
-map.setPalette("tvalues100-200-100")
-t1mri.loadReferentialFromHeader()
-map.loadReferentialFromHeader()
-fusion_map=a.fusionObjects([map, t1mri], "Fusion2DMethod")
-axial=a.createWindow("Axial")
-axial.addObjects(fusion_map)
-a.execute("Fusion2DParams", object=fusion_map, mode="linear_on_defined", rate=0.5)
-</screen>
-  </para>
-  <para>See <ulink url="#ana_training%load_referential_info">the corresponding actions in the graphical interface</ulink>.</para>
-
-</sect2>
-
-<sect2 id="ana_training%view_roi_code">
-<title>Display a ROI graph</title>
-<screen>graph=a.loadObject( os.path.join(src, "data_for_anatomist", "roi", "basal_ganglia.arg") )
-w = a.createWindow( '3D' )
-w.addObjects( graph, add_graph_nodes=True )
-</screen>
-<para>See <ulink url="#ana_training%view_roi">the corresponding actions in the graphical interface</ulink>.</para>
-</sect2>
-
-<sect2 id="ana_training%execute_command">
-  <title>Sending a command to Anatomist</title>
-  <para>A lot of commands that can be processed by Anatomist are encapsulted in Anatomist class methods. But some commands, less commonly used are not available through specific methods. Nevertheless, they can be called through a generic method <emphasis>Anatomist.execute(&lt; command name &gt;, **parameters)</emphasis>.</para>
-  <para>The list of available commands is listed in the following page : <ulink url="http://brainvisa.info/doc/anatomist/html/fr/programmation/commands.html">http://brainvisa.info/doc/anatomist/html/fr/programmation/commands.html</ulink>.</para>
-  <para>In the previous examples, we use this method to call Fusion2DParams command which is not encapsulated in a specific method.</para>
-  <screen>a.execute("Fusion2DParams", object=fusion_map, mode="linear_on_defined", rate=0.5)</screen>
-</sect2>
-</sect1>
-<sect1><title>Using direct implementation</title>
-  <para>When you use the direct implementation of Anatomist Python API, more features are available. Indeed, each C++ class and function that are declared in the SIP bindings are available in Python. Moreover, the Python script and Anatomist objects share memory, so lower level manipulations are possible.</para>
-  <para>See the <ulink url="#doxyana%index">Anatomist doxygen documentation</ulink> about the C++ API to have more information about the classes and functions that may be available in Python (if the bindings are done).</para>
-  <para>In this mode, it is also possible to interact on objects directly and interactively with Python Aims API. See more details about that in <ulink url="#sphinxpyaims%pyaims-pyanatomist-integration">PyAims / PyAnatomist integration part in Aims tutorial</ulink>.</para>
-</sect1>
-</chapter>
 <!--
     
 A documenter
