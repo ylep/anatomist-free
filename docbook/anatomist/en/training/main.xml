@@ -1263,8 +1263,8 @@
         <imageobject role="html"><imagedata fileref="&DIR_IMG;anasimpleviewer_multiobjects.png" format="PNG"/></imageobject>
       </mediaobject>
     </figure>
-    
-    <para>This simplified version of Anatomist has been developped using PyAnatomist, the Python API for Anatomist. To know more about how to program your own application with this API, see the <link linkend='ana_training%pyanatomist'>next chapter</link>.</para>
+
+    <para>This simplified version of Anatomist has been developped using PyAnatomist, the Python API for Anatomist. To know more about how to program your own application with this API, see the <ulink url="#sphinxpyanatomist%tutorial">PyAnatomist tutorials</ulink>.</para>
 </section>
 
 </chapter>
